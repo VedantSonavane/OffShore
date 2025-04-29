@@ -1,5 +1,5 @@
 import React from "react";
-import Home from "./screens/Home"; // Import Home component from screens folder
+import Home from "./Screens/Home"; // Import Home component from screens folder
 import Navbar from "./Components/Navbar"; // Import Navbar component from components folder
 
 function App() {
