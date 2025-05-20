@@ -1,0 +1,65 @@
+import React from "react";
+import "./index.css";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import Loader from "./Components/Loader";
+import Navbar from "./Components/Navbar";
+import Footer from "./Components/Footer";
+import Architecture from "./Screens/Services/Architecture.jsx";
+import Interior from "./Screens/Services/Interior.jsx";
+import BIM from "./Screens/Services/BIM.jsx";
+
+import Home from "./Screens/Home.jsx";
+
+// Debug component to log the current route
+const DebugRoute = () => {
+  const location = useLocation();
+  console.log("Current route:", location.pathname);
+  return null;
+};
+
+function App() {
+  const PlaceholderPage = ({ title }) => (
+    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+      <h1 className="text-3xl font-bold text-gray-800">{title} Page</h1>
+    </div>
+  );
+
+  return (
+    <Router>
+      <div>
+    
+      <Navbar/>
+        <DebugRoute /> {/* Log the current route */}
+        <Routes>
+          <Route
+            path="/"
+            element={<Home />}
+          />
+          <Route path="/architecture" element={<Architecture />} />
+          <Route path="/interior" element={<Interior  />} />
+          <Route path="/bim" element={<BIM/>} />
+          <Route path="/3dvisualization" element={<PlaceholderPage title="3D Visualization" />} />
+          <Route path="/it" element={<PlaceholderPage title="IT" />} />
+          <Route path="/marketing" element={<PlaceholderPage title="Marketing" />} />
+          <Route path="/about" element={<PlaceholderPage title="About Us" />} />
+          <Route path="/services" element={<PlaceholderPage title="Services" />} />
+          <Route path="/contact" element={<PlaceholderPage title="Contact" />} />
+          <Route path="/project" element={<PlaceholderPage title="Project" />} />
+          <Route
+            path="*"
+            element={
+              <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+                <h1 className="text-3xl font-bold text-gray-800">
+                  404 - Page Not Found
+                </h1>
+              </div>
+            }
+          />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
+  );
+}
+
+export default App;
