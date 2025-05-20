@@ -35,7 +35,7 @@ const Architecture = () => {
 
   const tabData = {
     services: {
-      title: "Comprehensive interior designing Designing Services",
+      title: "Comprehensive Interior  Designing Services",
       description:
         "We provide end-to-end interior designing solutions from concept to completion. Our team delivers innovative designs tailored to your specific needs and vision.",
       image: architectureHero,
@@ -277,7 +277,7 @@ const Architecture = () => {
             transition={{ delay: 0.3, duration: 0.8 }}
             className="text-8xl font-extrabold text-white tracking-tight mb-4 drop-shadow-2xl"
           >
-            interior designing Designing
+            Interior  Designing
           </motion.h1>
         </div>
       </motion.div>
