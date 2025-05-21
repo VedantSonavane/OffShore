@@ -259,9 +259,25 @@ const Architecture = () => {
       });
     }
   };
+ const [activeIndex, setActiveIndex] = useState(0);
+  const features = tabData.services.features;
+  const doubledFeatures = [...features, ...features]; // Double for continuous loop
+  const imageWidth = 100; // w-24 (24 * 4px/rem = 96px)
+  const gap = 16; // mx-2 (2 * 0.5rem * 16px/rem = 16px)
+
+  // Auto-slide with pause
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prevIndex) =>
+        prevIndex === features.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 3000); // Pause for 3 seconds
+
+    return () => clearInterval(interval);
+  }, [features.length]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-100 to-gray-200 font-sans">
+    <div className="min-h-screen ">
       {/* Hero Section */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -297,9 +313,8 @@ const Architecture = () => {
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className={`z-20 bg-white/90 backdrop-blur-xl shadow-lg transition-all duration-300 ${
-          isSticky ? "fixed top-[72px] left-0 right-0 shadow-xl" : "relative"
-        }`}
+        className={`z-20 bg-white/90 backdrop-blur-xl shadow-lg transition-all duration-300 ${isSticky ? "fixed top-[72px] left-0 right-0 shadow-xl" : "relative"
+          }`}
       >
         <div className="container flex justify-center items-center mx-auto px-4">
           <div className="flex overflow-x-auto scrollbar-hide py-3">
@@ -328,97 +343,111 @@ const Architecture = () => {
       {/* Main Content */}
       <div className="container mx-auto px-4 sm:px-6 py-12 md:py-16">
         {/* Services Section */}
-        <motion.section
-          ref={(ref) => setRef("services", ref)}
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="py-12 sm:py-16 scroll-mt-20"
-          id="services"
-          data-aos="fade-up"
-        >
-          <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-12">
-            <div className="flex-1" data-aos="fade-right">
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-                {tabData.services.title}
-              </h2>
-              <p className="text-base sm:text-lg text-gray-600 mb-8 leading-relaxed">
-                {tabData.services.description}
-              </p>
-              <div className="grid grid-cols-2 sm:grid-cols-2 gap-4">
-                {tabData.services.features.map((feature, index) => (
-                  <motion.div
-                    key={index}
-                    whileHover={{ scale: 1.05, backgroundColor: "#f1f5f9" }}
-                    className="flex items-center p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
-                    data-aos="fade-up"
-                    data-aos-delay={index * 100}
+     <motion.section
+      ref={(ref) => setRef("services", ref)}
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+      className="py-12 sm:py-16 scroll-mt-20"
+      id="services"
+      data-aos="fade-up"
+    >
+      <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-12 px-4 sm:px-8">
+        <div className="flex-1" data-aos="fade-right">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+            {tabData.services.title}
+          </h2>
+          <p className="text-base sm:text-lg text-gray-600 mb-8 leading-relaxed">
+            {tabData.services.description}
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-2 gap-4">
+            {features.map((feature, index) => (
+              <motion.div
+                key={index}
+                whileHover={{ scale: 1.05, backgroundColor: "#f1f5f9" }}
+                className="flex items-center p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
+              >
+                <div className="bg-blue-100 rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0">
+                  <svg
+                    className="w-4 h-4 text-blue-600"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
                   >
-                    <div className="bg-yellow-100 rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0">
-                      <svg
-                        className="w-4 h-4 text-yellow-600"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </div>
+                <span className="text-gray-800 text-base">{feature.name}</span>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+        <div className="flex-1" data-aos="fade-left">
+          <motion.div
+            initial={{ scale: 0.9, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="relative w-full h-[600px]"
+          >
+            {/* Main Image */}
+            <img
+              src={features[activeIndex].image}
+              alt={features[activeIndex].name}
+              className="w-full h-[400px] rounded-xl shadow-2xl object-cover transform hover:scale-105 transition-transform duration-500"
+            />
+            {/* Carousel */}
+            <div className="absolute bottom-0 w-full h-[140px] overflow-hidden">
+              <motion.div
+                className="flex"
+                animate={{
+                  x: `-${activeIndex * (imageWidth + gap)}px`,
+                  transition: {
+                    x: {
+                      duration: 0.5,
+                      ease: "easeInOut",
+                    },
+                  },
+                }}
+                style={{ width: `${doubledFeatures.length * (imageWidth + gap)}px` }}
+              >
+                {doubledFeatures.map((feature, index) => (
+                  <div
+                    key={index}
+                    className="flex flex-col items-center mx-2 py-2"
+                    onClick={() => setActiveIndex(index % features.length)}
+                  >
+                    <div
+                      whileHover={{ scale: 1.05 }}
+                      className={`w-24 h-24 rounded-lg overflow-hidden mb-1 cursor-pointer ${
+                        activeIndex === index % features.length ? "scale-105" : ""
+                      }`}
+                    >
+                      <img
+                        src={feature.image}
+                        alt={feature.name}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
-                    <span className="text-gray-800 text-base">
+                    <span className="text-gray-800 text-xs text-center">
                       {feature.name}
                     </span>
-                  </motion.div>
+                  </div>
                 ))}
-              </div>
+              </motion.div>
             </div>
-            <motion.div
-              className="flex-1"
-              initial={{ scale: 0.9, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              data-aos="fade-left"
-            >
-              <img
-                src={serviceImage}
-                alt={tabData.services.title}
-                className="w-full h-auto rounded-xl shadow-2xl object-cover transform hover:scale-105 transition-transform duration-500"
-              />
-            </motion.div>
-          </div>
-          <div className="mt-24">
-            <div className="grid grid-cols-2 sm:grid-cols-5 gap-4">
-              {tabData.services.features.map((feature, index) => (
-                <motion.div
-                  key={index}
-                  className="flex flex-col items-center hover:scale-105 transition-all duration-300"
-                  data-aos="fade-up"
-                  data-aos-delay={index * 100}
-                >
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    className="w-24 h-24 rounded-lg overflow-hidden mb-2"
-                  >
-                    <img
-                      src={feature.image}
-                      alt={feature.name}
-                      className="w-full h-full object-cover"
-                    />
-                  </motion.div>
-                  <span className="text-gray-800 text-xs text-center">
-                    {feature.name}
-                  </span>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </motion.section>
+          </motion.div>
+        </div>
+      </div>
+    </motion.section>
 
         {/* Tools Section */}
         <motion.section
@@ -427,7 +456,7 @@ const Architecture = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="py-12 sm:py-16 scroll-mt-20 bg-gradient-to-r from-yellow-700 to-yellow-900 rounded-2xl px-4 sm:px-8 text-white"
+          className="py-12 sm:py-16 scroll-mt-20 rounded-2xl px-4 sm:px-8 text-white"
           id="tools"
           data-aos="fade-up"
         >
@@ -443,14 +472,14 @@ const Architecture = () => {
               <img
                 src={tabData.tools.image}
                 alt={tabData.tools.title}
-                className="w-full border border-white h-auto rounded-xl shadow-2xl object-cover transform hover:scale-105 transition-transform duration-500"
+                className="w-full border border-white h-[550px] rounded-xl shadow-2xl object-cover transform hover:scale-105 transition-transform duration-500"
               />
             </motion.div>
             <div className="flex-1" data-aos="fade-left">
-              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-6">
                 {tabData.tools.title}
               </h2>
-              <p className="text-base sm:text-lg text-white mb-8 leading-relaxed">
+              <p className="text-base sm:text-lg text-gray-600 mb-8 leading-relaxed">
                 {tabData.tools.description}
               </p>
               <div className="grid grid-cols-4 sm:grid-cols-4 gap-4">
@@ -489,7 +518,7 @@ const Architecture = () => {
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* Heading */}
-            <div className="text-center mb-12">
+            <div className="text-center mb-8">
               <h2 className="text-4xl font-extrabold text-gray-900">
                 {tabData.plans.title}
               </h2>
@@ -500,7 +529,7 @@ const Architecture = () => {
 
             {/* Full Width Image */}
             <motion.div
-              className="mb-16"
+              className="mb-12"
               initial={{ scale: 0.95, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.8 }}
@@ -520,7 +549,7 @@ const Architecture = () => {
                   key={index}
                   whileHover={{ scale: 1.05 }}
                   transition={{ type: "spring", stiffness: 300 }}
-                  className="relative group bg-white text-yellow-900 rounded-2xl shadow-lg p-6 flex flex-col justify-between h-full border border-yellow-200 transition-all duration-300"
+                  className="relative group bg-white text-yellow-900 rounded-2xl shadow-lg p-6 flex flex-col justify-between h-full border border-yellow-500 transition-all duration-300"
                 >
                   {/* Card Content */}
                   <div className="transition-all duration-300 group-hover:text-white">
@@ -534,7 +563,7 @@ const Architecture = () => {
                   </button>
 
                   {/* Hover Overlay for Gradient Background */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-yellow-500 to-yellow-700 opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity duration-300 -z-10"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-yellow-500 to-yellow-700 opacity-0 group-hover:opacity-100  rounded-2xl transition-opacity duration-300 -z-10"></div>
                 </motion.div>
               ))}
             </div>
@@ -548,7 +577,7 @@ const Architecture = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="py-12 sm:py-16 scroll-mt-20 bg-gradient-to-r from-yellow-700 to-yellow-900 rounded-2xl px-4 sm:px-8 text-white"
+          className="py-12 sm:py-16 scroll-mt-20   rounded-2xl px-4 sm:px-8 text-gray-800 "
           id="why-us"
           data-aos="zoom-in"
         >
@@ -576,7 +605,7 @@ const Architecture = () => {
                     <div className="text-base mb-2">{stat.label}</div>
                     <div className="w-full bg-yellow-300 rounded-full h-2.5">
                       <motion.div
-                        className="bg-white h-2.5 rounded-full"
+                        className="bg-yellow-500 h-2.5 rounded-full"
                         initial={{ width: 0 }}
                         whileInView={{ width: `${stat.percentage}%` }}
                         transition={{ duration: 1, delay: index * 0.2 }}
@@ -638,105 +667,63 @@ const Architecture = () => {
               <img
                 src={tabData["why-us"].image}
                 alt={tabData["why-us"].title}
-                className="w-full h-auto border border-white rounded-xl shadow-2xl object-cover transform hover:scale-105 transition-transform duration-500"
+                className="w-full h-[550px] border border-white rounded-xl shadow-2xl object-cover transform hover:scale-105 transition-transform duration-500"
               />
             </motion.div>
           </div>
 
-          {/* Circular Progress Bars (Four) */}
-          <div className="mt-12">
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mb-12">
-              {[
-                { label: "Client Satisfaction", percentage: 92 },
-                { label: "Project Efficiency", percentage: 87 },
-                { label: "Innovation Score", percentage: 78 },
-                { label: "Team Expertise", percentage: 85 },
-              ].map((item, index) => (
-                <motion.div
-                  key={index}
-                  className="flex flex-col items-center"
-                  data-aos="fade-up"
-                  data-aos-delay={index * 100}
-                >
-                  <div className="relative w-24 h-24">
-                    <svg className="w-full h-full" viewBox="0 0 100 100">
-                      <circle
-                        className="text-yellow-300"
-                        strokeWidth="10"
-                        stroke="currentColor"
-                        fill="transparent"
-                        r="45"
-                        cx="50"
-                        cy="50"
-                      />
-                      <motion.circle
-                        className="text-white"
-                        strokeWidth="10"
-                        stroke="currentColor"
-                        fill="transparent"
-                        r="45"
-                        cx="50"
-                        cy="50"
-                        strokeDasharray="283"
-                        strokeDashoffset={283 - (283 * item.percentage) / 100}
-                        strokeLinecap=""
-                        initial={{ strokeDashoffset: 283 }}
-                        whileInView={{
-                          strokeDashoffset: 283 - (283 * item.percentage) / 100,
-                        }}
-                        transition={{ duration: 1, delay: index * 0.2 }}
-                      />
-                    </svg>
-                    <div className="absolute inset-0 flex items-center justify-center text-xl font-bold">
-                      {item.percentage}%
-                    </div>
-                  </div>
-                  <div className="text-base mt-2 text-center">{item.label}</div>
-                </motion.div>
-              ))}
-            </div>
+
+
+        </motion.section>
+        <div className="py-16 px-4 sm:px-6 lg:px-20">
+          {/* Centered Header */}
+          <div className="text-center mb-14">
+            <h2 className="text-4xl font-bold text-gray-800">Our Expertise</h2>
+            <p className="text-gray-500 mt-3 text-base max-w-xl mx-auto">
+              We specialize in delivering solutions that drive real results. Here's what makes us stand out.
+            </p>
           </div>
 
-          {/* Benefits List */}
-          <div>
-            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-              {tabData["why-us"].benefits.map((benefit, index) => (
-                <motion.div
-                  key={index}
-                  whileHover={{
-                    scale: 1.05,
-                    boxShadow: "0 10px 20px rgba(0, 0, 0, 0.2)",
-                  }}
-                  className="p-6 bg-yellow-400/50 rounded-xl shadow-lg border border-yellow-600/30 hover:bg-yellow-800/70 transition-all duration-300"
-                  data-aos="fade-up"
-                  data-aos-delay={index * 100}
-                >
-                  <div className="flex items-center mb-3">
-                    <div className="bg-white rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0">
-                      <svg
-                        className="w-4 h-4 text-yellow-600"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                    </div>
-                    <h3 className="text-lg font-semibold">{benefit.title}</h3>
+          {/* Card Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+            {tabData["why-us"].benefits.map((benefit, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center text-center bg-white rounded-3xl shadow-md p-8 border border-gray-200 transform transition-all duration-300 hover:scale-105 hover:bg-yellow-500 hover:text-white hover:shadow-2xl"
+              >
+                {/* Icon */}
+                <div className="mb-6">
+                  <div className="flex items-center justify-center w-12 h-12 border border-yellow-500 rounded-full bg-yellow-100 text-yellow-600 shadow-md transition-all duration-300 group-hover:bg-white group-hover:text-yellow-800">
+                    <svg
+                      className="w-6 h-6"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
                   </div>
-                  <p className="text-sm text-gray-200 leading-relaxed">
-                    {benefit.description}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
+                </div>
+
+                {/* Title */}
+                <h3 className="text-xl font-semibold mb-2 transition-colors duration-300">
+                  {benefit.title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-sm leading-relaxed transition-colors duration-300">
+                  {benefit.description}
+                </p>
+              </div>
+            ))}
           </div>
-        </motion.section>
+        </div>
+
 
         {/* Get Started Section */}
         <motion.section

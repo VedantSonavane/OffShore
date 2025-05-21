@@ -261,7 +261,7 @@ const Architecture = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-100 to-gray-200 font-sans">
+    <div className="min-h-screen  font-sans">
       {/* Hero Section */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -297,9 +297,8 @@ const Architecture = () => {
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className={`z-20 bg-white/90 backdrop-blur-xl shadow-lg transition-all duration-300 ${
-          isSticky ? "fixed top-[72px] left-0 right-0 shadow-xl" : "relative"
-        }`}
+        className={`z-20 bg-white/90 backdrop-blur-xl shadow-lg transition-all duration-300 ${isSticky ? "fixed top-[72px] left-0 right-0 shadow-xl" : "relative"
+          }`}
       >
         <div className="container flex justify-center items-center mx-auto px-4">
           <div className="flex overflow-x-auto scrollbar-hide py-3">
@@ -334,7 +333,7 @@ const Architecture = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="py-12 sm:py-16 scroll-mt-20"
+          className="min-h-screen py-20"
           id="services"
           data-aos="fade-up"
         >
@@ -392,8 +391,8 @@ const Architecture = () => {
               />
             </motion.div>
           </div>
-          <div className="mt-24">
-            <div className="grid grid-cols-2 sm:grid-cols-5 gap-4">
+          <div className="mt-12">
+            <div className="grid grid-cols-2 sm:grid-cols-10 gap-4">
               {tabData.services.features.map((feature, index) => (
                 <motion.div
                   key={index}
@@ -427,11 +426,11 @@ const Architecture = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="py-12 sm:py-16 scroll-mt-20 bg-gradient-to-r from-blue-700 to-blue-900 rounded-2xl px-4 sm:px-8 text-white"
+          className="  container min-h-screen  text-white"
           id="tools"
           data-aos="fade-up"
         >
-          <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-12">
+          <div className="flex flex-col bg-gradient-to-r from-blue-700 py-20 px-20 rounded-2xl to-blue-900 lg:flex-row items-center gap-8 md:gap-12">
             <motion.div
               className="flex-1"
               initial={{ scale: 0.9, opacity: 0 }}
@@ -484,7 +483,7 @@ const Architecture = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="py-16 sm:py-20 scroll-mt-20 "
+          className="container min-h-screen -mt-[200px]"
           id="plans"
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -499,20 +498,7 @@ const Architecture = () => {
             </div>
 
             {/* Full Width Image */}
-            <motion.div
-              className="mb-16"
-              initial={{ scale: 0.95, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <img
-                src={tabData.plans.image}
-                alt={tabData.plans.title}
-                className="w-full h-[350px] border-2 border-blue-200 rounded-2xl shadow-2xl object-cover hover:scale-105 transition-transform duration-500"
-              />
-            </motion.div>
-
+          
             {/* 5 Cards in One Row */}
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
               {tabData.plans.plans.slice(0, 5).map((plan, index) => (
@@ -548,7 +534,7 @@ const Architecture = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="py-12 sm:py-16 scroll-mt-20 bg-gradient-to-r from-blue-700 to-blue-900 rounded-2xl px-4 sm:px-8 text-white"
+          className="py-12 sm:py-16 -mt-30 bg-gradient-to-r from-blue-700 to-blue-900 rounded-2xl px-4 sm:px-8 text-white"
           id="why-us"
           data-aos="zoom-in"
         >
@@ -643,101 +629,13 @@ const Architecture = () => {
             </motion.div>
           </div>
 
-          {/* Circular Progress Bars (Four) */}
-          <div className="mt-12">
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mb-12">
-              {[
-                { label: "Client Satisfaction", percentage: 92 },
-                { label: "Project Efficiency", percentage: 87 },
-                { label: "Innovation Score", percentage: 78 },
-                { label: "Team Expertise", percentage: 85 },
-              ].map((item, index) => (
-                <motion.div
-                  key={index}
-                  className="flex flex-col items-center"
-                  data-aos="fade-up"
-                  data-aos-delay={index * 100}
-                >
-                  <div className="relative w-24 h-24">
-                    <svg className="w-full h-full" viewBox="0 0 100 100">
-                      <circle
-                        className="text-blue-300"
-                        strokeWidth="10"
-                        stroke="currentColor"
-                        fill="transparent"
-                        r="45"
-                        cx="50"
-                        cy="50"
-                      />
-                      <motion.circle
-                        className="text-white"
-                        strokeWidth="10"
-                        stroke="currentColor"
-                        fill="transparent"
-                        r="45"
-                        cx="50"
-                        cy="50"
-                        strokeDasharray="283"
-                        strokeDashoffset={283 - (283 * item.percentage) / 100}
-                        strokeLinecap=""
-                        initial={{ strokeDashoffset: 283 }}
-                        whileInView={{
-                          strokeDashoffset: 283 - (283 * item.percentage) / 100,
-                        }}
-                        transition={{ duration: 1, delay: index * 0.2 }}
-                      />
-                    </svg>
-                    <div className="absolute inset-0 flex items-center justify-center text-xl font-bold">
-                      {item.percentage}%
-                    </div>
-                  </div>
-                  <div className="text-base mt-2 text-center">{item.label}</div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
 
-          {/* Benefits List */}
-          <div>
-            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-              {tabData["why-us"].benefits.map((benefit, index) => (
-                <motion.div
-                  key={index}
-                  whileHover={{
-                    scale: 1.05,
-                    boxShadow: "0 10px 20px rgba(0, 0, 0, 0.2)",
-                  }}
-                  className="p-6 bg-blue-400/50 rounded-xl shadow-lg border border-blue-600/30 hover:bg-blue-800/70 transition-all duration-300"
-                  data-aos="fade-up"
-                  data-aos-delay={index * 100}
-                >
-                  <div className="flex items-center mb-3">
-                    <div className="bg-white rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0">
-                      <svg
-                        className="w-4 h-4 text-blue-600"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                    </div>
-                    <h3 className="text-lg font-semibold">{benefit.title}</h3>
-                  </div>
-                  <p className="text-sm text-gray-200 leading-relaxed">
-                    {benefit.description}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
+
+
         </motion.section>
 
+        {/* Benefits List */}
+     
         {/* Get Started Section */}
         <motion.section
           ref={(ref) => setRef("get-started", ref)}
@@ -746,7 +644,7 @@ const Architecture = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
           id="get-started"
-          className="relative py-20 sm:py-24 mt-20 rounded-xl text-white overflow-hidden"
+          className="relative py-36  mt-20 rounded-xl text-white overflow-hidden"
         >
           <video
             autoPlay
