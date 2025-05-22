@@ -184,7 +184,7 @@ const Architecture = () => {
           icon: (
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-12 w-12 text-blue-600"
+              className="h-12 w-12 text-purple-600"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -207,7 +207,7 @@ const Architecture = () => {
           icon: (
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-12 w-12 text-blue-600"
+              className="h-12 w-12 text-purple-600"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -228,7 +228,7 @@ const Architecture = () => {
           icon: (
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-12 w-12 text-blue-600"
+              className="h-12 w-12 text-purple-600"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -249,7 +249,7 @@ const Architecture = () => {
           icon: (
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-12 w-12 text-blue-600"
+              className="h-12 w-12 text-purple-600"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -270,7 +270,7 @@ const Architecture = () => {
           icon: (
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-12 w-12 text-blue-600"
+              className="h-12 w-12 text-purple-600"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -291,7 +291,7 @@ const Architecture = () => {
           icon: (
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-12 w-12 text-blue-600"
+              className="h-12 w-12 text-purple-600"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -450,7 +450,7 @@ const Architecture = () => {
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className={`z-20 bg-blue-500 backdrop-blur-xl shadow-lg transition-all duration-300 ${
+        className={`z-20 bg-purple-500 backdrop-blur-xl shadow-lg transition-all duration-300 ${
           isSticky ? "fixed top-[72px] left-0 right-0 shadow-xl" : "relative"
         }`}
       >
@@ -462,12 +462,12 @@ const Architecture = () => {
                 onClick={() => handleTabClick(tab.id)}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
-                className={`relative px-4 sm:px-6 py-2 text-sm sm:text-base font-semibold transition-all duration-300 mx-1 text-white hover:text-blue-600 hover:bg-blue-100 rounded-md`}
+                className={`relative px-4 sm:px-6 py-2 text-sm sm:text-base font-semibold transition-all duration-300 mx-1 text-white hover:text-purple-600 hover:bg-purple-100 rounded-md`}
               >
                 {tab.label}
                 {activeTab === tab.id && (
                   <motion.div
-                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-600"
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-purple-600"
                     layoutId="underline"
                     transition={{ type: "spring", stiffness: 300, damping: 30 }}
                   />
@@ -508,9 +508,9 @@ const Architecture = () => {
                     data-aos="fade-up"
                     data-aos-delay={index * 100}
                   >
-                    <div className="bg-blue-100 rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0">
+                    <div className="bg-purple-100 rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0">
                       <svg
-                        className="w-4 h-4 text-blue-600"
+                        className="w-4 h-4 text-purple-600"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -671,7 +671,7 @@ const Architecture = () => {
               <img
                 src={tabData.plans.image}
                 alt={tabData.plans.title}
-                className="w-full h-[350px] border-2 border-blue-200 rounded-2xl shadow-2xl object-cover hover:scale-105 transition-transform duration-500"
+                className="w-full h-[350px] border-2 border-purple-200 rounded-2xl shadow-2xl object-cover hover:scale-105 transition-transform duration-500"
               />
             </motion.div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
@@ -680,16 +680,16 @@ const Architecture = () => {
                   key={index}
                   whileHover={{ scale: 1.05 }}
                   transition={{ type: "spring", stiffness: 300 }}
-                  className="relative group bg-white text-blue-900 rounded-2xl shadow-lg p-6 flex flex-col justify-between h-full border border-blue-500 transition-all duration-300"
+                  className="relative group bg-white text-purple-900 rounded-2xl shadow-lg p-6 flex flex-col justify-between h-full border border-purple-500 transition-all duration-300"
                 >
                   <div className="transition-all duration-300 group-hover:text-white">
                     <h3 className="text-lg font-semibold mb-2">{plan.title}</h3>
                     <p className="text-sm mb-6">{plan.description}</p>
                   </div>
-                  <button className="mt-auto w-full py-2 rounded-lg bg-blue-600 text-white font-semibold group-hover:bg-white group-hover:text-blue-700 transition duration-300">
+                  <button className="mt-auto w-full py-2 rounded-lg bg-purple-600 text-white font-semibold group-hover:bg-white group-hover:text-purple-700 transition duration-300">
                     Get started
                   </button>
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-blue-700 opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity duration-300 -z-10"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-purple-700 opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity duration-300 -z-10"></div>
                 </motion.div>
               ))}
             </div>
@@ -727,9 +727,9 @@ const Architecture = () => {
                       {stat.number}+
                     </div>
                     <div className="text-base mb-2">{stat.label}</div>
-                    <div className="w-full bg-blue-300 rounded-full h-2.5">
+                    <div className="w-full bg-purple-300 rounded-full h-2.5">
                       <motion.div
-                        className="bg-blue-500 h-2.5 rounded-full"
+                        className="bg-purple-500 h-2.5 rounded-full"
                         initial={{ width: 0 }}
                         whileInView={{ width: `${stat.percentage}%` }}
                         transition={{ duration: 1, delay: index * 0.2 }}
@@ -746,12 +746,12 @@ const Architecture = () => {
                       scale: 1.05,
                       boxShadow: "0 10px 20px rgba(0, 0, 0, 0.2)",
                     }}
-                    className="p-4 bg-white rounded-xl shadow-lg border border-blue-600/30 transition-all duration-300"
+                    className="p-4 bg-white rounded-xl shadow-lg border border-purple-600/30 transition-all duration-300"
                     data-aos="fade-up"
                     data-aos-delay={index * 100}
                   >
                     <div className="flex items-center mb-2">
-                      <div className="bg-blue-600 rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0">
+                      <div className="bg-purple-600 rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0">
                         <svg
                           className="w-4 h-4 text-white"
                           fill="none"
@@ -766,7 +766,7 @@ const Architecture = () => {
                           />
                         </svg>
                       </div>
-                      <h3 className="text-lg text-blue-600 font-semibold">
+                      <h3 className="text-lg text-purple-600 font-semibold">
                         {benefit.title}
                       </h3>
                     </div>
@@ -803,10 +803,10 @@ const Architecture = () => {
               {tabData["why-us"].benefits.map((benefit, index) => (
                 <div
                   key={index}
-                  className="flex flex-col items-center text-center bg-white rounded-3xl shadow-md p-8 border border-gray-200 transform transition-all duration-300 hover:scale-105 hover:bg-blue-500 hover:text-white hover:shadow-2xl"
+                  className="flex flex-col items-center text-center bg-white rounded-3xl shadow-md p-8 border border-gray-200 transform transition-all duration-300 hover:scale-105 hover:bg-purple-500 hover:text-white hover:shadow-2xl"
                 >
                   <div className="mb-6">
-                    <div className="flex items-center justify-center w-12 h-12 border border-blue-500 rounded-full bg-blue-100 text-blue-600 shadow-md transition-all duration-300 group-hover:bg-white group-hover:text-blue-800">
+                    <div className="flex items-center justify-center w-12 h-12 border border-purple-500 rounded-full bg-purple-100 text-purple-600 shadow-md transition-all duration-300 group-hover:bg-white group-hover:text-purple-800">
                       <svg
                         className="w-6 h-6"
                         fill="none"
@@ -961,7 +961,7 @@ const Architecture = () => {
                     <p className="text-gray-600 my-2">{faq.answer}</p>
                     <Link
                       to="/contact-us"
-                      className="text-blue-600 hover:text-blue-800 hover:underline capitalize"
+                      className="text-purple-600 hover:text-purple-800 hover:underline capitalize"
                       title="Read More"
                     >
                       Read More

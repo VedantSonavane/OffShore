@@ -7,6 +7,14 @@ import Footer from "./Components/Footer";
 import Architecture from "./Screens/Services/Architecture.jsx";
 import Interior from "./Screens/Services/Interior.jsx";
 import BIM from "./Screens/Services/BIM.jsx";
+import Visulization from "./Screens/Services/3D.jsx";
+import IT from "./Screens/Services/IT.jsx";
+import Marketing from "./Screens/Services/Marketing.jsx";
+import Admin from "./Screens/Services/Admin.jsx";
+
+
+
+
 
 import Home from "./Screens/Home.jsx";
 
@@ -38,9 +46,11 @@ function App() {
           <Route path="/architecture" element={<Architecture />} />
           <Route path="/interior" element={<Interior  />} />
           <Route path="/bim" element={<BIM/>} />
-          <Route path="/3dvisualization" element={<PlaceholderPage title="3D Visualization" />} />
-          <Route path="/it" element={<PlaceholderPage title="IT" />} />
-          <Route path="/marketing" element={<PlaceholderPage title="Marketing" />} />
+          <Route path="/3dvisualization" element={<Visulization/>} />
+          <Route path="/it" element={<IT />} />
+          <Route path="/marketing" element={<Marketing  />} />
+                    <Route path="/admin" element={<Admin  />} />
+
           <Route path="/about" element={<PlaceholderPage title="About Us" />} />
           <Route path="/services" element={<PlaceholderPage title="Services" />} />
           <Route path="/contact" element={<PlaceholderPage title="Contact" />} />
