@@ -20,42 +20,60 @@ export default function TestimonialMetrics() {
 
   const testimonials = [
     {
-      company: "HackerOne",
-      metric: "169%",
-      description: "Return on investment",
+      company: "Chris P",
+      metric: "<1%",
+      description: "Fewer than 1% rework requests, thanks to Offshore 365’s precision in architectural and 3D work.",
       color: "bg-red-500",
       hoverColor: "bg-red-700",
       dotColor: "#ef4444",
       textColor: "text-white",
     },
     {
-      company: "Vonage",
-      metric: "160%",
-      description: "Increase in customers reached",
+      company: "David L",
+      metric: "40%",
+      description: "Operational costs cut by 40% without compromising on quality.",
       color: "bg-blue-500",
       hoverColor: "bg-blue-700",
       dotColor: "#3b82f6",
       textColor: "text-white",
     },
     {
-      company: "Texas",
-      metric: "20%",
-      description: "Decrease in scheduling errors",
+      company: "Jessica M",
+      metric: "2x",
+      description: "Doubled our team’s capacity with scalable offshore talent.",
       color: "bg-amber-500",
       hoverColor: "bg-amber-700",
       dotColor: "#f59e0b",
       textColor: "text-white",
     },
     {
-      company: "Muck Rack",
-      metric: "8 days",
-      description: "Reduction in time to schedule",
+      company: "Anna K",
+      metric: "30%",
+      description: "Accelerated timelines by 30% using the time zone advantage.",
       color: "bg-purple-500",
       hoverColor: "bg-purple-700",
       dotColor: "#a855f7",
       textColor: "text-white",
     },
-  ]
+    {
+      company: "Robert D",
+      metric: "100%",
+      description: "Top-tier BIM expertise powering our tech-heavy deliverables.",
+      color: "bg-red-500",
+      hoverColor: "bg-red-700",
+      dotColor: "#ef4444",
+      textColor: "text-white",
+    },
+    {
+      company: "Mark T",
+      metric: "35%",
+      description: "Project output increased by 35% in Q1 with seamless integration.",
+      color: "bg-blue-500",
+      hoverColor: "bg-blue-700",
+      dotColor: "#3b82f6",
+      textColor: "text-white",
+    },
+  ];
 
   const cardVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -93,21 +111,21 @@ export default function TestimonialMetrics() {
     // Auto-slide interval
     if (isPaused) return
     const interval = setInterval(() => {
-      setCurrentSlide((prev) => prev + 1)
+      setCurrentSlide((prev) => (prev + 1) % testimonials.length)
     }, 4000)
     return () => {
       clearInterval(interval)
       splitTitle.revert()
       splitSubtitle.revert()
     }
-  }, [isPaused])
+  }, [isPaused, testimonials.length])
 
   const nextSlide = () => {
-    setCurrentSlide((prev) => prev + 1)
+    setCurrentSlide((prev) => (prev + 1) % testimonials.length)
   }
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => prev - 1)
+    setCurrentSlide((prev) => (prev - 1 + testimonials.length) % testimonials.length)
   }
 
   const goToSlide = (index) => {
@@ -153,18 +171,22 @@ export default function TestimonialMetrics() {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 sm:mb-12">
           <div className="max-w-2xl mb-6 md:mb-0" data-aos="fade-right" data-aos-delay="100">
-            <h2
-              ref={titleRef}
-              className="text-3xl sm:text-4xl md:text-5xl font-bold text-blue-900 mb-4 tracking-tight"
+            <motion.h1
+              className="text-[64px] font-extrabold text-gray-900 mb-3 tracking-wide"
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.6 }}
             >
-              Discover how businesses grow with Offshore365
-            </h2>
-            <p
-              ref={subtitleRef}
-              className="text-base sm:text-lg text-gray-600 leading-relaxed"
+              This Impact Is Real
+            </motion.h1>
+            <motion.p
+              className="text-gray-500 text-[20px]"
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
             >
-              Learn how teams of all sizes are using Calendly's scheduling automation platform to create value.
-            </p>
+              Discover how businesses grow with offshore 365
+            </motion.p>
           </div>
           <div className="flex space-x-3" data-aos="fade-left" data-aos-delay="200">
             <button
@@ -217,21 +239,21 @@ export default function TestimonialMetrics() {
               >
                 <div className="z-10 relative text-center px-6 sm:px-8 py-8 sm:py-10">
                   <span
-                    className="font-semibold text-lg sm:text-xl block mb-4"
+                    className="font-semibold text-[20px] block mb-2"
                     data-aos="fade-up"
                     data-aos-delay={600 + (index % totalSlides) * 100}
                   >
                     {item.company}
                   </span>
                   <h3
-                    className="text-5xl sm:text-6xl font-bold mb-4"
+                    className="text-[64px] font-bold mb-2"
                     data-aos="fade-up"
                     data-aos-delay={700 + (index % totalSlides) * 100}
                   >
                     {item.metric}
                   </h3>
                   <p
-                    className="text-base sm:text-lg leading-relaxed"
+                    className="text-[16px] leading-relaxed"
                     data-aos="fade-up"
                     data-aos-delay={800 + (index % totalSlides) * 100}
                   >
@@ -261,15 +283,11 @@ export default function TestimonialMetrics() {
                   data-aos-delay={1000 + index * 100}
                 >
                   <div
-                    className={`liquid-dot w-2.5 h-2.5 sm:w-3 sm:h-3 border border-white rounded-full transition-all duration-500 flex items-center justify-center ${
-                      isActive ? "scale-125" : "scale-100 opacity-70 hover:opacity-100"
-                    }`}
+                    className={`liquid-dot w-2.5 h-2.5 sm:w-3 sm:h-3 border border-white rounded-full transition-all duration-500 flex items-center justify-center ${isActive ? "scale-125" : "scale-100 opacity-70 hover:opacity-100"}`}
                     style={{ background: item.dotColor }}
                   >
                     <div
-                      className={`absolute inset-0 rounded-full overflow-hidden ${
-                        isActive ? "animate-pulse" : ""
-                      }`}
+                      className={`absolute inset-0 rounded-full overflow-hidden ${isActive ? "animate-pulse" : ""}`}
                     >
                       <div
                         className="liquid-bubble absolute w-4 h-4 sm:w-5 sm:h-5 rounded-full"

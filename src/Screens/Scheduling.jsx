@@ -2,42 +2,48 @@
 
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import meetImage from "../assets/meet.png"
+
+// Updated services array with 8 services
 const services = [
   {
     name: "Architecture",
-    bgColor: "bg-blue-500",
-    hoverColor: "hover:bg-blue-600",
+    bgColor: "bg-white",
+    hoverColor: "hover:bg-blue-100",
   },
   {
     name: "Interior Design",
-    bgColor: "bg-blue-400",
-    hoverColor: "hover:bg-blue-500",
+    bgColor: "bg-white",
+    hoverColor: "hover:bg-blue-100",
   },
   {
     name: "3D Visualization",
-    bgColor: "bg-blue-600",
-    hoverColor: "hover:bg-blue-700",
+    bgColor: "bg-white",
+    hoverColor: "hover:bg-blue-100",
   },
   {
     name: "BIM Services",
-    bgColor: "bg-blue-300",
-    hoverColor: "hover:bg-blue-400",
+    bgColor: "bg-white",
+    hoverColor: "hover:bg-blue-100",
   },
   {
-    name: "IT Services",
-    bgColor: "bg-blue-700",
-    hoverColor: "hover:bg-blue-800",
+    name: "Project Management",
+    bgColor: "bg-white",
+    hoverColor: "hover:bg-blue-100",
   },
   {
-    name: "Admin Services",
-    bgColor: "bg-blue-200",
-    hoverColor: "hover:bg-blue-300",
+    name: "Urban Planning",
+    bgColor: "bg-white",
+    hoverColor: "hover:bg-blue-100",
   },
   {
-    name: "Marketing",
-    bgColor: "bg-blue-800",
-    hoverColor: "hover:bg-blue-900",
+    name: "Construction Consulting",
+    bgColor: "bg-white",
+    hoverColor: "hover:bg-blue-100",
+  },
+  {
+    name: "Sustainable Design",
+    bgColor: "bg-white",
+    hoverColor: "hover:bg-blue-100",
   },
 ]
 
@@ -118,9 +124,8 @@ const CustomCalendar = ({ selected, onChange }) => {
           key={day}
           onClick={() => handleDayClick(day)}
           disabled={isDisabled}
-          className={`w-12 h-12 flex items-center justify-center rounded-full text-sm ${
-            isSelected ? "bg-blue-600 text-white" : "text-gray-800"
-          } ${isDisabled ? "opacity-50 cursor-not-allowed" : "hover:bg-blue-100"}`}
+          className={`w-12 h-12 flex items-center justify-center rounded-full text-sm ${isSelected ? "bg-blue-600 text-white" : "text-gray-800"
+            } ${isDisabled ? "opacity-50 cursor-not-allowed" : "hover:bg-blue-100"}`}
         >
           {day}
         </button>,
@@ -163,7 +168,7 @@ const CustomCalendar = ({ selected, onChange }) => {
   )
 }
 
-// Updated ClockCard Component without moon/sun and showing the selected time
+// ClockCard Component
 const ClockCard = ({ value, timeZone, country, selectedDate }) => {
   const [currentTime, setCurrentTime] = useState(new Date())
 
@@ -254,7 +259,7 @@ const ScheduleMeeting = () => {
   const [selectedCountry, setSelectedCountry] = useState(countries[0])
   const [timeSlots, setTimeSlots] = useState(baseTimeSlots)
   const [form, setForm] = useState({
-    service: "Architecture", // Initialize with Architecture
+    service: "Architecture",
     date: null,
     time: "",
     name: "",
@@ -341,35 +346,25 @@ const ScheduleMeeting = () => {
     }
   }
 
-  const getServiceColor = () => {
-    const service = services.find((s) => s.name === form.service)
-    return service ? service.bgColor : "bg-blue-500" // Fallback to Architecture's color
-  }
-
-  const getServiceHoverColor = () => {
-    const service = services.find((s) => s.name === form.service)
-    return service ? service.hoverColor : "hover:bg-blue-600" // Fallback to Architecture's hover color
-  }
-
   return (
-    <div className="min-h-screen px-6 py-16 ">
+    <div className="min-h-screen px-4 sm:px-6 lg:px-8 py-16">
       {/* Header */}
       <div className="max-w-5xl mx-auto text-center mb-12">
         <motion.h1
-          className="text-4xl font-light text-gray-900 mb-3 tracking-tight"
+          className="text-[64px] font-extrabold text-gray-900 mb-3 tracking-wide"
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6 }}
         >
-          Schedule a Meeting
+          Power your business today
         </motion.h1>
         <motion.p
-          className="text-gray-500 text-base max-w-md mx-auto"
+          className="text-gray-500 text-[20px]"
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          Connect with our team to elevate your AEC business.
+          Schedule a meeting with offshore 365 experts
         </motion.p>
       </div>
 
@@ -379,9 +374,8 @@ const ScheduleMeeting = () => {
           {[1, 2, 3, 4].map((s) => (
             <div key={s} className="flex flex-col items-center">
               <motion.div
-                className={`w-10 h-10 rounded-full border-2 flex items-center justify-center text-lg font-medium ${
-                  step >= s ? "border-blue-600 bg-blue-50" : "border-gray-200 bg-white"
-                } relative overflow-hidden`}
+                className={`w-10 h-10 rounded-full border-2 flex items-center justify-center text-lg font-medium ${step >= s ? "border-blue-600 bg-blue-50" : "border-gray-200 bg-white"
+                  } relative overflow-hidden`}
                 initial={{ scale: 0.9 }}
                 animate={{ scale: step === s ? 1.1 : 1 }}
                 transition={{ duration: 0.3 }}
@@ -427,246 +421,223 @@ const ScheduleMeeting = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
-          {/* Left Side - Image */}
-          <div className="relative h-[600px] rounded-xl overflow-hidden shadow-md">
-            <img
-              src={meetImage || "/placeholder.svg"}
-              alt="Meeting illustration"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">Let's Collaborate </h2>
-            </div>
-          </div>
+      <div className="max-w-5xl mx-auto">
+        <div
+          className="relative rounded-xl shadow-md p-6 min-h-[600px] flex flex-col bg-blue-700 text-white transition-colors duration-200 w-full"
+        >
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={step}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="flex-1"
+            >
+              {step === 1 && (
+                <div className="h-[450px]  flex flex-col">
+                  <h1 className="text-[34px] font-light text-center mb-6 tracking-tight">Select a Service</h1>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 flex-1">
+                    {services.map((service) => (
+                      <motion.button
+                        key={service.name}
+                        onClick={() => handleServiceSelect(service)}
+                        className={`p-9 border border-blue-800 rounded-lg text-blue-600 font-extrabold text-[20px] text-center transition-all ${service.bgColor
+                          } ${form.service === service.name ? "ring-1 ring-blue-600" : ""} ${service.hoverColor}`}
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                      >
+                        {service.name}
+                      </motion.button>
+                    ))}
+                  </div>
+                </div>
+              )}
 
-          {/* Right Side - Form Steps */}
-          <div
-            className={`relative rounded-xl shadow-md p-6 min-h-[600px] flex flex-col ${getServiceColor()} text-white transition-colors duration-200`}
-          >
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={step}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.2 }}
-                className="flex-1"
-              >
-                {step === 1 && (
-                  <div className="h-full flex flex-col">
-                    <h2 className="text-2xl font-light mb-6 tracking-tight">Select a Service</h2>
-                    <div className="grid grid-cols-2 sm:grid-cols-2 gap-3 flex-1">
-                      {services.map((service) => (
+              {step === 2 && (
+                <div className="h-full flex flex-col">
+                  <h1 className="text-[34px] text-center font-extrabold mb-6 tracking-wide">Choose a Date</h1>
+                  <div className="flex-1">
+                    <CustomCalendar selected={form.date} onChange={handleDateSelect} />
+                  </div>
+                </div>
+              )}
+
+              {step === 3 && (
+                <div className="h-full flex flex-col">
+                  <h2 className="text-[34px] font-extrabold mb-6 text-center tracking-wide">Select Time</h2>
+                  <div className="flex justify-end mb-4">
+                    <select
+                      value={selectedCountry.name}
+                      onChange={handleCountryChange}
+                      className="p-2 bg-white border border-blue-600 rounded-lg text-blue-800 text-sm focus:ring-1 focus:ring-blue-400 focus:outline-none"
+                    >
+                      {countries.map((country) => (
+                        <option key={country.name} value={country.name} className="text-gray-800">
+                          {country.name}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                  <div className="flex-1 flex flex-col items-center">
+                    <div className="mb-6">
+                      <ClockCard
+                        value={form.time}
+                        timeZone={selectedCountry.timeZone}
+                        country={selectedCountry.name}
+                        selectedDate={form.date}
+                      />
+                    </div>
+                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 w-full">
+                      {timeSlots.map((time) => (
                         <motion.button
-                          key={service.name}
-                          onClick={() => handleServiceSelect(service)}
-                          className={`p-9  border border-white rounded-lg text-white font-medium text-sm transition-all ${
-                            service.bgColor
-                          } ${form.service === service.name ? "ring-1 ring-white/50" : ""} ${service.hoverColor}`}
+                          key={time}
+                          onClick={() => handleTimeSelect(time)}
+                          className={`p-2 rounded-lg h-[75px]  border text-[20px] font-extrabold text-center ${form.time === time
+                            ? "border-blue-600 bg-blue-100 text-blue-600"
+                            : "border-blue-600 bg-white text-blue-600"
+                            } hover:border-blue-600 hover:bg-blue-100 transition-all`}
                           whileHover={{ scale: 1.02 }}
                           whileTap={{ scale: 0.98 }}
                         >
-                          {service.name}
+                          {time}
                         </motion.button>
                       ))}
                     </div>
                   </div>
-                )}
+                </div>
+              )}
 
-                {step === 2 && (
-                  <div className="h-full flex flex-col">
-                    <h2 className="text-2xl font-light mb-6 tracking-tight">Choose a Date</h2>
-                    <div className="flex-1">
-                      <CustomCalendar selected={form.date} onChange={handleDateSelect} />
-                    </div>
-                  </div>
-                )}
-
-                {step === 3 && (
-                  <div className="h-full flex flex-col">
-                    <h2 className="text-2xl font-light mb-6 tracking-tight">Select Time</h2>
-                    <div className="flex justify-end mb-4">
-                      <select
-                        value={selectedCountry.name}
-                        onChange={handleCountryChange}
-                        className="p-2 bg-white/10 border border-white/20 rounded-lg text-white text-sm focus:ring-1 focus:ring-blue-400 focus:outline-none"
-                      >
-                        {countries.map((country) => (
-                          <option key={country.name} value={country.name} className="text-gray-800">
-                            {country.name}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
-                    <div className="flex-1 flex flex-col items-center">
-                      <div className="mb-6">
-                        <ClockCard
-                          value={form.time}
-                          timeZone={selectedCountry.timeZone}
-                          country={selectedCountry.name}
-                          selectedDate={form.date}
-                        />
-                      </div>
-                      <div className="grid grid-cols-5 gap-3 w-full">
-                        {timeSlots.map((time) => (
-                          <motion.button
-                            key={time}
-                            onClick={() => handleTimeSelect(time)}
-                            className={`p-2 rounded-lg border text-sm font-medium ${
-                              form.time === time
-                                ? "border-blue-400 bg-blue-500/20 text-white"
-                                : "border-white/20 bg-white/10 text-white"
-                            } hover:border-blue-400 hover:bg-blue-500/30 transition-all`}
-                            whileHover={{ scale: 1.02 }}
-                            whileTap={{ scale: 0.98 }}
-                          >
-                            {time}
-                          </motion.button>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                )}
-
-                {step === 4 && (
-                  <div className="h-full flex flex-col">
-                    <h2 className="text-2xl font-light mb-6 tracking-tight">Your Information</h2>
-                    <div className="space-y-4 flex-1">
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div>
-                          <label className="block text-xs font-medium mb-1">Full Name</label>
-                          <input
-                            type="text"
-                            name="name"
-                            value={form.name}
-                            onChange={handleChange}
-                            placeholder="John Doe"
-                            className="w-full p-2 border border-white/20 bg-white/10 rounded-lg focus:border-blue-400 focus:ring-0 focus:outline-none text-sm text-white placeholder-white/50"
-                            required
-                          />
-                        </div>
-                        <div>
-                          <label className="block text-xs font-medium mb-1">Email Address</label>
-                          <input
-                            type="email"
-                            name="email"
-                            value={form.email}
-                            onChange={handleChange}
-                            placeholder="john@example.com"
-                            className="w-full p-2 border border-white/20 bg-white/10 rounded-lg focus:border-blue-400 focus:ring-0 focus:outline-none text-sm text-white placeholder-white/50"
-                            required
-                          />
-                        </div>
-                      </div>
+              {step === 4 && (
+                <div className="h-full flex flex-col">
+                  <h2 className="text-[34px] text-center font-extrabold mb-6 tracking-wide">Your Information</h2>
+                  <div className="space-y-4 flex-1">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-xs font-medium mb-1">Company Name</label>
+                        <label className="block text-[16px] font-medium mb-1">Full Name</label>
                         <input
                           type="text"
-                          name="companyName"
-                          value={form.companyName}
+                          name="name"
+                          value={form.name}
                           onChange={handleChange}
-                          placeholder="Acme Corp"
-                          className="w-full p-2 border border-white/20 bg-white/10 rounded-lg focus:border-blue-400 focus:ring-0 focus:outline-none text-sm text-white placeholder-white/50"
+                          className="w-full p-2 border border-blue-600 bg-white rounded-lg focus:border-blue-400 focus:ring-0 focus:outline-none text-sm text-blue-600 placeholder-blue-300"
                           required
                         />
                       </div>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div>
-                          <label className="block text-xs font-medium mb-1">Company Location</label>
-                          <input
-                            type="text"
-                            name="companyLocation"
-                            value={form.companyLocation}
-                            onChange={handleChange}
-                            placeholder="New York, NY"
-                            className="w-full p-2 border border-white/20 bg-white/10 rounded-lg focus:border-blue-400 focus:ring-0 focus:outline-none text-sm text-white placeholder-white/50"
-                          />
-                        </div>
-                        <div>
-                          <label className="block text-xs font-medium mb-1">Number of Employees</label>
-                          <select
-                            name="employees"
-                            value={form.employees}
-                            onChange={handleChange}
-                            className="w-full p-2 border border-white/20 bg-white/10 rounded-lg focus:border-blue-400 focus:ring-0 focus:outline-none text-sm text-white placeholder-white/50"
-                          >
-                            <option value="" className="text-gray-800">
-                              Select number of employees
-                            </option>
-                            {employeeOptions.map((option) => (
-                              <option key={option} value={option} className="text-gray-800">
-                                {option}
-                              </option>
-                            ))}
-                          </select>
-                        </div>
-                      </div>
                       <div>
-                        <label className="block text-xs font-medium mb-1">Phone Number</label>
+                        <label className="block text-[16px] font-medium mb-1">Email Address</label>
                         <input
-                          type="tel"
-                          name="phone"
-                          value={form.phone}
+                          type="email"
+                          name="email"
+                          value={form.email}
                           onChange={handleChange}
-                          placeholder="+1 (555) 123-4567"
-                          className="w-full p-2 border border-white/20 bg-white/10 rounded-lg focus:border-blue-400 focus:ring-0 focus:outline-none text-sm text-white placeholder-white/50"
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-xs font-medium mb-1">Message (Optional)</label>
-                        <textarea
-                          name="message"
-                          value={form.message}
-                          onChange={handleChange}
-                          placeholder="Tell us about your project..."
-                          rows={3}
-                          className="w-full p-2 border border-white/20 bg-white/10 rounded-lg focus:border-blue-400 focus:ring-0 focus:outline-none text-sm text-white placeholder-white/50"
+                          className="w-full p-2 border border-blue-600 bg-white rounded-lg focus:border-blue-400 focus:ring-0 focus:outline-none text-sm text-blue-600 placeholder-blue-300"
+                          required
                         />
                       </div>
                     </div>
+                    <div>
+                      <label className="block text-[16px] font-medium mb-1">Company Name</label>
+                      <input
+                        type="text"
+                        name="companyName"
+                        value={form.companyName}
+                        onChange={handleChange}
+                        className="w-full p-2 border border-blue-600 bg-white rounded-lg focus:border-blue-400 focus:ring-0 focus:outline-none text-sm text-blue-600 placeholder-blue-300"
+                        required
+                      />
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-[16px] font-medium mb-1">Company Location</label>
+                        <input
+                          type="text"
+                          name="companyLocation"
+                          value={form.companyLocation}
+                          onChange={handleChange}
+                          className="w-full p-2 border border-blue-600 bg-white rounded-lg focus:border-blue-400 focus:ring-0 focus:outline-none text-sm text-blue-600 placeholder-blue-300"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-[16px] font-medium mb-1">Number of Employees</label>
+                        <select
+                          name="employees"
+                          value={form.employees}
+                          onChange={handleChange}
+                          className="w-full p-2 border border-blue-600 bg-white rounded-lg focus:border-blue-400 focus:ring-0 focus:outline-none text-sm text-blue-600 placeholder-blue-300"
+                        >
+                          <option value="" className="text-gray-800">
+                            Select number of employees
+                          </option>
+                          {employeeOptions.map((option) => (
+                            <option key={option} value={option} className="text-gray-800">
+                              {option}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+                    </div>
+                    <div>
+                      <label className="block text-[16px] font-medium mb-1">Phone Number</label>
+                      <input
+                        type="tel"
+                        name="phone"
+                        value={form.phone}
+                        onChange={handleChange}
+                        className="w-full p-2 border border-blue-600 bg-white rounded-lg focus:border-blue-400 focus:ring-0 focus:outline-none text-sm text-blue-600 placeholder-blue-300"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-[16px] font-medium mb-1">Message</label>
+                      <textarea
+                        name="message"
+                        value={form.message}
+                        onChange={handleChange}
+                        rows={3}
+                        className="w-full p-2 border border-blue-600 bg-white rounded-lg focus:border-blue-400 focus:ring-0 focus:outline-none text-sm text-blue-600 placeholder-blue-300"
+                      />
+                    </div>
                   </div>
-                )}
-              </motion.div>
-            </AnimatePresence>
+                </div>
+              )}
+            </motion.div>
+          </AnimatePresence>
 
-            {/* Navigation Buttons */}
-            <div className="flex justify-between mt-6 pt-4 border-t border-white/20">
+          {/* Navigation Buttons */}
+          <div className="flex justify-between mt-6 pt-4 border-t border-white/20">
+            <button
+              onClick={handleBack}
+              disabled={step === 1}
+              className="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+              Back
+            </button>
+            {step < 4 ? (
               <button
-                onClick={handleBack}
-                disabled={step === 1}
+                onClick={handleNext}
+                disabled={!isStepComplete()}
                 className="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                Next
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
-                Back
               </button>
-              {step < 4 ? (
-                <button
-                  onClick={handleNext}
-                  disabled={!isStepComplete()}
-                  className="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  Next
-                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </button>
-              ) : (
-                <button
-                  onClick={handleSubmit}
-                  disabled={!isStepComplete()}
-                  className="inline-flex items-center px-4 py-2 bg-green-600 hover:bg-green-700 text-white text-sm font-medium rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  Schedule Meeting
-                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                </button>
-              )}
-            </div>
+            ) : (
+              <button
+                onClick={handleSubmit}
+                disabled={!isStepComplete()}
+                className="inline-flex items-center px-4 py-2 bg-green-600 hover:bg-green-700 text-white text-sm font-medium rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                Schedule Meeting
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+              </button>
+            )}
           </div>
         </div>
       </div>

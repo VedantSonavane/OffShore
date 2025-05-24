@@ -29,25 +29,32 @@ const cards = [
   { id: 7, title: "Admin Tools", image: card5, overlayText: "Admin" },
 ];
 
-const AnimatedText = ({ text, className, delay = 0 }) => (
-  <span className="inline-block overflow-hidden">
-    {text.split("").map((char, index) => (
-      <motion.span
-        key={index}
-        className={`inline-block ${className}`}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{
-          duration: 0.5,
-          delay: delay + index * 0.03,
-          ease: [0.215, 0.61, 0.355, 1],
-        }}
-      >
-        {char === " " ? "\u00A0" : char}
-      </motion.span>
-    ))}
-  </span>
-);
+const AnimatedText = ({ text, className, delay = 0 }) => {
+  const words = text.split(" ");
+  return (
+    <span className="inline-block overflow-hidden">
+      {words.map((word, wIdx) => (
+        <span key={wIdx} className="inline-block mr-2">
+          {word.split("").map((char, cIdx) => (
+            <motion.span
+              key={`${wIdx}-${cIdx}`}
+              className={`inline-block ${className}`}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.5,
+                delay: delay + (wIdx * 0.3) + cIdx * 0.03,
+                ease: [0.215, 0.61, 0.355, 1],
+              }}
+            >
+              {char}
+            </motion.span>
+          ))}
+        </span>
+      ))}
+    </span>
+  );
+};
 
 const AnimatedSection = ({ children, className, initialX = 0 }) => {
   const ref = useRef(null);
@@ -119,7 +126,7 @@ const CardCarousel = () => {
                   <img src={card.image} alt={card.title} className="w-full h-full object-cover" />
                   <div className="absolute inset-0 flex items-center justify-center">
                     <motion.h2
-                      className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white"
+                      className="text-[64px] font-bold tracking-wide text-white"
                       initial={{ opacity: 0, scale: 0.8 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ delay: isActive ? 0.2 : 0 }}
@@ -128,8 +135,7 @@ const CardCarousel = () => {
                     </motion.h2>
                   </div>
                   <motion.p
-                    href="#"
-                    className="absolute bottom-4 right-4 text-white bg-white/30 px-4 py-2 rounded-full text-xs sm:text-sm hover:bg-white/60 transition-colors"
+                    className="absolute bottom-4 right-4 text-white bg-white/30 px-4 py-2 rounded-full text-[20px] sm:text-sm hover:bg-white/60 transition-colors"
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: isActive ? 0.4 : 0 }}
@@ -155,37 +161,34 @@ const Hero = () => {
 
   const shapeY1 = useTransform(scrollYProgress, [0, 1], [0, -100]);
   const shapeY2 = useTransform(scrollYProgress, [0, 1], [0, -200]);
-  const shapeY3 = useTransform(scrollYProgress, [0, 1], [0, 1], [0, -150]);
+  const shapeY3 = useTransform(scrollYProgress, [0, 1], [0, -150]);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   return (
     <div
-      className=" w-full min-h-screen bg-white flex items-top justify-top py-16 "
+      className="w-full min-h-screen bg-white flex items-top justify-top py-16"
       ref={containerRef}
     >
-      <motion.div
-        className="container mx-auto px-4 sm:px-6 relative z-10 max-w-full sm:max-w-7xl"
-       
-      >
+      <motion.div className="container mx-auto px-4 sm:px-6 relative z-10 max-w-full sm:max-w-7xl">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8 sm:gap-12">
           {/* Left Column */}
           <AnimatedSection
             className="w-full lg:w-5/12 text-center lg:text-left px-4 sm:px-8"
             initialX={-100}
           >
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-800 leading-tight">
-              <AnimatedText text="Easy" className="block mb-2 sm:mb-3" delay={0.2} />
+            <h1 className="text-[64px] font-bold text-gray-900 leading-tight tracking-wide">
+              <AnimatedText text="Unlock" className=" text-slate-800" delay={0.2} />
               <br />
-              <AnimatedText text="scheduling" className="block mb-2 sm:mb-3" delay={0.4} />
-              <AnimatedText text="ahead" className="block" delay={0.6} />
+              <AnimatedText text="Infinite" className=" text-slate-800" delay={0.4} />
+              <AnimatedText text="Productivity" className="text-slate-800" delay={0.6} />
             </h1>
             <motion.p
-              className="mt-4 sm:mt-6 text-slate-600 text-base sm:text-lg"
+              className="mt-4 sm:mt-6  text-gray-500 text-[20px] leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}
             >
-              Join 40 million professionals who easily book meetings with the #1 scheduling tool.
+              Join World's #1 Trusted, Tech-Powered Offshore AEC Partner for Seamless Project Delivery
             </motion.p>
             <motion.div
               className="mt-6 sm:mt-8 flex flex-col gap-4 max-w-xs sm:max-w-md mx-auto lg:mx-0"
@@ -194,17 +197,17 @@ const Hero = () => {
               transition={{ duration: 0.6, delay: 1 }}
             >
               <motion.button
-                className="flex items-center justify-center gap-2 bg-[#256bff] text-white py-2 sm:py-3 px-4 sm:px-6 rounded-md hover:bg-blue-700 transition-colors text-sm sm:text-base"
+                className="flex items-center text-[20px] justify-center gap-2 bg-[#256bff] text-white py-4  px-4  rounded-lg hover:bg-blue-700 transition-colors  sm:text-base"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 <motion.p
-                  className="inline-block"
+                  className="inline-block "
                   initial={{ x: 0 }}
                   whileHover={{ x: 5 }}
                   transition={{ duration: 0.3 }}
                 >
-                  Schedule a Meet
+                  Schedule a  Meet
                 </motion.p>
               </motion.button>
             </motion.div>

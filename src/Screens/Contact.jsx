@@ -3,7 +3,6 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import contactImg from "../assets/concontact.png";
 
 const ContactSection = () => {
   useEffect(() => {
@@ -11,7 +10,8 @@ const ContactSection = () => {
   }, []);
 
   const [formData, setFormData] = useState({
-    name: "",
+    firstName: "",
+    lastName: "",
     email: "",
     reason: "",
     message: "",
@@ -24,111 +24,111 @@ const ContactSection = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     toast.success("Message sent successfully!");
-    setFormData({ name: "", email: "", reason: "", message: "" });
+    setFormData({
+      firstName: "",
+      lastName: "",
+      email: "",
+      reason: "",
+      message: "",
+    });
   };
 
   return (
-    <section className="min-h-screen bg-white px-4 md:px-20 py-16 text-black">
+    <section className="min-h-screen bg-[#f7f8fa] px-4 md:px-20 py-16">
       <ToastContainer />
-      {/* Heading */}
-      <div className="mb-12 text-center" data-aos="fade-up">
-        <h2 className="text-4xl md:text-5xl font-extrabold mb-2">Contact Us</h2>
-        <p className="text-md md:text-lg">
-          We'd love to help you. Drop us a message and we’ll get back to you shortly.
-        </p>
-      </div>
+      <div className="max-w-6xl mx-auto bg-white rounded-3xl shadow-xl flex flex-col md:flex-row overflow-hidden">
+        {/* Form Side */}
+        <div className="w-full md:w-1/2 p-8 md:p-12">
+          <h2 className="text-3xl font-bold mb-2 text-[#1a2e45]">Let's Chat</h2>
+          <p className="text-gray-600 mb-6">A Calendly expert will reach out to discuss your needs.</p>
 
-      {/* Main container */}
-      <div
-        className="max-w-full mx-auto bg-gray-50 rounded-2xl shadow-lg  flex flex-col md:flex-row"
-        data-aos="fade-up"
-        data-aos-delay="200"
-      >
-        {/* Left side - Form */}
-        <div className="w-full md:w-1/2 p-6 flex justify-center items-center  h-[700px] overflow-y-auto">
-          <form className="space-y-6" onSubmit={handleSubmit}>
-            <div className="flex flex-col md:flex-row gap-6">
-              <div className="flex-1">
-                <label className="block font-semibold mb-1 text-black">Your Name</label>
-                <input
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
-                  placeholder="Enter your name"
-                  required
-                />
-              </div>
-              <div className="flex-1">
-                <label className="block font-semibold mb-1 text-black">Email Address</label>
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
-                  placeholder="you@example.com"
-                  required
-                />
-              </div>
-            </div>
-
-            <div>
-              <label className="block font-semibold mb-1 text-black">Reason for Contact</label>
-              <select
-                name="reason"
-                value={formData.reason}
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div className="flex flex-col md:flex-row gap-4">
+              <input
+                type="text"
+                name="firstName"
+                value={formData.firstName}
                 onChange={handleChange}
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 text-black focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="First Name"
+                className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
                 required
-              >
-                <option value="">Select a reason</option>
-                <option value="support">Support</option>
-                <option value="feedback">Feedback</option>
-                <option value="partnership">Partnership</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-
-            <div>
-              <label className="block font-semibold mb-1 text-black">Your Message</label>
-              <textarea
-                name="message"
-                rows="4"
-                value={formData.message}
+              />
+              <input
+                type="text"
+                name="lastName"
+                value={formData.lastName}
                 onChange={handleChange}
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
-                placeholder="Write your message here..."
+                placeholder="Last Name"
+                className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
                 required
               />
             </div>
 
-            <div className="text-center">
-              <button
-                type="submit"
-                className="bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition duration-300 shadow-lg"
-              >
-                Send Message
-              </button>
-            </div>
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              placeholder="Work Email"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+              required
+            />
+
+            <select
+              name="reason"
+              value={formData.reason}
+              onChange={handleChange}
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none text-gray-700"
+              required
+            >
+              <option value="">How do you plan on using Calendly?</option>
+              <option value="sales">Sales</option>
+              <option value="recruiting">Recruiting</option>
+              <option value="support">Customer Support</option>
+              <option value="other">Other</option>
+            </select>
+
+            <textarea
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              placeholder="How can we help?"
+              rows="4"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+              required
+            />
+
+            <button
+              type="submit"
+              className="w-full bg-[#2d6bff] text-white py-3 rounded-lg font-semibold hover:bg-blue-600 transition"
+            >
+              Submit
+            </button>
+
+            <p className="text-xs text-gray-500 mt-4">
+              By clicking submit you consent to receive email communications about Calendly products and services and agree to our <a href="#" className="text-blue-500 underline">Terms</a>. Your data will be processed in accordance with our <a href="#" className="text-blue-500 underline">Privacy Policy</a>. You may opt out at any time.
+            </p>
           </form>
         </div>
 
-        {/* Right side - Image */}
-        <div
-          className="w-full md:w-1/2 h-[700px]"
-          data-aos="fade-left"
-        >
-          <img
-            src={contactImg}
-            alt="Contact visual"
-            className="w-full h-full object-cover rounded-b-2xl md:rounded-bl-none md:rounded-br-2xl"
-          />
-            <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
-            Connect & Create
-            </h2>
+        {/* Info Side */}
+        <div className="w-full md:w-1/2 bg-[#f9fafb] px-8 py-12 flex flex-col justify-center text-[#1a2e45]">
+          <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-6">
+            Increase revenue, <br />
+            accelerate sales pipeline, <br />
+            and improve customer retention.
+          </h2>
+
+          <div className="mt-6 space-y-4 text-xl font-semibold">
+            <div>
+              <span className="text-3xl font-bold">20m</span> users worldwide
+            </div>
+            <div>
+              <span className="text-3xl font-bold">100k</span> companies use Calendly
+            </div>
+            <div>
+              <span className="text-3xl font-bold">230+</span> countries with monthly active users
+            </div>
           </div>
         </div>
       </div>

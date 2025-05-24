@@ -24,7 +24,7 @@ const Model = () => {
     {
       title: "Fixed Fee Model",
       description:
-        "A pre-determined, fixed cost is agreed upon for the entire project. Appropriate for well-defined projects with clear specifications.",
+        "A predetermined, fixed cost is agreed upon for the entire project.Appropriate for well-defined projects with clear specifications.",
       image: card2,
       colorClass: "bg-yellow-500",
       icon: <DollarSign className="h-6 w-6 text-yellow-500 mr-2" />,
@@ -32,7 +32,7 @@ const Model = () => {
     {
       title: "Project Based Model",
       description:
-        "Costs are determined based on the overall scope and milestones of the project. Ideal for projects with distinct phases and deliverables.",
+        "Costs are determined based on the overall scope and milestones of the project.Ideal for projects with distinct phases and deliverables.",
       image: card4,
       colorClass: "bg-green-500",
       icon: <Layers className="h-6 w-6 text-green-500 mr-2" />,
@@ -40,7 +40,7 @@ const Model = () => {
     {
       title: "Dedicated Team Model",
       description:
-        "The outsourcing firm provides a dedicated team exclusively for the client. Suited for long-term projects requiring ongoing collaboration.",
+        "The outsourcing firm provides a dedicated team of architects and professionals exclusively for the client.Suited for long-term projects requiring ongoing collaboration and support.",
       image: card1,
       colorClass: "bg-blue-500",
       icon: <Users className="h-6 w-6 text-blue-500 mr-2" />,
@@ -48,7 +48,7 @@ const Model = () => {
     {
       title: "Performance Model",
       description:
-        "Payment is tied to specific performance metrics or project outcomes. Encourages the outsourcing firm to meet or exceed predefined goals.",
+        "Payment is tied to specific project outcomes or performance metrics.Encourages the outsourcing firm to meet or exceed predefined goals.",
       image: card6,
       colorClass: "bg-purple-500",
       icon: <TrendingUp className="h-6 w-6 text-purple-500 mr-2" />,
@@ -76,11 +76,11 @@ const Model = () => {
     <div className="min-h-screen bg-white flex flex-col items-center justify-center px-4 py-10">
       {/* Header */}
       <div className="text-center mb-12" data-aos="fade-up">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-4 tracking-tight">
-          Our Models of Outsourcing
+        <h1 className="text-[64px] font-bold text-gray-900 mb-4 tracking-tight">
+          Scalable Productivity Models
         </h1>
-        <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
-          Choose the perfect model that fits your project needs.
+        <p className="text-base sm:text-lg text-gray-500 max-w-2xl mx-auto">
+          Optimised for your success
         </p>
       </div>
 
@@ -97,21 +97,19 @@ const Model = () => {
               >
                 <div className="flex items-center mb-2">
                   {section.icon}
-                  <h3
-                    className={`text-lg sm:text-xl font-semibold transition-all duration-300 ${
-                      activeSection === index ? 'text-gray-900' : 'text-gray-600'
-                    }`}
+                  <h1
+                    className={`text-[20px] tracking-wide font-bold transition-all duration-300 ${activeSection === index ? 'text-gray-900' : 'text-gray-500'
+                      }`}
                   >
                     {section.title}
-                  </h3>
+                  </h1>
                 </div>
                 {/* Description */}
                 <div
-                  className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                    activeSection === index ? 'max-h-40 opacity-100 mt-2 p-2' : 'max-h-0 opacity-0'
-                  }`}
+                  className={`overflow-hidden transition-all duration-500 ease-in-out ${activeSection === index ? 'max-h-40 opacity-100 mt-2 p-2' : 'max-h-0 opacity-0'
+                    }`}
                 >
-                  <p className="text-sm sm:text-md text-gray-600">{section.description}</p>
+                  <p className="text-[16px]  text-gray-400">{section.description}</p>
                 </div>
                 {/* Progress Bar */}
                 <div className="h-0.5 bg-gray-200 w-full mt-3 rounded">
@@ -125,9 +123,8 @@ const Model = () => {
               </div>
               {/* Mobile Image Box (Visible only on mobile) */}
               <div
-                className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${
-                  activeSection === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-                }`}
+                className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${activeSection === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                  }`}
               >
                 <div className="relative w-full h-64 mt-4 rounded-md overflow-hidden">
                   <img
@@ -158,7 +155,7 @@ const Model = () => {
               alt={sections[activeSection].title}
               className="w-full h-full object-cover transition-all duration-700 ease-in-out"
             />
-            <div className="absolute bottom-4 right-4">
+            <div className="absolute top-4 right-4">
               <button className="bg-white/30 text-white px-4 py-2 rounded-full backdrop-blur-md shadow-md hover:bg-white/50 transition duration-300">
                 Choose Model
               </button>

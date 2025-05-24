@@ -9,14 +9,14 @@ import 'aos/dist/aos.css';
 const cardData = [
   {
     title: "Global Experts",
-    description: "250+ skilled AEC professionals, globally trained via Offshore 365 Academy.",
+    description: "250+ skilled AEC professionals trained to global standards.",
   },
   {
     title: "Value Leader",
     description: "35–40% more economical than in-house teams.",
   },
   {
-    title: "Worldwide Synergy",
+    title: " Synergy",
     description: "Adapting to your standards for consistent, high-quality output.",
   },
   {
@@ -28,7 +28,7 @@ const cardData = [
     description: "Expertise in cutting-edge AEC software and methodologies.",
   },
   {
-    title: "Workforce Flexibility",
+    title: " Flexibility",
     description: "Easily scale teams to meet evolving project needs.",
   },
   {
@@ -84,10 +84,10 @@ const FeatureCard = React.memo(({ data, dataIndex }) => {
       animate="visible"
     >
       <div className="flex flex-col justify-start relative z-20">
-        <h3 className="text-4xl font-bold text-gray-700 mb-6 text-left tracking-tight group-hover:text-white transition-colors duration-500">
+        <h3 className="text-[36px] tracking-wide font-bold text-gray-900 mb-4 text-left tracking-tight group-hover:text-white transition-colors duration-500">
           {data.title}
         </h3>
-        <p className="text-sm text-gray-500 text-left leading-relaxed group-hover:text-white transition-colors duration-500">
+        <p className="text-[16px] text-gray-500 text-left leading-relaxed group-hover:text-white transition-colors duration-500">
           {data.description}
         </p>
       </div>
@@ -101,13 +101,10 @@ const FeatureCard = React.memo(({ data, dataIndex }) => {
       >
         <div className="relative w-32 h-16">
           <div
-            className={`absolute bottom-0 right-0 w-32 h-16 bg-${readMoreColor} rounded-tl-full overflow-hidden flex items-center justify-center`}
-          >
+            className={`absolute bottom-0 right-0 w-32 h-16 bg-${readMoreColor} rounded-tl-full overflow-hidden flex items-center justify-center`}>
             <div className="flex items-center gap-2 text-white text-sm font-medium">
-              <p>Check out</p>
-              <motion.div variants={arrowVariants}>
-                <ChevronRightCircle size={18} />
-              </motion.div>
+
+
             </div>
           </div>
         </div>
@@ -148,12 +145,12 @@ const Features = () => {
 
   return (
     <div className="py-20 px-6 text-center" data-aos="fade-up">
-      <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight gsap-heading">
-        Your Trusted Offshore AEC Partner
-       
+      <h1 className="text-[64px] font-bold text-gray-900 mb-2 tracking-wide gsap-heading">
+        Innovate with Offshore 365
       </h1>
-      <p className="text-lg text-gray-600 mb-12 max-w-2xl mx-auto ">
-        Deliver seamless projects with our exceptional features and expertise.
+
+      <p className="text-[20px] text-gray-500 mb-12 max-w-2xl mx-auto ">
+        Deliver seamless projects with our exceptional expertise
       </p>
 
       <div className="flex justify-center">
@@ -171,24 +168,26 @@ const Features = () => {
         />
       </div>
 
-      <div className="relative w-full mt-24 overflow-hidden">
+      <div className="relative w-full mt-12 overflow-hidden">
         <div className="absolute top-0 left-0 w-24 h-full z-10 bg-gradient-to-r from-white via-white/80 to-transparent pointer-events-none"></div>
         <div className="absolute top-0 right-0 w-24 h-full z-10 bg-gradient-to-l from-white via-white/80 to-transparent pointer-events-none"></div>
 
-        <p className="text-lg text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed" data-aos="fade-right">
+        <p className="text-[20px] text-gray-500 mb-12 max-w-2xl mx-auto leading-relaxed" data-aos="fade-right">
           We bring together the finest talent and the most advanced technologies to empower your business.
         </p>
 
         <motion.div
           className="flex gap-12 w-max"
-          initial={{ x: 0 }}
-          animate={{ x: '-50%' }}
+          animate={{ x: ['0%', '-50%'] }}
           transition={{
             repeat: Infinity,
-            duration: 20,
+            repeatType: 'loop',
+            duration: 30,
             ease: 'linear',
           }}
         >
+
+
           {[
             'V-Ray', 'Lumion', 'Photoshop', 'Premiere Pro', 'Illustrator',
             'After Effects', 'Node.js', 'Cinema 4D',

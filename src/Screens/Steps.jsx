@@ -87,8 +87,8 @@ const StepsSection = () => {
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-        <h1 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">Powering 365 Productivity</h1>
-        <p className="text-lg max-w-2xl mx-auto">Our Process, Explained In 4 Simple Steps</p>
+        <h1 className="text-[64px] tracking-wide  font-bold mb-4 ">Powering 365 Productivity</h1>
+        <p className="text-[20px] ">with our proven 4-step process for efficiency</p>
       </motion.div>
 
       {/* Cards */}
@@ -101,10 +101,9 @@ const StepsSection = () => {
             return (
               <motion.div
                 key={index}
-              
-                className={`group e-card playing relative w-[300px] h-[400px] bg-transparent shadow-2xl rounded-2xl overflow-hidden transition-all duration-500 ${
-                  isActive ? "scale-105 shadow-white/30 shadow-lg z-20" : "hover:scale-105 z-10"
-                }`}
+
+                className={`group e-card playing relative w-[300px] h-[400px] bg-transparent shadow-2xl rounded-2xl overflow-hidden transition-all duration-500 ${isActive ? "scale-105 shadow-white/30 shadow-lg z-20" : "hover:scale-105 z-10"
+                  }`}
                 onMouseEnter={() => setHoveredGradient(step.gradient)}
                 onMouseLeave={() => setHoveredGradient("")}
                 onClick={() => handleDotClick(index)}
@@ -116,9 +115,8 @@ const StepsSection = () => {
                 {[...Array(3)].map((_, i) => (
                   <div
                     key={i}
-                    className={`wave absolute w-[540px] h-[700px] opacity-60 left-0 ${
-                      i === 0 ? "top-0 -mt-[70%]" : "top-[210px]"
-                    } -ml-[50%] rounded-[40%]`}
+                    className={`wave absolute w-[540px] h-[700px] opacity-60 left-0 ${i === 0 ? "top-0 -mt-[70%]" : "top-[210px]"
+                      } -ml-[50%] rounded-[40%]`}
                     style={{ background: step.gradient }}
                   />
                 ))}
@@ -129,11 +127,11 @@ const StepsSection = () => {
                 </div>
 
                 {/* Card Content */}
-                <div className="infotop absolute top-36 left-0 right-0 text-center text-white px-6">
-                  <h3 className="text-4xl font-semibold mb-8 transition-transform duration-300 group-hover:scale-110">
+                <div className="infotop  absolute top-36 left-0 right-0 text-center text-white px-6">
+                  <h3 className="text-[36px] tracking-wide font-semibold mb-8 transition-transform duration-300 group-hover:scale-110">
                     {step.title}
                   </h3>
-                  <p className="text-xl p-2 font-light transition-transform duration-300 group-hover:scale-110">
+                  <p className="text-[16px] p-2 font-light transition-transform duration-300 group-hover:scale-110">
                     {step.description}
                   </p>
                 </div>
@@ -156,9 +154,8 @@ const StepsSection = () => {
                 aria-label={`Go to step ${step.id}: ${step.title}`}
               >
                 <div
-                  className={`liquid-dot w-3 h-3 border border-white rounded-full transition-all duration-500 flex items-center justify-center ${
-                    isActive ? "scale-125" : "scale-100 opacity-70 hover:opacity-100"
-                  }`}
+                  className={`liquid-dot w-3 h-3 border border-white rounded-full transition-all duration-500 flex items-center justify-center ${isActive ? "scale-125" : "scale-100 opacity-70 hover:opacity-100"
+                    }`}
                   style={{ background: step.gradient }}
                 >
                   {/* Liquid Bubble Effect */}
@@ -170,10 +167,10 @@ const StepsSection = () => {
                   </div>
 
                   {/* Dot Number */}
-              
+
                 </div>
 
-               
+
               </button>
             )
           })}
