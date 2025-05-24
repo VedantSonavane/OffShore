@@ -2,11 +2,11 @@ import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import architectureHero from "../../assets/architecture.png";
-import serviceImage from "../../assets/architecture.png";
-import toolsImage from "../../assets/architecttools.png";
-import plansImage from "../../assets/architectplans.png";
-import whyUsImage from "../../assets/architectwhy.png";
+import architectureHero from "../../assets/bimmain.webp";
+import serviceImage from "../../assets/bimmain.webp";
+import toolsImage from "../../assets/bimmain.webp";
+import plansImage from "../../assets/bimmain.webp";
+import whyUsImage from "../../assets/bimmain.webp";
 import getStartedImage from "../../assets/architecture.png";
 import { Link } from "react-router-dom";
 import architectureVideo from "../../assets/architecture.mp4";
@@ -30,9 +30,9 @@ const Architecture = () => {
     { id: "tools", label: "Tools" },
     { id: "plans", label: "Plans" },
     { id: "why-us", label: "Why Us?" },
-   
+
     { id: "get-started", label: "Get Started" },
-     { id: "faq", label: "FAQ" },
+    { id: "faq", label: "FAQ" },
   ];
 
   const tabData = {
@@ -42,16 +42,18 @@ const Architecture = () => {
         "We provide end-to-end Architectural Excellence solutions from concept to completion. Our team delivers innovative designs tailored to your specific needs and vision.",
       image: architectureHero,
       features: [
-        { name: "SCHEMATIC DESIGN", image: serviceImage },
-        { name: "QUALITY CHECKS", image: serviceImage },
-        { name: "DESIGN DEVELOPMENT", image: serviceImage },
-        { name: "CONSTRUCTION DOCUMENTS", image: serviceImage },
-        { name: "SPACE PLANING", image: serviceImage },
-        { name: "DRAFTING", image: serviceImage },
-        { name: "INTERIOR 3D MODELLING", image: serviceImage },
-        { name: "INTERIOR 2D & 3D RENDERING", image: serviceImage },
-        { name: "360 DEGREE INTERIOR", image: serviceImage },
-        { name: "BOQ AND MATERIAL TAKE OFF", image: serviceImage },
+
+
+        { name: " ARCHITECTURAL BIM", image: serviceImage },
+        { name: "SCAN TO BIM", image: serviceImage },
+        { name: "CONSTRUCTION DRAWINGS", image: serviceImage },
+        { name: "SHOP DRAWINGS", image: serviceImage },
+        { name: "BIM COORDINATION", image: serviceImage },
+        { name: "CLASH DETECTION", image: serviceImage },
+        { name: "REVIT FAMILY CREATION", image: serviceImage },
+        { name: "POINT CLOUD REGISTRATION", image: serviceImage },
+        { name: "SURVEY MAPPING", image: serviceImage },
+        { name: "4D SCHEDULING", image: serviceImage },
       ],
     },
     tools: {
@@ -430,7 +432,7 @@ const Architecture = () => {
             transition={{ delay: 0.3, duration: 0.8 }}
             className="text-8xl font-extrabold text-white tracking-tight mb-4 drop-shadow-2xl"
           >
-            Architectural Excellence
+            BIM
           </motion.h1>
         </div>
       </motion.div>
@@ -450,9 +452,8 @@ const Architecture = () => {
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className={`z-20 bg-red-500 backdrop-blur-xl shadow-lg transition-all duration-300 ${
-          isSticky ? "fixed top-[72px] left-0 right-0 shadow-xl" : "relative"
-        }`}
+        className={`z-20 bg-red-500 backdrop-blur-xl shadow-lg transition-all duration-300 ${isSticky ? "fixed top-[72px] left-0 right-0 shadow-xl" : "relative"
+          }`}
       >
         <div className="container flex justify-center items-center mx-auto ">
           <div className="flex overflow-x-auto scrollbar-hide py-3">
@@ -562,9 +563,8 @@ const Architecture = () => {
                         onClick={() => setActiveIndex(index % features.length)}
                       >
                         <div
-                          className={`w-24 h-24 rounded-lg overflow-hidden mb-1 cursor-pointer ${
-                            activeIndex === index % features.length ? "scale-105" : ""
-                          }`}
+                          className={`w-24 h-24 rounded-lg overflow-hidden mb-1 cursor-pointer ${activeIndex === index % features.length ? "scale-105" : ""
+                            }`}
                         >
                           <img
                             src={feature.image}
@@ -707,91 +707,96 @@ const Architecture = () => {
           id="why-us"
           data-aos="zoom-in"
         >
-          <div className="flex flex-col lg:flex-row-reverse items-center gap-8 md:gap-12">
-            <div className="flex-1" data-aos="fade-left">
-              <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-                {tabData["why-us"].title}
-              </h2>
-              <p className="text-base sm:text-lg mb-8 leading-relaxed">
-                {tabData["why-us"].description}
-              </p>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 mb-8">
-                {tabData["why-us"].stats.map((stat, index) => (
-                  <div
-                    key={index}
-                    className="flex flex-col items-start"
-                    data-aos="fade-up"
-                    data-aos-delay={index * 100}
-                  >
-                    <div className="text-2xl font-bold mb-2">
-                      {stat.number}+
-                    </div>
-                    <div className="text-base mb-2">{stat.label}</div>
-                    <div className="w-full bg-red-300 rounded-full h-2.5">
-                      <motion.div
-                        className="bg-red-500 h-2.5 rounded-full"
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${stat.percentage}%` }}
-                        transition={{ duration: 1, delay: index * 0.2 }}
-                      />
+          <div className="text-center mb-14">
+            <h2 className="text-4xl font-bold text-red-700">Why Choose Us</h2>
+            <p className="text-red-500 mt-3 text-base max-w-xl mx-auto">
+              Discover the key advantages of working with our experienced team.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-10 justify-items-center">
+            {[
+              {
+                title: "Dedicated Teams",
+                description:
+                  "Our focused teams handle each discipline individually for enhanced quality and quicker delivery.",
+                icon: (
+                  <svg className="w-12 h-12 text-red-900" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <path d="M17 20h5v-2a4 4 0 00-5-4m-6 6H4v-2a4 4 0 015-4h6a4 4 0 015 4v2m-6-6V6a4 4 0 00-8 0v8m8-4h.01" />
+                  </svg>
+                ),
+              },
+              {
+                title: "Innovation Driven",
+                description:
+                  "We use cutting-edge tools and virtual models to make sure every design decision is smart and impactful.",
+                icon: (
+                  <svg className="w-12 h-12 text-red-900" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <path d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                ),
+              },
+              {
+                title: "End-to-End Support",
+                description:
+                  "From planning to final execution, we're by your side throughout the entire project lifecycle.",
+                icon: (
+                  <svg className="w-12 h-12 text-red-900" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <path d="M4 6h16M4 12h16M4 18h16" />
+                  </svg>
+                ),
+              },
+              {
+                title: "Clash Detection & Resolution",
+                description:
+                  "Pro-active detection and resolution of inter-disciplinary conflicts through regular clash detections.",
+                icon: (
+                  <svg className="w-12 h-12 text-red-900" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <path d="M9 17v-2a4 4 0 014-4h4" />
+                    <path d="M7 3v4m0 4v4m0 4v4" />
+                  </svg>
+                ),
+              },
+              {
+                title: "Time & Cost Savings",
+                description:
+                  "Regular clash detection and conflict resolution ensure cost and time savings.",
+                icon: (
+                  <svg className="w-12 h-12 text-red-900" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                ),
+              },
+              {
+                title: "Cloud Collaboration | BIM 360",
+                description:
+                  "Real-time collaboration among multiple teams, across various locations without any data loss.",
+                icon: (
+                  <svg className="w-12 h-12 text-red-900" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <path d="M3 15a4 4 0 015-4h11a4 4 0 110 8H7a4 4 0 01-4-4z" />
+                  </svg>
+                ),
+              },
+            ].map((item, index) => (
+              <div className="flip-card red-theme" key={index}>
+                <div className="flip-card-inner">
+                  <div className="flip-card-front">
+                    <div className="flex flex-col items-center justify-center h-full px-4 text-center">
+                      {item.icon}
+                      <div className="text-xl font-bold mt-3">{item.title}</div>
                     </div>
                   </div>
-                ))}
-              </div>
-              <div className="grid grid-cols-2 sm:grid-cols-2 gap-6 mb-12">
-                {tabData["why-us"].highlightedBenefits.map((benefit, index) => (
-                  <motion.div
-                    key={index}
-                    whileHover={{
-                      scale: 1.05,
-                      boxShadow: "0 10px 20px rgba(0, 0, 0, 0.2)",
-                    }}
-                    className="p-4 bg-white rounded-xl shadow-lg border border-red-600/30 transition-all duration-300"
-                    data-aos="fade-up"
-                    data-aos-delay={index * 100}
-                  >
-                    <div className="flex items-center mb-2">
-                      <div className="bg-red-600 rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0">
-                        <svg
-                          className="w-4 h-4 text-white"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M5 13l4 4L19 7"
-                          />
-                        </svg>
-                      </div>
-                      <h3 className="text-lg text-red-600 font-semibold">
-                        {benefit.title}
-                      </h3>
+                  <div className="flip-card-back">
+                    <div className="flex flex-col items-center justify-center h-full px-4">
+                      <div className="text-lg font-bold mb-2">{item.title}</div>
+                      <p className="text-sm">{item.description}</p>
                     </div>
-                    <p className="text-sm text-gray-600 leading-relaxed">
-                      {benefit.description}
-                    </p>
-                  </motion.div>
-                ))}
+                  </div>
+                </div>
               </div>
-            </div>
-            <motion.div
-              className="flex-1"
-              initial={{ scale: 0.9, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              data-aos="fade-right"
-            >
-              <img
-                src={tabData["why-us"].image}
-                alt={tabData["why-us"].title}
-                className="w-full h-[550px] border border-white rounded-xl shadow-2xl object-cover transform hover:scale-105 transition-transform duration-500"
-              />
-            </motion.div>
+            ))}
           </div>
+
           <div className="py-16 px-4 sm:px-6 lg:px-20">
             <div className="text-center mb-14">
               <h2 className="text-4xl font-bold text-gray-800">Our Expertise</h2>

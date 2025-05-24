@@ -42,16 +42,18 @@ const Architecture = () => {
         "We provide end-to-end Architectural Excellence solutions from concept to completion. Our team delivers innovative designs tailored to your specific needs and vision.",
       image: architectureHero,
       features: [
+
+
+        { name: "PRE CONCEPT DESIGN", image: serviceImage },
         { name: "SCHEMATIC DESIGN", image: serviceImage },
-        { name: "QUALITY CHECKS", image: serviceImage },
         { name: "DESIGN DEVELOPMENT", image: serviceImage },
         { name: "CONSTRUCTION DOCUMENTS", image: serviceImage },
         { name: "SPACE PLANING", image: serviceImage },
         { name: "DRAFTING", image: serviceImage },
-        { name: "INTERIOR 3D MODELLING", image: serviceImage },
-        { name: "INTERIOR 2D & 3D RENDERING", image: serviceImage },
-        { name: "360 DEGREE INTERIOR", image: serviceImage },
-        { name: "BOQ AND MATERIAL TAKE OFF", image: serviceImage },
+        { name: " 3D MODELLING", image: serviceImage },
+        { name: " RENDERING", image: serviceImage },
+        { name: "WALK THROUGH ANIMATIONS", image: serviceImage },
+        { name: "QUALITY CHECKS", image: serviceImage },
       ],
     },
     tools: {
