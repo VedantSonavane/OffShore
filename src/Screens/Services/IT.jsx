@@ -37,21 +37,18 @@ const Architecture = () => {
 
   const tabData = {
     services: {
-      title: "Comprehensive Architechural Excellence Services",
+      title: "Comprehensive IT Services",
       description:
-        "We provide end-to-end Architectural Excellence solutions from concept to completion. Our team delivers innovative designs tailored to your specific needs and vision.",
+        "We provide end-to-end IT solutions from concept to completion. Our team delivers innovative designs tailored to your specific needs and vision.",
       image: architectureHero,
       features: [
-        { name: "SCHEMATIC DESIGN", image: serviceImage },
-        { name: "QUALITY CHECKS", image: serviceImage },
-        { name: "DESIGN DEVELOPMENT", image: serviceImage },
-        { name: "CONSTRUCTION DOCUMENTS", image: serviceImage },
-        { name: "SPACE PLANING", image: serviceImage },
-        { name: "DRAFTING", image: serviceImage },
-        { name: "INTERIOR 3D MODELLING", image: serviceImage },
-        { name: "INTERIOR 2D & 3D RENDERING", image: serviceImage },
-        { name: "360 DEGREE INTERIOR", image: serviceImage },
-        { name: "BOQ AND MATERIAL TAKE OFF", image: serviceImage },
+  
+
+        { name: "WEB DEVELOPMENT ", image: serviceImage },
+        { name: "DIGITAL MARKETING", image: serviceImage },
+        { name: "APP DEVELOPMENT", image: serviceImage },
+        { name: "CRM / ERP", image: serviceImage },
+       
       ],
     },
     tools: {
@@ -109,7 +106,7 @@ const Architecture = () => {
       ],
     },
     "why-us": {
-      title: "Why Choose Our Architectural Excellence Services?",
+      title: "Why Choose Our IT Services?",
       description:
         "We combine creativity with technical expertise to deliver exceptional results.",
       image: whyUsImage,
@@ -120,14 +117,16 @@ const Architecture = () => {
       ],
       highlightedBenefits: [
         {
-          title: "Reduced Administrative Burden",
-          description:
-            "Offshore365 handles the administrative tasks associated with hiring and managing staff, such as recruitment, onboarding, and payroll. This allows clients to focus on their core business operations.",
+          title: "Customized Solutions",
+        },
+         {
+          title: "Integration Expertise",
+        },
+         {
+          title: "User-Centric Design",
         },
         {
-          title: "Time Zone Advantage",
-          description:
-            "Offshore teams can work while your in-house team is off, enabling faster project turnaround times and shorter project cycles. This can be a significant advantage for projects with tight deadlines.",
+          title: "Scalable Architecture",
         },
       ],
       benefits: [
@@ -308,7 +307,7 @@ const Architecture = () => {
       ],
     },
     "get-started": {
-      title: "Start Your Architectural Excellence Project Today",
+      title: "Start Your IT Project Today",
       description:
         "Get in touch to discuss your project requirements and how we can help bring your vision to life.",
       image: getStartedImage,
@@ -430,7 +429,7 @@ const Architecture = () => {
             transition={{ delay: 0.3, duration: 0.8 }}
             className="text-8xl font-extrabold text-white tracking-tight mb-4 drop-shadow-2xl"
           >
-            Architectural Excellence
+            IT
           </motion.h1>
         </div>
       </motion.div>

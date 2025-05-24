@@ -30,9 +30,9 @@ const Architecture = () => {
     { id: "tools", label: "Tools" },
     { id: "plans", label: "Plans" },
     { id: "why-us", label: "Why Us?" },
-   
+
     { id: "get-started", label: "Get Started" },
-     { id: "faq", label: "FAQ" },
+    { id: "faq", label: "FAQ" },
   ];
 
   const tabData = {
@@ -42,7 +42,7 @@ const Architecture = () => {
         "We provide end-to-end 3D Visualization solutions from concept to completion. Our team delivers innovative designs tailored to your specific needs and vision.",
       image: architectureHero,
       features: [
-   
+
 
         { name: " 3D EXTERIOR RENDERING", image: serviceImage },
         { name: "3D INTERIOR RENDERING", image: serviceImage },
@@ -50,7 +50,7 @@ const Architecture = () => {
         { name: "MARKETING RENDERING", image: serviceImage },
         { name: "WALKTHROUGHS AND FLYTHROUGHS", image: serviceImage },
         { name: "360 DEGREE PANORAMIC VIEW", image: serviceImage },
-       
+
       ],
     },
     tools: {
@@ -117,19 +117,19 @@ const Architecture = () => {
         { number: 15, label: "Countries", max: 20, percentage: 75 },
         { number: 500, label: "Global Projects", max: 600, percentage: 83 },
       ],
-     highlightedBenefits: [
-  {
-    title: "DELIVERY MODELS",
-    description:
-      "✓ Agile Design: Visualizing Creative Ideas\n✓ One Time Renderings - A three-step process to Realize Your Design Concept\n✓ Unreal Engine VR Walkthrough Package",
-  },
-  {
-    title: "VISUALIZATION SOFTWARES",
-    description:
-      "✓ Expertise in 3ds Max\n✓ Unreal Engine Walkthroughs\n✓ Sketchup Renderings\n✓ Vray & Corona for high quality renderings",
-  },
- 
-],
+      highlightedBenefits: [
+        {
+          title: "DELIVERY MODELS",
+          description:
+            "✓ Agile Design: Visualizing Creative Ideas\n✓ One Time Renderings - A three-step process to Realize Your Design Concept\n✓ Unreal Engine VR Walkthrough Package",
+        },
+        {
+          title: "VISUALIZATION SOFTWARES",
+          description:
+            "✓ Expertise in 3ds Max\n✓ Unreal Engine Walkthroughs\n✓ Sketchup Renderings\n✓ Vray & Corona for high quality renderings",
+        },
+
+      ],
 
       benefits: [
         {
@@ -451,9 +451,8 @@ const Architecture = () => {
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className={`z-20 bg-green-500 backdrop-blur-xl shadow-lg transition-all duration-300 ${
-          isSticky ? "fixed top-[72px] left-0 right-0 shadow-xl" : "relative"
-        }`}
+        className={`z-20 bg-green-500 backdrop-blur-xl shadow-lg transition-all duration-300 ${isSticky ? "fixed top-[72px] left-0 right-0 shadow-xl" : "relative"
+          }`}
       >
         <div className="container flex justify-center items-center mx-auto ">
           <div className="flex overflow-x-auto scrollbar-hide py-3">
@@ -563,9 +562,8 @@ const Architecture = () => {
                         onClick={() => setActiveIndex(index % features.length)}
                       >
                         <div
-                          className={`w-24 h-24 rounded-lg overflow-hidden mb-1 cursor-pointer ${
-                            activeIndex === index % features.length ? "scale-105" : ""
-                          }`}
+                          className={`w-24 h-24 rounded-lg overflow-hidden mb-1 cursor-pointer ${activeIndex === index % features.length ? "scale-105" : ""
+                            }`}
                         >
                           <img
                             src={feature.image}
