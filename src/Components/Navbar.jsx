@@ -25,9 +25,10 @@ const Navbar = () => {
 
   const moreLinks = [
     { label: "About Us", href: "/about" },
-    { label: "Blogs", href: "/services" },
+     { label: "Carrer", href: "/carrers" },
+    { label: "Blogs", href: "/Blogs" },
     { label: "Contact", href: "/contact" },
-    { label: "Carrer", href: "/project" },
+   
   ];
 
   return (

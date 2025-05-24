@@ -30,9 +30,9 @@ const Architecture = () => {
     { id: "tools", label: "Tools" },
     { id: "plans", label: "Plans" },
     { id: "why-us", label: "Why Us?" },
-   
+
     { id: "get-started", label: "Get Started" },
-     { id: "faq", label: "FAQ" },
+    { id: "faq", label: "FAQ" },
   ];
 
   const tabData = {
@@ -41,17 +41,17 @@ const Architecture = () => {
       description:
         "We provide end-to-end Admin  solutions from concept to completion. Our team delivers innovative designs tailored to your specific needs and vision.",
       image: architectureHero,
-    features: [
- 
-  { name: "EMAIL HANDLING", image: serviceImage },
-  { name: "REPORT MANAGEMENT", image: serviceImage },
-  { name: "MANAGING SPREADSHEETS", image: serviceImage },
-  { name: "INVOICE MANAGEMENT", image: serviceImage },
-  { name: "CRM MANAGEMENT", image: serviceImage },
-  { name: "PROJECT COORDINATION", image: serviceImage },
-  { name: "DATA MANAGEMENT", image: serviceImage },
-  { name: "CALENDAR MANAGEMENT", image: serviceImage },
-],
+      features: [
+
+        { name: "EMAIL HANDLING", image: serviceImage },
+        { name: "REPORT MANAGEMENT", image: serviceImage },
+        { name: "MANAGING SPREADSHEETS", image: serviceImage },
+        { name: "INVOICE MANAGEMENT", image: serviceImage },
+        { name: "CRM MANAGEMENT", image: serviceImage },
+        { name: "PROJECT COORDINATION", image: serviceImage },
+        { name: "DATA MANAGEMENT", image: serviceImage },
+        { name: "CALENDAR MANAGEMENT", image: serviceImage },
+      ],
 
     },
     tools: {
@@ -118,30 +118,30 @@ const Architecture = () => {
         { number: 15, label: "Countries", max: 20, percentage: 75 },
         { number: 500, label: "Global Projects", max: 600, percentage: 83 },
       ],
-       highlightedBenefits: [
-  
-  {
-    title: "Comprehensive Workspace Setup",
-    description:
-      "Includes all office space, desks, and essential tools to ensure your remote team operates efficiently from day one.",
-  },
- 
-  {
-    title: "Payroll and Benefits Management",
-    description:
-      "Handles payroll administration, taxes, and benefits, reducing compliance risks and internal workload.",
-  },
-  {
-    title: "Remote Worker Enablement",
-    description:
-      "Equips teams with the necessary tools, training, and support to excel in remote work environments.",
-  },
-  {
-    title: "Employee Health Coverage",
-    description:
-      "Includes family health insurance for team members, ensuring well-being and peace of mind.",
-  },
-],
+      highlightedBenefits: [
+
+        {
+          title: "Comprehensive Workspace Setup",
+          description:
+            "Includes all office space, desks, and essential tools to ensure your remote team operates efficiently from day one.",
+        },
+
+        {
+          title: "Payroll and Benefits Management",
+          description:
+            "Handles payroll administration, taxes, and benefits, reducing compliance risks and internal workload.",
+        },
+        {
+          title: "Remote Worker Enablement",
+          description:
+            "Equips teams with the necessary tools, training, and support to excel in remote work environments.",
+        },
+        {
+          title: "Employee Health Coverage",
+          description:
+            "Includes family health insurance for team members, ensuring well-being and peace of mind.",
+        },
+      ],
       benefits: [
         {
           title: "AEC Expertise",
@@ -442,7 +442,7 @@ const Architecture = () => {
             transition={{ delay: 0.3, duration: 0.8 }}
             className="text-8xl font-extrabold text-white tracking-tight mb-4 drop-shadow-2xl"
           >
-            Admin 
+            Admin
           </motion.h1>
         </div>
       </motion.div>
@@ -462,9 +462,8 @@ const Architecture = () => {
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className={`z-20 bg-gray-500 backdrop-blur-xl shadow-lg transition-all duration-300 ${
-          isSticky ? "fixed top-[72px] left-0 right-0 shadow-xl" : "relative"
-        }`}
+        className={`z-20 bg-gray-500 backdrop-blur-xl shadow-lg transition-all duration-300 ${isSticky ? "fixed top-[72px] left-0 right-0 shadow-xl" : "relative"
+          }`}
       >
         <div className="container flex justify-center items-center mx-auto ">
           <div className="flex overflow-x-auto scrollbar-hide py-3">
@@ -574,9 +573,8 @@ const Architecture = () => {
                         onClick={() => setActiveIndex(index % features.length)}
                       >
                         <div
-                          className={`w-24 h-24 rounded-lg overflow-hidden mb-1 cursor-pointer ${
-                            activeIndex === index % features.length ? "scale-105" : ""
-                          }`}
+                          className={`w-24 h-24 rounded-lg overflow-hidden mb-1 cursor-pointer ${activeIndex === index % features.length ? "scale-105" : ""
+                            }`}
                         >
                           <img
                             src={feature.image}

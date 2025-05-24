@@ -1,7 +1,7 @@
 /* src/index.css */
 
 @font-face {
-  font-family: "Chillax";
+  font-family: "PlusJakartaSans";
   src: url("./PlusJakartaSans-VariableFont_wght.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
@@ -17,7 +17,7 @@
 @tailwind utilities;
 
 * {
-  font-family: "Chillax";
+  font-family: "PlusJakartaSans";
   
 }/* Animation for Gradient */
 

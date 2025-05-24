@@ -12,6 +12,12 @@ import IT from "./Screens/Services/IT.jsx";
 import Marketing from "./Screens/Services/Marketing.jsx";
 import Admin from "./Screens/Services/Admin.jsx";
 import Aboutus from "./Screens/Pages/Aboutus.jsx";
+import Carrers from "./Screens/Pages/Carrers.jsx";
+import Blogs from "./Screens/Pages/Blogs.jsx";
+import Contact from "./Screens/Pages/Contactus.jsx";
+
+
+
 
 
 
@@ -36,8 +42,8 @@ function App() {
   return (
     <Router>
       <div>
-    
-      <Navbar/>
+
+        <Navbar />
         <DebugRoute /> {/* Log the current route */}
         <Routes>
           <Route
@@ -45,17 +51,17 @@ function App() {
             element={<Home />}
           />
           <Route path="/architecture" element={<Architecture />} />
-          <Route path="/interior" element={<Interior  />} />
-          <Route path="/bim" element={<BIM/>} />
-          <Route path="/3dvisualization" element={<Visulization/>} />
+          <Route path="/interior" element={<Interior />} />
+          <Route path="/bim" element={<BIM />} />
+          <Route path="/3dvisualization" element={<Visulization />} />
           <Route path="/it" element={<IT />} />
-          <Route path="/marketing" element={<Marketing  />} />
-                    <Route path="/admin" element={<Admin  />} />
+          <Route path="/marketing" element={<Marketing />} />
+          <Route path="/admin" element={<Admin />} />
 
           <Route path="/about" element={<Aboutus title="About Us" />} />
-          <Route path="/services" element={<PlaceholderPage title="Services" />} />
-          <Route path="/contact" element={<PlaceholderPage title="Contact" />} />
-          <Route path="/project" element={<PlaceholderPage title="Project" />} />
+          <Route path="/carrers" element={<Carrers title="Carrers" />} />
+          <Route path="/contact" element={<Contact title="Contact" />} />
+          <Route path="/blogs" element={<Blogs title="Blogs" />} />
           <Route
             path="*"
             element={
