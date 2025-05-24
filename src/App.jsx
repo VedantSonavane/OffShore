@@ -11,6 +11,7 @@ import Visulization from "./Screens/Services/3D.jsx";
 import IT from "./Screens/Services/IT.jsx";
 import Marketing from "./Screens/Services/Marketing.jsx";
 import Admin from "./Screens/Services/Admin.jsx";
+import Aboutus from "./Screens/Pages/Aboutus.jsx";
 
 
 
@@ -51,7 +52,7 @@ function App() {
           <Route path="/marketing" element={<Marketing  />} />
                     <Route path="/admin" element={<Admin  />} />
 
-          <Route path="/about" element={<PlaceholderPage title="About Us" />} />
+          <Route path="/about" element={<Aboutus title="About Us" />} />
           <Route path="/services" element={<PlaceholderPage title="Services" />} />
           <Route path="/contact" element={<PlaceholderPage title="Contact" />} />
           <Route path="/project" element={<PlaceholderPage title="Project" />} />
