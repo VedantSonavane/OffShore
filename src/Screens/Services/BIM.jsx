@@ -37,9 +37,9 @@ const Architecture = () => {
 
   const tabData = {
     services: {
-      title: "Comprehensive Architechural Excellence Services",
+      title: "Comprehensive BIM Services",
       description:
-        "We provide end-to-end Architectural Excellence solutions from concept to completion. Our team delivers innovative designs tailored to your specific needs and vision.",
+        "We provide end-to-end BIM solutions from concept to completion. Our team delivers innovative designs tailored to your specific needs and vision.",
       image: architectureHero,
       features: [
 
@@ -111,7 +111,7 @@ const Architecture = () => {
       ],
     },
     "why-us": {
-      title: "Why Choose Our Architectural Excellence Services?",
+      title: "Why Choose Our BIM Services?",
       description:
         "We combine creativity with technical expertise to deliver exceptional results.",
       image: whyUsImage,
@@ -310,7 +310,7 @@ const Architecture = () => {
       ],
     },
     "get-started": {
-      title: "Start Your Architectural Excellence Project Today",
+      title: "Start Your BIM Project Today",
       description:
         "Get in touch to discuss your project requirements and how we can help bring your vision to life.",
       image: getStartedImage,
