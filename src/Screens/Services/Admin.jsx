@@ -37,22 +37,22 @@ const Architecture = () => {
 
   const tabData = {
     services: {
-      title: "Comprehensive Architechural Excellence Services",
+      title: "Comprehensive Admin  Services",
       description:
-        "We provide end-to-end Architectural Excellence solutions from concept to completion. Our team delivers innovative designs tailored to your specific needs and vision.",
+        "We provide end-to-end Admin  solutions from concept to completion. Our team delivers innovative designs tailored to your specific needs and vision.",
       image: architectureHero,
-      features: [
-        { name: "SCHEMATIC DESIGN", image: serviceImage },
-        { name: "QUALITY CHECKS", image: serviceImage },
-        { name: "DESIGN DEVELOPMENT", image: serviceImage },
-        { name: "CONSTRUCTION DOCUMENTS", image: serviceImage },
-        { name: "SPACE PLANING", image: serviceImage },
-        { name: "DRAFTING", image: serviceImage },
-        { name: "INTERIOR 3D MODELLING", image: serviceImage },
-        { name: "INTERIOR 2D & 3D RENDERING", image: serviceImage },
-        { name: "360 DEGREE INTERIOR", image: serviceImage },
-        { name: "BOQ AND MATERIAL TAKE OFF", image: serviceImage },
-      ],
+    features: [
+ 
+  { name: "EMAIL HANDLING", image: serviceImage },
+  { name: "REPORT MANAGEMENT", image: serviceImage },
+  { name: "MANAGING SPREADSHEETS", image: serviceImage },
+  { name: "INVOICE MANAGEMENT", image: serviceImage },
+  { name: "CRM MANAGEMENT", image: serviceImage },
+  { name: "PROJECT COORDINATION", image: serviceImage },
+  { name: "DATA MANAGEMENT", image: serviceImage },
+  { name: "CALENDAR MANAGEMENT", image: serviceImage },
+],
+
     },
     tools: {
       title: "Connect with Offshore365 to the tools you already use",
@@ -109,7 +109,7 @@ const Architecture = () => {
       ],
     },
     "why-us": {
-      title: "Why Choose Our Architectural Excellence Services?",
+      title: "Why Choose Our Admin  Services?",
       description:
         "We combine creativity with technical expertise to deliver exceptional results.",
       image: whyUsImage,
@@ -118,18 +118,30 @@ const Architecture = () => {
         { number: 15, label: "Countries", max: 20, percentage: 75 },
         { number: 500, label: "Global Projects", max: 600, percentage: 83 },
       ],
-      highlightedBenefits: [
-        {
-          title: "Reduced Administrative Burden",
-          description:
-            "Offshore365 handles the administrative tasks associated with hiring and managing staff, such as recruitment, onboarding, and payroll. This allows clients to focus on their core business operations.",
-        },
-        {
-          title: "Time Zone Advantage",
-          description:
-            "Offshore teams can work while your in-house team is off, enabling faster project turnaround times and shorter project cycles. This can be a significant advantage for projects with tight deadlines.",
-        },
-      ],
+       highlightedBenefits: [
+  
+  {
+    title: "Comprehensive Workspace Setup",
+    description:
+      "Includes all office space, desks, and essential tools to ensure your remote team operates efficiently from day one.",
+  },
+ 
+  {
+    title: "Payroll and Benefits Management",
+    description:
+      "Handles payroll administration, taxes, and benefits, reducing compliance risks and internal workload.",
+  },
+  {
+    title: "Remote Worker Enablement",
+    description:
+      "Equips teams with the necessary tools, training, and support to excel in remote work environments.",
+  },
+  {
+    title: "Employee Health Coverage",
+    description:
+      "Includes family health insurance for team members, ensuring well-being and peace of mind.",
+  },
+],
       benefits: [
         {
           title: "AEC Expertise",
@@ -308,7 +320,7 @@ const Architecture = () => {
       ],
     },
     "get-started": {
-      title: "Start Your Architectural Excellence Project Today",
+      title: "Start Your Admin  Project Today",
       description:
         "Get in touch to discuss your project requirements and how we can help bring your vision to life.",
       image: getStartedImage,
@@ -430,7 +442,7 @@ const Architecture = () => {
             transition={{ delay: 0.3, duration: 0.8 }}
             className="text-8xl font-extrabold text-white tracking-tight mb-4 drop-shadow-2xl"
           >
-            Architectural Excellence
+            Admin 
           </motion.h1>
         </div>
       </motion.div>
