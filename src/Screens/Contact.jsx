@@ -51,7 +51,7 @@ export default function ContactPage() {
     })
 
     // Automatically change circle color every 3 seconds
-    const colors = ['bg-blue-500', 'bg-red-500', 'bg-yellow-500']
+    const colors = ['bg-blue-500']
     let colorIndex = 0
 
     const colorInterval = setInterval(() => {
@@ -96,7 +96,7 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen px-4 md:px-8 lg:px-16 py-16 relative overflow-hidden">
       {/* Single Large Animated Background Circle Behind Form */}
-      <div className={`absolute top-1/2 transform -translate-y-1/2 w-[500px] h-[500px] rounded-full  animate-float transition-colors duration-1000 ${circleColor} z-0`}></div>
+      <div className={`absolute left-0 top-1/2 transform -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-90 animate-float transition-colors duration-1000 ${circleColor} z-0`}></div>
 
       <div className="text-center mb-12" data-aos="fade-up">
         <h1 className="text-[60px] font-bold text-[#0d3557] mb-4 tracking-tight">
@@ -127,7 +127,7 @@ export default function ContactPage() {
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Form Section */}
           <div
-            className="bg-white rounded-2xl shadow-sm border-2 border-gray-200 p-8 lg:p-12 relative z-20"
+            className="bg-white rounded-2xl shadow-sm border border-gray-200 p-8 lg:p-12 relative z-20"
             data-aos="fade-right"
             data-aos-delay="100"
           >
@@ -243,7 +243,20 @@ export default function ContactPage() {
         </div>
       </div>
 
-    
+      <style jsx>{`
+        @keyframes float {
+          0%, 100% {
+            transform: translateY(-50%);
+          }
+          50% {
+            transform: translateY(calc(-50% - 20px));
+          }
+        }
+
+        .animate-float {
+          animation: float 6s ease-in-out infinite;
+        }
+      `}</style>
     </div>
   )
 }

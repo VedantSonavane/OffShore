@@ -148,7 +148,7 @@ const Model = () => {
           className="hidden md:flex md:w-1/2 flex-col items-center justify-center"
           data-aos="fade-left"
         >
-          <div className="relative w-full max-w-[600px] h-[500px] rounded-md overflow-hidden">
+          <div className="relative w-full max-w-[600px] h-[400px] rounded-md overflow-hidden">
             <img
               key={sections[activeSection].image}
               src={sections[activeSection].image}

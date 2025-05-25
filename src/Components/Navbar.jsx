@@ -4,6 +4,7 @@ import { Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
 import "aos/dist/aos.css";
 import AOS from "aos";
+import { InformationCircleIcon, XMarkIcon } from '@heroicons/react/24/solid'; // or /outline
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -51,14 +52,18 @@ const Navbar = () => {
           <button className="bg-blue-100 text-sm border border-blue-600 text-blue-600 px-4 py-2 rounded-md hover:bg-blue-200 transition">
             Schedule a Meet
           </button>
-          <div
-            onClick={() => setMoreOpen(!moreOpen)}
-            className={`w-10 h-10 flex items-center justify-center rounded-full border border-blue-600 cursor-pointer transition ${
-              moreOpen ? "bg-blue-600 text-white" : "text-blue-600"
-            }`}
-          >
-            ⓘ
-          </div>
+         <div
+  onClick={() => setMoreOpen(!moreOpen)}
+  className={`w-10 h-10 flex items-center justify-center rounded-full border border-blue-600 cursor-pointer transition ${
+    moreOpen ? "bg-blue-600 text-white" : "text-blue-600"
+  }`}
+>
+  {moreOpen ? (
+    <XMarkIcon className="w-6 h-6" />
+  ) : (
+    <InformationCircleIcon className="w-6 h-6" />
+  )}
+</div>
         </div>
 
         {/* Mobile Menu Toggle */}

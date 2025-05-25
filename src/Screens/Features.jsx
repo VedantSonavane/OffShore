@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import AOS from 'aos';
 import gsap from 'gsap';
 import 'aos/dist/aos.css';
+import tools from "../assets/ms.png";
 
 const cardData = [
   {
@@ -176,32 +177,38 @@ const Features = () => {
           We bring together the finest talent and the most advanced technologies to empower your business.
         </p>
 
-        <motion.div
-          className="flex gap-12 w-max"
-          animate={{ x: ['0%', '-50%'] }}
-          transition={{
-            repeat: Infinity,
-            repeatType: 'loop',
-            duration: 30,
-            ease: 'linear',
-          }}
-        >
+        <div className="relative overflow-hidden w-full">
+          <motion.div
+            className="flex gap-12 w-max"
+            animate={{ x: ['0%', '-50%'] }}
+            transition={{
+              repeat: Infinity,
+              repeatType: 'loop',
+              duration: 30,
+              ease: 'linear',
+            }}
+          >
+            {[...Array(2)].map((_, i) => (
+              <div key={i} className="flex gap-12">
+                {[
+                  'AutoCAD', 'Revit', 'SketchUp', 'V-Ray', 'Lumion', 'Enscape',
+                  '3ds Max', 'Photoshop', 'Illustrator', 'Archicad', 'Navisworks',
+                  'Civil 3D', 'Premiere Pro', 'MS Office'
+                ].map((tool, idx) => (
+                  <div key={`${i}-${idx}`} className="flex flex-col items-center min-w-[100px]">
+                    <img
+                      src={tools}
+                      alt={tool}
+                      className="w-10 h-10"
+                    />
+                    <p className="text-sm text-gray-600 mt-2">{tool}</p>
+                  </div>
+                ))}
+              </div>
+            ))}
+          </motion.div>
+        </div>
 
-
-          {[
-            'V-Ray', 'Lumion', 'Photoshop', 'Premiere Pro', 'Illustrator',
-            'After Effects', 'Node.js', 'Cinema 4D',
-          ].flatMap(tool => [tool, tool]).map((tool, idx) => (
-            <div key={idx} className="flex flex-col items-center min-w-[100px]">
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg"
-                alt={tool}
-                className="w-10 h-10"
-              />
-              <p className="text-sm text-gray-600 mt-2">{tool}</p>
-            </div>
-          ))}
-        </motion.div>
       </div>
     </div>
   );

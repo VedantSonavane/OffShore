@@ -11,9 +11,8 @@ import getStartedImage from "../../assets/architecture.png";
 import { Link } from "react-router-dom";
 import architectureVideo from "../../assets/architecture.mp4";
 import Scheduling from "../Scheduling";
+import figmaLogo from "../../assets/ms.png";
 
-const figmaLogo =
-  "https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg";
 
 const Architecture = () => {
   const [activeTab, setActiveTab] = useState("services");
@@ -30,9 +29,8 @@ const Architecture = () => {
     { id: "tools", label: "Tools" },
     { id: "plans", label: "Plans" },
     { id: "why-us", label: "Why Us?" },
-   
     { id: "get-started", label: "Get Started" },
-     { id: "faq", label: "FAQ" },
+    { id: "faq", label: "FAQ" },
   ];
 
   const tabData = {
@@ -42,22 +40,20 @@ const Architecture = () => {
         "We provide end-to-end Architectural Excellence solutions from concept to completion. Our team delivers innovative designs tailored to your specific needs and vision.",
       image: architectureHero,
       features: [
-
-
         { name: "PRE CONCEPT DESIGN", image: serviceImage },
         { name: "SCHEMATIC DESIGN", image: serviceImage },
         { name: "DESIGN DEVELOPMENT", image: serviceImage },
         { name: "CONSTRUCTION DOCUMENTS", image: serviceImage },
         { name: "SPACE PLANING", image: serviceImage },
         { name: "DRAFTING", image: serviceImage },
-        { name: " 3D MODELLING", image: serviceImage },
-        { name: " RENDERING", image: serviceImage },
+        { name: " 3D MODELLING AND RENDERING", image: serviceImage },
+        { name: " BOQ AND MATERIAL TAKE OFF", image: serviceImage },
         { name: "WALK THROUGH ANIMATIONS", image: serviceImage },
         { name: "QUALITY CHECKS", image: serviceImage },
       ],
     },
     tools: {
-      title: "Connect with Offshore365 to the tools you already use",
+      title: "Collaborate effortlessly with offshore 365 experts proficient in  your entire AEC software suite.",
       description: "Boost productivity with 100+ integrations",
       image: toolsImage,
       software: [
@@ -80,36 +76,32 @@ const Architecture = () => {
       plans: [
         {
           title: "Hourly Billing Model",
-          price: "$50/hr",
           description: "Flexible billing based on hours worked.",
-          recommended: false,
+          backDescription: "Billing is based on team hours, ideal for dynamic, evolving project scopes."
         },
         {
           title: "Fixed Fee Model",
-          price: "$5,000/project",
           description: "Set price for defined project scope.",
-          recommended: false,
+          backDescription: "A fixed cost is set upfront for clearly defined projects with stable requirements."
         },
         {
           title: "Project Based Model",
-          price: "$10,000/project",
           description: "Comprehensive pricing for entire projects.",
-          recommended: true,
+          backDescription: "Pricing aligns with project phases and milestones—great for phased delivery."
         },
         {
           title: "Dedicated Team Model",
-          price: "$20,000/mo",
-          description: "Full-time team for ongoing projects.",
-          recommended: false,
+          description: "Full-time team for ongoing collaboration.",
+          backDescription: "A team works exclusively on your project—best for long-term collaboration."
         },
         {
           title: "Performance Model",
-          price: "Custom",
-          description: "Pricing based on project outcomes.",
-          recommended: false,
-        },
-      ],
-    },
+          description: "Pricing tied to project outcomes.",
+          backDescription: "Payment is based on results, motivating vendors to exceed targets."
+        }
+      ]
+    }
+    ,
     "why-us": {
       title: "Why Choose Our Architectural Excellence Services?",
       description:
@@ -400,42 +392,96 @@ const Architecture = () => {
 
   const [activeIndex, setActiveIndex] = useState(0);
   const features = tabData.services.features;
-  const doubledFeatures = [...features, ...features]; // Double for continuous loop
-  const imageWidth = 100; // w-24 (24 * 4px/rem = 96px)
-  const gap = 16; // mx-2 (2 * 0.5rem * 16px/rem = 16px)
+  const doubledFeatures = [...features, ...features];
+  const imageWidth = 100;
+  const gap = 16;
 
-  // Auto-slide with pause
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((prevIndex) =>
         prevIndex === features.length - 1 ? 0 : prevIndex + 1
       );
-    }, 3000); // Pause for 3 seconds
+    }, 3000);
 
     return () => clearInterval(interval);
   }, [features.length]);
 
+  const activeGradient = "linear-gradient(744deg, #00008B, #1E90FF 60%, #00BFFF)";
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <motion.div
+      <motion.section
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.2 }}
-        className="relative h-[500px] sm:h-[600px] w-full bg-fixed bg-cover bg-center flex items-center justify-center"
-        style={{ backgroundImage: `url(${architectureHero})` }}
+        className="py-20 h-[600px] transition-all duration-1000 text-white flex justify-center items-center relative overflow-hidden"
+        style={{ background: activeGradient }}
       >
+        {/* Background Waves */}
+        {[...Array(3)].map((_, i) => (
+          <div
+            key={`bg-wave-${i}`}
+            className="wave absolute w-[300%] h-[300%] opacity-30 left-[-50%] top-[-50%] rounded-[100%]"
+            style={{
+              background: activeGradient,
+              animationDelay: `${i * 2}s`,
+              animationDuration: `${15 + i * 5}s`,
+            }}
+          />
+        ))}
+        {/* Background Image Overlay */}
+
         <div className="relative text-center px-4 z-10" data-aos="fade-up">
           <motion.h1
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="text-8xl font-extrabold text-white tracking-tight mb-4 drop-shadow-2xl"
+            className="text-[120px] font-extrabold tracking-wide mb-4 drop-shadow-2xl"
           >
-            Architectural Excellence
+            Architecture
           </motion.h1>
+
+          <motion.p
+            initial={{ y: 30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.7, duration: 0.2 }}
+            className="text-[20px] font-light max-w-3xl mx-auto"
+          >
+            Offshore365 has completed over 200+ Large Scale Architectural Projects
+            using BIM & CAD, produced in accordance with AIA and RIBA architecture
+            standards.
+          </motion.p>
         </div>
-      </motion.div>
+      </motion.section>
+
+      <style jsx>{`
+        .wave {
+          animation: wave 5s infinite linear;
+          pointer-events: none;
+        }
+
+        .wave:nth-child(2) {
+          animation-duration: 2s;
+        }
+
+        .wave:nth-child(3) {
+          animation-duration: 2s;
+        }
+
+        .group:hover .wave {
+          animation-play-state: paused;
+        }
+
+        @keyframes wave {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+      `}</style>
 
       {/* Placeholder for Tabs Bar */}
       <div
@@ -452,9 +498,8 @@ const Architecture = () => {
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className={`z-20 bg-blue-500 backdrop-blur-xl shadow-lg transition-all duration-300 ${
-          isSticky ? "fixed top-[72px] left-0 right-0 shadow-xl" : "relative"
-        }`}
+        className={`z-20 bg-blue-500 backdrop-blur-xl shadow-lg transition-all duration-300 ${isSticky ? "fixed top-[72px] left-0 right-0 shadow-xl" : "relative"
+          }`}
       >
         <div className="container flex justify-center items-center mx-auto ">
           <div className="flex overflow-x-auto scrollbar-hide py-3">
@@ -494,19 +539,28 @@ const Architecture = () => {
           data-aos="fade-up"
         >
           <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-12 px-4 sm:px-8">
+            {/* LEFT: TEXT SECTION */}
             <div className="flex-1" data-aos="fade-right">
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-                {tabData.services.title}
-              </h2>
-              <p className="text-base sm:text-lg text-gray-600 mb-8 leading-relaxed">
-                {tabData.services.description}
+              <h1 className="text-[60px] font-bold mb-4 text-[#0d3557] tracking-wide leading-snug">
+                Amplify Productivity with Offshore 365
+              </h1>
+              <p className="text-[20px] text-gray-500 leading-relaxed">
+                Offshore 365 delivers end to end documentation services to a diverse range of sectors,
+                supported by our global team, we empower your projects with accuracy, quality, and efficiency,
+                no matter the scale or complexity.
               </p>
+            </div>
+
+
+            {/* RIGHT: FEATURES + CAROUSEL */}
+            <div className="flex-1 flex flex-col gap-6" data-aos="fade-left">
+              {/* Feature boxes */}
               <div className="grid grid-cols-2 sm:grid-cols-2 gap-4">
                 {features.map((feature, index) => (
                   <motion.div
                     key={index}
                     whileHover={{ scale: 1.05, backgroundColor: "#f1f5f9" }}
-                    className="flex items-center p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+                    className="flex items-center p-4 bg-white rounded-xl border border-blue-500 shadow-md hover:shadow-lg transition-all duration-300"
                     data-aos="fade-up"
                     data-aos-delay={index * 100}
                   >
@@ -529,20 +583,16 @@ const Architecture = () => {
                   </motion.div>
                 ))}
               </div>
-            </div>
-            <div className="flex-1" data-aos="fade-left">
+
+              {/* Carousel below feature boxes */}
               <motion.div
                 initial={{ scale: 0.9, opacity: 0 }}
                 whileInView={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
-                className="relative w-full h-[600px]"
+                className="relative w-full h-[150px]"
               >
-                <img
-                  src={features[activeIndex].image}
-                  alt={features[activeIndex].name}
-                  className="w-full h-[400px] rounded-xl shadow-2xl object-cover transform hover:scale-105 transition-transform duration-500"
-                />
+
                 <div className="absolute bottom-0 w-full h-[140px] overflow-hidden">
                   <motion.div
                     className="flex"
@@ -564,9 +614,8 @@ const Architecture = () => {
                         onClick={() => setActiveIndex(index % features.length)}
                       >
                         <div
-                          className={`w-24 h-24 rounded-lg overflow-hidden mb-1 cursor-pointer ${
-                            activeIndex === index % features.length ? "scale-105" : ""
-                          }`}
+                          className={`w-24 h-24 rounded-lg overflow-hidden mb-1 cursor-pointer ${activeIndex === index % features.length ? "scale-105" : ""
+                            }`}
                         >
                           <img
                             src={feature.image}
@@ -586,6 +635,7 @@ const Architecture = () => {
           </div>
         </motion.section>
 
+
         {/* Tools Section */}
         <motion.section
           ref={(ref) => setRef("tools", ref)}
@@ -598,25 +648,12 @@ const Architecture = () => {
           data-aos="fade-up"
         >
           <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-12">
-            <motion.div
-              className="flex-1"
-              initial={{ scale: 0.9, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              data-aos="fade-right"
-            >
-              <img
-                src={tabData.tools.image}
-                alt={tabData.tools.title}
-                className="w-full border border-white h-[550px] rounded-xl shadow-2xl object-cover transform hover:scale-105 transition-transform duration-500"
-              />
-            </motion.div>
+
             <div className="flex-1" data-aos="fade-left">
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-6">
+              <h1 className="text-[60px] tracking-wide text-[#0d3557] text-center  font-extrabold  mb-4">
                 {tabData.tools.title}
-              </h2>
-              <p className="text-base sm:text-lg text-gray-600 mb-8 leading-relaxed">
+              </h1>
+              <p className="text-[20px]  text-center text-gray-500 mb-16 leading-relaxed">
                 {tabData.tools.description}
               </p>
               <div className="grid grid-cols-4 sm:grid-cols-4 gap-4">
@@ -654,47 +691,61 @@ const Architecture = () => {
           className="py-16 sm:py-20 scroll-mt-20"
           id="plans"
         >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-8">
-              <h2 className="text-4xl font-extrabold text-gray-900">
+              <h1 className="text-[60px] tracking-wide text-[#0d3557] text-center  font-extrabold  mb-4">
                 {tabData.plans.title}
-              </h2>
-              <p className="mt-4 text-lg text-gray-600">
+              </h1>
+              <p className="text-[20px]  text-center text-gray-500 mb-16 leading-relaxed">
                 {tabData.plans.description}
               </p>
             </div>
-            <motion.div
-              className="mb-12"
-              initial={{ scale: 0.95, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <img
-                src={tabData.plans.image}
-                alt={tabData.plans.title}
-                className="w-full h-[350px] border-2 border-blue-200 rounded-2xl shadow-2xl object-cover hover:scale-105 transition-transform duration-500"
-              />
-            </motion.div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+
+            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
               {tabData.plans.plans.slice(0, 5).map((plan, index) => (
                 <motion.div
                   key={index}
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                  className="relative group bg-white text-blue-900 rounded-2xl shadow-lg p-6 flex flex-col justify-between h-full border border-blue-500 transition-all duration-300"
+                  whileHover={{ scale: 1.02 }}
+                  className="flip-card"
                 >
-                  <div className="transition-all duration-300 group-hover:text-white">
-                    <h3 className="text-lg font-semibold mb-2">{plan.title}</h3>
-                    <p className="text-sm mb-6">{plan.description}</p>
+                  <div className="flip-inner w-[300px] relative w-full h-full rounded-2xl shadow-lg border border-blue-500">
+
+                    {/* FRONT SIDE */}
+                    <div className="flip-front absolute w-full h-full bg-gradient-to-br from-blue-500 to-blue-900 text-white rounded-2xl p-6 flex flex-col justify-between">
+                      <div>
+                        <h1 className="text-[28px] tracking-wide text-white text-left font-extrabold mb-4">
+                          {plan.title}
+                        </h1>
+                        <p className="text-[20px] text-left text-white/80 mb-16 leading-relaxed">
+                          {plan.description.slice(0, 60)}
+                        </p>
+                      </div>
+                      {/* Circle Arrow Button */}
+                      <div className="absolute bottom-4 right-4">
+                        <div className="w-10 h-10 rounded-full bg-white bg-blur-lg flex items-center justify-center text-blue-800 shadow-md">
+                          →
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* BACK SIDE */}
+                    <div className="flip-back absolute w-full h-full bg-gradient-to-br from-blue-500 to-blue-900 text-white rounded-2xl p-6 flex flex-col justify-between">
+                      <div>
+                        <p className="text-[20px] text-left text-white/80 mb-16 leading-relaxed">
+                          {plan.backDescription}</p>
+                      </div>
+                      <button className="w-full py-2 rounded-lg bg-white text-blue-700 font-semibold transition duration-300">
+                        Get started
+                      </button>
+                    </div>
+
                   </div>
-                  <button className="mt-auto w-full py-2 rounded-lg bg-blue-600 text-white font-semibold group-hover:bg-white group-hover:text-blue-700 transition duration-300">
-                    Get started
-                  </button>
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-blue-700 opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity duration-300 -z-10"></div>
                 </motion.div>
               ))}
             </div>
+
+
+
           </div>
         </motion.section>
 
@@ -710,11 +761,12 @@ const Architecture = () => {
           data-aos="zoom-in"
         >
           <div className="flex flex-col lg:flex-row-reverse items-center gap-8 md:gap-12">
+            {/* Right side content: title, description, stats, benefits */}
             <div className="flex-1" data-aos="fade-left">
-              <h2 className="text-3xl sm:text-4xl font-bold mb-6">
+              <h1 className="text-[34px] font-extrabold mb-4 text-[#0d3557] tracking-wide leading-snug">
                 {tabData["why-us"].title}
-              </h2>
-              <p className="text-base sm:text-lg mb-8 leading-relaxed">
+              </h1>
+              <p className="text-[20px] text-gray-500 leading-relaxed">
                 {tabData["why-us"].description}
               </p>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 mb-8">
@@ -725,10 +777,10 @@ const Architecture = () => {
                     data-aos="fade-up"
                     data-aos-delay={index * 100}
                   >
-                    <div className="text-2xl font-bold mb-2">
+                    <div className="text-[34px] mt-4 font-bold mb-2">
                       {stat.number}+
                     </div>
-                    <div className="text-base mb-2">{stat.label}</div>
+                    <div className="text-[20px] text-gray-500 mb-2">{stat.label}</div>
                     <div className="w-full bg-blue-300 rounded-full h-2.5">
                       <motion.div
                         className="bg-blue-500 h-2.5 rounded-full"
@@ -753,7 +805,7 @@ const Architecture = () => {
                     data-aos-delay={index * 100}
                   >
                     <div className="flex items-center mb-2">
-                      <div className="bg-blue-600 rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0">
+                      <div className="bg-blue-800 rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0">
                         <svg
                           className="w-4 h-4 text-white"
                           fill="none"
@@ -768,35 +820,72 @@ const Architecture = () => {
                           />
                         </svg>
                       </div>
-                      <h3 className="text-lg text-blue-600 font-semibold">
+                      <h1 className="text-[18px] text-blue-800 tracking-wide font-semibold">
                         {benefit.title}
-                      </h3>
+                      </h1>
                     </div>
-                    <p className="text-sm text-gray-600 leading-relaxed">
+                    <p className="text-[16px] text-gray-500 leading-relaxed">
                       {benefit.description}
                     </p>
                   </motion.div>
                 ))}
               </div>
             </div>
+
             <motion.div
-              className="flex-1"
+              className="flex-1 "
               initial={{ scale: 0.9, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
               data-aos="fade-right"
             >
-              <img
-                src={tabData["why-us"].image}
-                alt={tabData["why-us"].title}
-                className="w-full h-[550px] border border-white rounded-xl shadow-2xl object-cover transform hover:scale-105 transition-transform duration-500"
-              />
+              <h1 className="text-[60px] font-bold mb-8 text-[#0d3557] tracking-wide leading-snug">
+                Transform the way your organisation works
+              </h1>
+              <div className="grid grid-cols-2 gap-4 text-gray-800">
+                {[
+                  "AEC Expertise",
+                  "Global Talent",
+                  "Cost Effective",
+                  "Scalable Teams",
+                  "Boost Productivity",
+                  "Seamless Integration",
+                  "Quality & Reliability",
+                  "Faster Turnaround",
+                ].map((point, index) => (
+                  <motion.div
+                    key={index}
+                    whileHover={{ scale: 1.05, backgroundColor: "#f1f5f9" }}
+                    className="flex items-center p-4 bg-white rounded-xl border border-blue-500 shadow-md hover:shadow-lg transition-all duration-300"
+                    data-aos="fade-up"
+                    data-aos-delay={index * 100}
+                  >
+                    <div className="bg-blue-100 rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0">
+                      <svg
+                        className="w-4 h-4 text-blue-600"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <span className="text-base">{point}</span>
+                  </motion.div>
+                ))}
+              </div>
             </motion.div>
+
           </div>
-          <div className="py-16 px-4 sm:px-6 lg:px-20">
+
+          {/* <div className="py-16 px-4 sm:px-6 lg:px-20">
             <div className="text-center mb-14">
-              <h2 className="text-4xl font-bold text-gray-800">Our Expertise</h2>
+              <h1 className="text-[60px] font-bold mb-8 text-[#0d3557] tracking-wide leading-snug">
+                Our Expertise</h1>
               <p className="text-gray-500 mt-3 text-base max-w-xl mx-auto">
                 We specialize in delivering solutions that drive real results. Here's what makes us stand out.
               </p>
@@ -807,7 +896,7 @@ const Architecture = () => {
                   key={index}
                   className="flex flex-col items-center text-center bg-white rounded-3xl shadow-md p-8 border border-gray-200 transform transition-all duration-300 hover:scale-105 hover:bg-blue-500 hover:text-white hover:shadow-2xl"
                 >
-                  <div className="mb-6">
+                  <div className="mb-6 p-2">
                     <div className="flex items-center justify-center w-12 h-12 border border-blue-500 rounded-full bg-blue-100 text-blue-600 shadow-md transition-all duration-300 group-hover:bg-white group-hover:text-blue-800">
                       <svg
                         className="w-6 h-6"
@@ -824,88 +913,85 @@ const Architecture = () => {
                       </svg>
                     </div>
                   </div>
-                  <h3 className="text-xl font-semibold mb-2 transition-colors duration-300">
+                  <h3 className="text-[20px] tracking-wide font-semibold mb-4 transition-colors duration-300">
                     {benefit.title}
                   </h3>
-                  <p className="text-sm leading-relaxed transition-colors duration-300">
+                  <p className="text-[16px] leading-relaxed transition-colors duration-300">
                     {benefit.description}
                   </p>
                 </div>
               ))}
             </div>
-          </div>
+          </div> */}
         </motion.section>
 
         {/* Get Started Section */}
         <motion.section
-          ref={(ref) => setRef("get-started", ref)}
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          id="get-started"
-          className="relative py-20 sm:py-24 mt-20 rounded-xl text-white overflow-hidden"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.2 }}
+          className="py-20 px-4 sm:px-8 h-auto sm:h-[550px] transition-all duration-1000 text-white flex rounded-full justify-center items-center relative overflow-hidden"
+          style={{ background: activeGradient }}
         >
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover z-0"
-          >
-            <source src={architectureVideo} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-          <div className="absolute inset-0 bg-black bg-opacity-50 z-0"></div>
-          <div className="relative z-10 container mx-auto px-6 flex flex-col lg:flex-row items-center gap-12">
-            <div className="flex-1">
-              <h2 className="text-4xl sm:text-5xl font-bold mb-6">
-                {tabData["get-started"].title}
-              </h2>
-              <p className="text-lg sm:text-xl text-gray-200 mb-8 leading-relaxed">
-                {tabData["get-started"].description}
-              </p>
-              <div className="space-y-4 mb-8">
-                {tabData["get-started"].steps.map((step, index) => (
-                  <motion.div
-                    key={index}
-                    whileHover={{ x: 10 }}
-                    className="flex items-center"
-                    data-aos="fade-up"
-                    data-aos-delay={index * 100}
-                  >
-                    <div className="bg-white text-black rounded-full w-8 h-8 flex items-center justify-center mr-4 font-bold text-base">
-                      {index + 1}
-                    </div>
-                    <span className="text-white text-lg">{step}</span>
-                  </motion.div>
-                ))}
-              </div>
-              <div className="flex flex-col sm:flex-row gap-4">
+          {/* Background Waves */}
+          {[...Array(3)].map((_, i) => (
+            <div
+              key={`bg-wave-${i}`}
+              className="wave absolute w-[300%] h-[300%] opacity-30 left-[-0%] top-[-0%] rounded-[100%]"
+              style={{
+                background: activeGradient,
+                animationDelay: `${i * 2}s`,
+                animationDuration: `${15 + i * 5}s`,
+              }}
+            />
+          ))}
+
+          {/* Content */}
+          <div className="relative text-center z-10 max-w-6xl mx-auto">
+            <motion.h1
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.3, duration: 0.8 }}
+              className="text-[60px] sm:text-[80px] md:text-[100px] lg:text-[120px] font-extrabold tracking-wide mb-4 drop-shadow-2xl leading-tight"
+            >
+              Let’s Get Started
+            </motion.h1>
+
+            <motion.p
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.7, duration: 0.2 }}
+              className="text-base sm:text-lg md:text-xl lg:text-[20px] font-light max-w-2xl mx-auto text-gray-200"
+            >
+              Power up your productivity with Offshore365
+            </motion.p>
+
+            {/* Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-6 sm:mt-8">
+              <motion.button
+                whileHover={{
+                  scale: 1.05,
+                  boxShadow: "0 0 15px rgba(255, 255, 255, 0.6)",
+                }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => setShowSchedulingSection(true)}
+                className="px-6 py-3 bg-white text-gray-700 rounded-full transition-all duration-300 font-semibold text-base shadow-lg"
+              >
+                Schedule a Consultation
+              </motion.button>
+
+              <Link to="/contact">
                 <motion.button
                   whileHover={{
                     scale: 1.05,
                     boxShadow: "0 0 15px rgba(255, 255, 255, 0.6)",
                   }}
                   whileTap={{ scale: 0.95 }}
-                  onClick={() => setShowSchedulingSection(true)}
-                  className="px-6 py-3 bg-white text-black rounded-xl transition-all duration-300 font-semibold text-base shadow-lg"
+                  className="px-6 py-3 border border-white text-white rounded-full hover:bg-white hover:text-black transition-all duration-300 font-semibold text-base shadow-lg"
                 >
-                  Schedule a Consultation
+                  Contact Our Team
                 </motion.button>
-                <Link to="/contact-us">
-                  <motion.button
-                    whileHover={{
-                      scale: 1.05,
-                      boxShadow: "0 0 15px rgba(255, 255, 255, 0.6)",
-                    }}
-                    whileTap={{ scale: 0.95 }}
-                    className="px-6 py-3 border border-white text-white rounded-xl hover:bg-white hover:text-black transition-all duration-300 font-semibold text-base shadow-lg"
-                  >
-                    Contact Our Team
-                  </motion.button>
-                </Link>
-              </div>
+              </Link>
             </div>
           </div>
         </motion.section>
@@ -934,18 +1020,23 @@ const Architecture = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="py-12 sm:py-16 scroll-mt-20  rounded-2xl px-4 sm:px-8"
+          className="py-12 sm:py-16 scroll-mt-20 rounded-2xl px-4 sm:px-8"
           id="faq"
           data-aos="fade-up"
         >
-          <div className="  p-4 sm:p-8 rounded-lg ">
-            <h4 className="text-4xl font-bold text-gray-800 tracking-widest uppercase text-center">
+          <div className="p-4 sm:p-8 rounded-lg">
+            {/* Title */}
+            <h4 className="text-[36px] sm:text-[48px] md:text-[54px] lg:text-[60px] font-extrabold text-[#0d3557] tracking-wide text-center leading-tight">
               {tabData.faq.title}
             </h4>
-            <p className="text-center text-gray-600 text-sm mt-2">
+
+            {/* Subtitle */}
+            <p className="text-center text-gray-500 text-base sm:text-lg md:text-xl lg:text-[20px] mt-2 max-w-3xl mx-auto">
               {tabData.faq.description}
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 xl:gap-12 px-2 xl:px-12 mt-4">
+
+            {/* FAQ Cards Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 xl:gap-12 px-2 xl:px-12 mt-8">
               {tabData.faq.faqs.map((faq, index) => (
                 <motion.div
                   key={index}
@@ -953,27 +1044,25 @@ const Architecture = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="flex space-x-8 mt-8"
+                  className="flex items-start space-x-4"
                   data-aos="fade-up"
                   data-aos-delay={index * 100}
                 >
-                  <div>{faq.icon}</div>
+                  <div className="mt-1">{faq.icon}</div>
                   <div>
-                    <h4 className="text-xl font-bold text-gray-700">{faq.question}</h4>
-                    <p className="text-gray-600 my-2">{faq.answer}</p>
-                    <Link
-                      to="/contact-us"
-                      className="text-blue-600 hover:text-blue-800 hover:underline capitalize"
-                      title="Read More"
-                    >
-                      Read More
-                    </Link>
+                    <h4 className="text-lg sm:text-xl md:text-2xl lg:text-[24px] font-bold text-[#0d3557]">
+                      {faq.question}
+                    </h4>
+                    <p className="text-gray-500 text-sm sm:text-base md:text-[16px] my-2 leading-relaxed">
+                      {faq.answer}
+                    </p>
                   </div>
                 </motion.div>
               ))}
             </div>
           </div>
         </motion.section>
+
       </div>
     </div>
   );
