@@ -8,29 +8,30 @@ import "aos/dist/aos.css"
 const steps = [
   {
     id: 1,
-    title: "Project Idea",
-    description: "Phasellus urna felis, vehicula a ultricie vulp utate ut ultricies.",
+    title: "Understanding business needs",
+    description: "Ensuring solutions that aligns perfectly for your unique project needs.",
     gradient: "linear-gradient(744deg, #006400, #228B22 60%, #32CD32)", // Green
   },
   {
     id: 2,
-    title: "Finding Inspiration",
-    description: "Phasellus urna felis, vehicula a ultricie vulp utate ut ultricies.",
+    title: "Assign the right experts",
+    description: "Providing right skills for right projects at the right time",
     gradient: "linear-gradient(744deg, #FFD700, #FFC107 60%, #FF8F00)", // Yellow
   },
   {
     id: 3,
-    title: "Product Creation",
-    description: "Phasellus urna felis, vehicula a ultricie vulp utate ut ultricies.",
+    title: "Seamless integration",
+    description: "Our team smoothly works with your existing workflows and tools",
     gradient: "linear-gradient(744deg, #00008B, #1E90FF 60%, #00BFFF)", // Blue
   },
   {
     id: 4,
-    title: "Edits Work with Client",
-    description: "Phasellus urna felis, vehicula a ultricie vulp utate ut ultricies.",
+    title: "Measure and optimise",
+    description: "Track progress and ensure success",
     gradient: "linear-gradient(744deg, #8B0000, #B22222 60%, #FF4500)", // Red
   },
-]
+];
+
 
 const StepsSection = () => {
   const [activeGradientIndex, setActiveGradientIndex] = useState(0)
@@ -128,7 +129,7 @@ const StepsSection = () => {
 
                 {/* Card Content */}
                 <div className="infotop  absolute top-36 left-0 right-0 text-center text-white px-6">
-                  <h3 className="text-[36px] tracking-wide font-semibold mb-8 transition-transform duration-300 group-hover:scale-110">
+                  <h3 className="text-[28px] tracking-wide font-semibold mb-8 transition-transform duration-300 group-hover:scale-110">
                     {step.title}
                   </h3>
                   <p className="text-[16px] p-2 font-light transition-transform duration-300 group-hover:scale-110">

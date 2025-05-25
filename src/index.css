@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: "PlusJakartaSans";
-  src: url("./PlusJakartaSans-VariableFont_wght.ttf") format("truetype");
+  src: url("./Gilroy-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -390,4 +390,21 @@
   );
   color: white;
   transform: rotateY(180deg);
+}
+@keyframes floatRight {
+  0%, 100% { transform: translate(10px, -10px); }
+  50% { transform: translate(-10px, 10px); }
+}
+
+@keyframes floatLeft {
+  0%, 100% { transform: translate(-10px, 10px); }
+  50% { transform: translate(10px, -10px); }
+}
+
+.animate-float-right {
+  animation: floatRight 6s ease-in-out infinite;
+}
+
+.animate-float-left {
+  animation: floatLeft 6s ease-in-out infinite;
 }

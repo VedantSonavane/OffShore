@@ -48,40 +48,43 @@ const ContactSection = () => {
   };
 
   return (
-    <section className="min-h-screen px-4 md:px-20 py-16 ">
+    <section className="min-h-screen px-4 md:px-20 py-16">
       <ToastContainer />
 
       {/* Section Heading */}
-      <div className="text-center mb-16">
-        <h1 className="text-[36px] md:text-[64px] font-bold text-gray-900 mb-4 tracking-wide gsap-heading">
+      <div className="text-center mb-8" data-aos="fade-up">
+        <h1 className="text-[36px] md:text-[64px] font-bold text-gray-900 mb-2 tracking-wide gsap-heading">
           Get in Touch with Offshore 365
         </h1>
         <p className="text-[18px] md:text-[20px] text-gray-500 max-w-2xl mx-auto">
-          Have questions, ideas, or partnership opportunities? Reach out and let's build something amazing together.
+          Have questions? Reach out and let's build something amazing together.
         </p>
       </div>
 
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-start gap-12">
         {/* Info Section */}
-        <div className="w-full lg:w-1/2 text-[#1a2e45]">
+        <div className="w-full lg:w-1/2 text-[#1a2e45]" data-aos="fade-right">
           <h2 className="text-[28px] md:text-[36px] font-bold leading-snug mb-6">
             Meet with our Offshore 365 experts
           </h2>
           <div className="mt-12 space-y-12 text-lg md:text-xl font-semibold">
-            <div>
+            <div data-aos="zoom-in" data-aos-delay="100">
               <span className="text-[40px] md:text-[64px] font-bold text-blue-500">500+</span> projects completed globally
             </div>
-            <div>
+            <div data-aos="zoom-in" data-aos-delay="200">
               <span className="text-[40px] md:text-[64px] font-bold text-red-500">150+</span> AEC firms partnered
             </div>
-            <div>
+            <div data-aos="zoom-in" data-aos-delay="300">
               <span className="text-[40px] md:text-[64px] font-bold text-yellow-500">25+</span> countries with active engagements
             </div>
           </div>
         </div>
 
         {/* Form Section */}
-        <div className="w-full lg:w-1/2 bg-white border border-gray-200 rounded-3xl shadow-xl p-6 md:p-12">
+        <div
+          className="w-full lg:w-1/2 bg-white border border-gray-200 rounded-3xl shadow-xl p-3 md:p-12"
+          data-aos="fade-left"
+        >
           <h2 className="text-3xl font-bold mb-2 text-[#1a2e45]">Let's Chat</h2>
           <p className="text-gray-600 mb-6">An Offshore 365 expert will reach out to discuss your needs.</p>
 
@@ -116,21 +119,6 @@ const ContactSection = () => {
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
               required
             />
-
-            <select
-              name="reason"
-              value={formData.reason}
-              onChange={handleChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-700 focus:ring-2 focus:ring-blue-500 outline-none"
-              required
-            >
-              <option value="">How do you plan on using our services?</option>
-              <option value="sales">Sales</option>
-              <option value="recruiting">Recruiting</option>
-              <option value="support">Customer Support</option>
-              <option value="consulting">Consulting</option>
-              <option value="other">Other</option>
-            </select>
 
             <select
               name="teamSize"
@@ -181,10 +169,6 @@ const ContactSection = () => {
             >
               Submit
             </button>
-
-            <p className="text-xs text-gray-500 mt-4">
-              By clicking submit you consent to receive email communications about Offshore 365 products and services and agree to our <a href="#" className="text-blue-500 underline">Terms</a>. Your data will be processed in accordance with our <a href="#" className="text-blue-500 underline">Privacy Policy</a>. You may opt out at any time.
-            </p>
           </form>
         </div>
       </div>

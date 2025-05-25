@@ -1,5 +1,11 @@
 import React, { useEffect } from "react";
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedinIn,
+  FaYoutube,
+} from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -9,53 +15,64 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer className="relative text-white pt-16 pb-10">
-      {/* Wave Background */}
-      <div className="absolute inset-0 z-0 overflow-hidden">
-        <div className="w-full h-full bg-gradient-to-r from-blue-400 to-blue-600 animate-gradient">
-          <div className="absolute top-0 left-0 w-full h-full bg-[url('/waves.svg')] bg-no-repeat bg-cover bg-center animate-wave" />
-        </div>
-      </div>
+    <footer className="relative text-white pt-16 pb-10 bg-[#1e3a8a]  overflow-hidden">
+      {/* Animated Circles */}
+      <div className="absolute w-60 h-60 top-[-50px] right-[-50px] bg-white/50 backdrop-blur-lg rounded-full z-0 animate-float-right" />
+      <div className="absolute w-72 h-72 bottom-[-60px] left-[-60px] bg-white/50 backdrop-blur-lg rounded-full z-0 animate-float-left" />
 
-      <div className="relative z-10 container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
-        {/* About Section */}
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 opacity-90" />
+
+      <div className="relative z-10 container mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-12">
+        {/* About Us */}
         <div data-aos="fade-up">
-          <h3 className="text-xl font-semibold mb-4">About Us</h3>
-          <p className="text-sm leading-relaxed">
-            We are a modern company dedicated to innovation and excellence, delivering top-notch services to our clients worldwide.
+          <h3 className="text-xl font-bold mb-4">OffShore365</h3>
+          <p className="text-sm text-white/90 mb-3">
+            Your global productivity partner delivering tech smart workforce
+            solutions tailored for your AEC Business ensuring seamless expansion
+            and efficiency.
           </p>
+          
+        </div>
+
+        {/* Services */}
+        <div data-aos="fade-up" data-aos-delay="100">
+          <h3 className="text-xl font-bold mb-4">Services</h3>
+          <ul className="text-sm space-y-2 text-white/90">
+            <li><a href="#">Architecture</a></li>
+            <li><a href="#">Interior</a></li>
+            <li><a href="#">3D Visualisation</a></li>
+            <li><a href="#">BIM</a></li>
+            <li><a href="#">IT</a></li>
+            <li><a href="#">Admin</a></li>
+            <li><a href="#">Marketing</a></li>
+          </ul>
         </div>
 
         {/* Quick Links */}
-        <div data-aos="fade-up" data-aos-delay="100">
-          <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
-          <ul className="text-sm space-y-2">
-            {["Home", "Services", "Portfolio", "Contact"].map((label, idx) => (
-              <li key={idx}>
-                <a
-                  href={`/${label.toLowerCase()}`}
-                  className="relative hover:text-gray-300 transition after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-white after:transition-all after:duration-300 hover:after:w-full"
-                >
-                  {label}
-                </a>
-              </li>
-            ))}
+        <div data-aos="fade-up" data-aos-delay="150">
+          <h3 className="text-xl font-bold mb-4">Quick Links</h3>
+          <ul className="text-sm space-y-2 text-white/90">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Career</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Blogs</a></li>
           </ul>
         </div>
 
         {/* Contact Info */}
         <div data-aos="fade-up" data-aos-delay="200">
-          <h3 className="text-xl font-semibold mb-4">Contact Info</h3>
-          <p className="text-sm mb-2">123 Minimal Street, Suite 456</p>
-          <p className="text-sm mb-2">City, Country 78910</p>
-          <p className="text-sm mb-2">Email: contact@company.com</p>
-          <p className="text-sm">Phone: +1 (234) 567-890</p>
+          <h3 className="text-xl font-bold mb-4">Contact Info</h3>
+         
         </div>
 
-        {/* Subscribe */}
-        <div data-aos="fade-up" data-aos-delay="300">
-          <h3 className="text-xl font-semibold mb-4">Subscribe</h3>
-          <p className="text-sm mb-4">Join our newsletter for updates and offers.</p>
+        {/* Newsletter */}
+        <div data-aos="fade-up" data-aos-delay="250">
+          <h3 className="text-xl font-bold mb-4">Subscribe</h3>
+          <p className="text-sm mb-4 text-white/90">
+            Join our newsletter for updates and offers.
+          </p>
           <div className="flex">
             <input
               type="email"
@@ -70,15 +87,20 @@ const Footer = () => {
       </div>
 
       {/* Social Icons */}
-      <div className="relative z-10 mt-12 flex justify-center gap-4">
-        {[FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn].map((Icon, idx) => (
-          <div
-            key={idx}
-            className="w-10 h-10 flex items-center justify-center rounded-full border border-white hover:bg-white hover:text-black transition duration-300"
-          >
-            <Icon size={18} />
-          </div>
-        ))}
+      <div className="relative z-10 mt-12 flex justify-center gap-5">
+        {[FaFacebookF, FaXTwitter, FaInstagram, FaLinkedinIn, FaYoutube].map(
+          (Icon, idx) => (
+            <a
+              key={idx}
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 flex items-center justify-center rounded-full border border-white hover:bg-white hover:text-black transition duration-300"
+            >
+              <Icon size={18} />
+            </a>
+          )
+        )}
       </div>
 
       {/* Copyright */}
