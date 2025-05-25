@@ -172,7 +172,7 @@ export default function TestimonialMetrics() {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 sm:mb-12">
           <div className="max-w-2xl mb-6 md:mb-0" data-aos="fade-right" data-aos-delay="100">
             <motion.h1
-              className="text-[64px] font-extrabold text-gray-900 mb-3 tracking-wide"
+              className="text-[60px] font-extrabold text-[#0d3557] mb-3 tracking-wide"
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.6 }}
@@ -246,7 +246,7 @@ export default function TestimonialMetrics() {
                     {item.company}
                   </span>
                   <h3
-                    className="text-[64px] font-bold mb-2"
+                    className="text-[60px] font-bold mb-2"
                     data-aos="fade-up"
                     data-aos-delay={700 + (index % totalSlides) * 100}
                   >

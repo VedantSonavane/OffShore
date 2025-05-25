@@ -124,9 +124,9 @@ const CardCarousel = () => {
               <div className="bg-white rounded-xl shadow-2xl overflow-hidden border border-gray-100 h-full">
                 <div className="relative h-full">
                   <img src={card.image} alt={card.title} className="w-full h-full object-cover" />
-                  <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="absolute inset-0 flex items-end justify-center">
                     <motion.h2
-                      className="text-[64px] font-bold tracking-wide text-white"
+                      className="text-[60px] font-bold tracking-wide text-white"
                       initial={{ opacity: 0, scale: 0.8 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ delay: isActive ? 0.2 : 0 }}
@@ -135,7 +135,7 @@ const CardCarousel = () => {
                     </motion.h2>
                   </div>
                   <motion.p
-                    className="absolute bottom-4 right-4 text-white bg-white/30 px-4 py-2 rounded-full text-[20px] sm:text-sm hover:bg-white/60 transition-colors"
+                    className="absolute top-4 right-4 text-white bg-white/30 px-4 py-2 rounded-full text-[20px] sm:text-sm hover:bg-white/60 transition-colors"
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: isActive ? 0.4 : 0 }}
@@ -176,11 +176,11 @@ const Hero = () => {
             className="w-full lg:w-5/12 text-center lg:text-left px-4 sm:px-8"
             initialX={-100}
           >
-            <h1 className="text-[64px] font-bold text-gray-900 leading-tight tracking-wide">
-              <AnimatedText text="Unlock" className=" text-slate-800" delay={0.2} />
+            <h1 className="text-[60px] font-bold text-[#0d3557] leading-tight tracking-wide">
+              <AnimatedText text="Unlock" className=" text-[#0d3557" delay={0.2} />
               <br />
-              <AnimatedText text="Infinite" className=" text-slate-800" delay={0.4} />
-              <AnimatedText text="Productivity" className="text-slate-800" delay={0.6} />
+              <AnimatedText text="Infinite" className=" " delay={0.4} />
+              <AnimatedText text="Productivity" className="" delay={0.6} />
             </h1>
             <motion.p
               className="mt-4 sm:mt-6  text-gray-500 text-[20px] leading-relaxed"

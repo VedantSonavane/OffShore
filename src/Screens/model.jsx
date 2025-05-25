@@ -76,7 +76,7 @@ const Model = () => {
     <div className="min-h-screen bg-white flex flex-col items-center justify-center px-4 py-10">
       {/* Header */}
       <div className="text-center mb-12" data-aos="fade-up">
-        <h1 className="text-[64px] font-bold text-gray-900 mb-4 tracking-tight">
+        <h1 className="text-[60px] font-bold text-[#0d3557] mb-4 tracking-tight">
           Scalable Productivity Models
         </h1>
         <p className="text-base sm:text-lg text-gray-500 max-w-2xl mx-auto">
@@ -145,22 +145,35 @@ const Model = () => {
 
         {/* Desktop Image Panel (Visible only on desktop) */}
         <div
-          className="hidden md:block w-full md:w-1/2 relative rounded-md overflow-hidden"
+          className="hidden md:flex md:w-1/2 flex-col items-center justify-center"
           data-aos="fade-left"
         >
-          <div className="relative w-full h-[600px]">
+          <div className="relative w-full max-w-[600px] h-[500px] rounded-md overflow-hidden">
             <img
               key={sections[activeSection].image}
               src={sections[activeSection].image}
               alt={sections[activeSection].title}
               className="w-full h-full object-cover transition-all duration-700 ease-in-out"
             />
-            <div className="absolute top-4 right-4">
+            <div className="absolute bottom-4 right-4">
               <button className="bg-white/30 text-white px-4 py-2 rounded-full backdrop-blur-md shadow-md hover:bg-white/50 transition duration-300">
                 Choose Model
               </button>
             </div>
           </div>
+          <div className="mt-4 text-center">
+            <p className="text-base sm:text-lg text-gray-500">
+              Not sure which model is right for you?{" "}
+              <a
+                href="#schdeule"
+                className="text-blue-600 hover:underline cursor-pointer"
+              >
+                Schedule a meet
+              </a>{" "}
+              with our experts
+            </p>
+          </div>
+
         </div>
       </div>
     </div>

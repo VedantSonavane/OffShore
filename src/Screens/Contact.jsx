@@ -1,179 +1,249 @@
-import React, { useState, useEffect } from "react";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import AOS from "aos";
-import "aos/dist/aos.css";
+"use client"
 
-const ContactSection = () => {
+import { useState, useEffect } from "react"
+import AOS from "aos"
+import "aos/dist/aos.css"
+
+function CountUp({ target, duration = 2000, delay = 0, className = "" }) {
+  const [count, setCount] = useState(0)
+
   useEffect(() => {
-    AOS.init({ duration: 800, once: true });
-  }, []);
+    let start = 0
+    let end = parseInt(target)
+    if (end === 0) return
+
+    let increment = end / (duration / 50) // update every 50ms
+    let current = start
+    let timer
+
+    // Delay start if delay is provided
+    const startCounting = () => {
+      timer = setInterval(() => {
+        current += increment
+        if (current >= end) {
+          setCount(end)
+          clearInterval(timer)
+        } else {
+          setCount(Math.floor(current))
+        }
+      }, 50)
+    }
+
+    const delayTimeout = setTimeout(startCounting, delay)
+
+    return () => {
+      clearInterval(timer)
+      clearTimeout(delayTimeout)
+    }
+  }, [target, duration, delay])
+
+  return <div className={className}>{count}+</div>
+}
+
+export default function ContactPage() {
+  const [circleColor, setCircleColor] = useState('bg-blue-500')
+
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: true,
+      easing: "ease-out-cubic",
+    })
+
+    // Automatically change circle color every 3 seconds
+    const colors = ['bg-blue-500', 'bg-red-500', 'bg-yellow-500']
+    let colorIndex = 0
+
+    const colorInterval = setInterval(() => {
+      colorIndex = (colorIndex + 1) % colors.length
+      setCircleColor(colors[colorIndex])
+    }, 3000)
+
+    return () => clearInterval(colorInterval)
+  }, [])
 
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
     email: "",
-    reason: "",
-    teamSize: "",
-    services: [],
+    usage: "",
     message: "",
-  });
+  })
 
-  const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    if (type === "checkbox") {
-      setFormData((prevData) => {
-        const newServices = checked
-          ? [...prevData.services, value]
-          : prevData.services.filter((service) => service !== value);
-        return { ...prevData, services: newServices };
-      });
-    } else {
-      setFormData({ ...formData, [name]: value });
-    }
-  };
+  const [showToast, setShowToast] = useState(false)
+
+  const handleChange = (name, value) => {
+    setFormData((prev) => ({ ...prev, [name]: value }))
+  }
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    toast.success("Message sent successfully!");
+    e.preventDefault()
+
+    // Show toast notification
+    setShowToast(true)
+    setTimeout(() => setShowToast(false), 3000)
+
+    // Reset form
     setFormData({
       firstName: "",
       lastName: "",
       email: "",
-      reason: "",
-      teamSize: "",
-      services: [],
+      usage: "",
       message: "",
-    });
-  };
+    })
+  }
 
   return (
-    <section className="min-h-screen px-4 md:px-20 py-16">
-      <ToastContainer />
+    <div className="min-h-screen px-4 md:px-8 lg:px-16 py-16 relative overflow-hidden">
+      {/* Single Large Animated Background Circle Behind Form */}
+      <div className={`absolute top-1/2 transform -translate-y-1/2 w-[500px] h-[500px] rounded-full  animate-float transition-colors duration-1000 ${circleColor} z-0`}></div>
 
-      {/* Section Heading */}
-      <div className="text-center mb-8" data-aos="fade-up">
-        <h1 className="text-[36px] md:text-[64px] font-bold text-gray-900 mb-2 tracking-wide gsap-heading">
-          Get in Touch with Offshore 365
+      <div className="text-center mb-12" data-aos="fade-up">
+        <h1 className="text-[60px] font-bold text-[#0d3557] mb-4 tracking-tight">
+          Get in Touch with Offshore365
         </h1>
-        <p className="text-[18px] md:text-[20px] text-gray-500 max-w-2xl mx-auto">
-          Have questions? Reach out and let's build something amazing together.
+        <p className="text-base sm:text-lg text-gray-500 max-w-2xl mx-auto">
+          We're here to help you scale productivity — reach out and let's build success together.
         </p>
       </div>
 
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-start gap-12">
-        {/* Info Section */}
-        <div className="w-full lg:w-1/2 text-[#1a2e45]" data-aos="fade-right">
-          <h2 className="text-[28px] md:text-[36px] font-bold leading-snug mb-6">
-            Meet with our Offshore 365 experts
-          </h2>
-          <div className="mt-12 space-y-12 text-lg md:text-xl font-semibold">
-            <div data-aos="zoom-in" data-aos-delay="100">
-              <span className="text-[40px] md:text-[64px] font-bold text-blue-500">500+</span> projects completed globally
+      {/* Toast Notification */}
+      {showToast && (
+        <div className="fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50 transition-all duration-300">
+          <div className="flex items-center gap-2">
+            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path
+                fillRule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clipRule="evenodd"
+              />
+            </svg>
+            <span className="font-medium">Message sent successfully!</span>
+          </div>
+        </div>
+      )}
+
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
+          {/* Form Section */}
+          <div
+            className="bg-white rounded-2xl shadow-sm border-2 border-gray-200 p-8 lg:p-12 relative z-20"
+            data-aos="fade-right"
+            data-aos-delay="100"
+          >
+            <div className="mb-8" data-aos="fade-up" data-aos-delay="200">
+              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-3">Let's Chat</h2>
+              <p className="text-gray-600 text-lg">An Offshore expert will reach out to discuss your needs.</p>
             </div>
-            <div data-aos="zoom-in" data-aos-delay="200">
-              <span className="text-[40px] md:text-[64px] font-bold text-red-500">150+</span> AEC firms partnered
+
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="grid md:grid-cols-2 gap-4" data-aos="fade-up" data-aos-delay="300">
+                <input
+                  type="text"
+                  placeholder="First Name"
+                  value={formData.firstName}
+                  onChange={(e) => handleChange("firstName", e.target.value)}
+                  className="h-12 px-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors"
+                  required
+                />
+                <input
+                  type="text"
+                  placeholder="Last Name"
+                  value={formData.lastName}
+                  onChange={(e) => handleChange("lastName", e.target.value)}
+                  className="h-12 px-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors"
+                  required
+                />
+              </div>
+
+              <div data-aos="fade-up" data-aos-delay="400">
+                <input
+                  type="email"
+                  placeholder="Work Email"
+                  value={formData.email}
+                  onChange={(e) => handleChange("email", e.target.value)}
+                  className="w-full h-12 px-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors"
+                  required
+                />
+              </div>
+
+              <div className="relative" data-aos="fade-up" data-aos-delay="500">
+                <select
+                  value={formData.usage}
+                  onChange={(e) => handleChange("usage", e.target.value)}
+                  className="w-full h-12 px-4 pr-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors appearance-none bg-white text-gray-900"
+                  required
+                >
+                  <option value="" disabled className="text-gray-500">
+                    How do you plan on using Calendly?
+                  </option>
+                  <option value="sales">Sales meetings</option>
+                  <option value="customer-success">Customer success</option>
+                  <option value="recruiting">Recruiting</option>
+                  <option value="education">Education</option>
+                  <option value="other">Other</option>
+                </select>
+                <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                  <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </div>
+              </div>
+
+              <div data-aos="fade-up" data-aos-delay="600">
+                <textarea
+                  placeholder="How can we help?"
+                  value={formData.message}
+                  onChange={(e) => handleChange("message", e.target.value)}
+                  className="w-full min-h-[120px] px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors resize-none"
+                  required
+                />
+              </div>
+
+              <div data-aos="fade-up" data-aos-delay="700">
+                <button
+                  type="submit"
+                  className="w-full h-12 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors duration-200 transform hover:scale-105"
+                >
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+
+          {/* Info Section */}
+          <div className="lg:pl-8" data-aos="fade-left" data-aos-delay="200">
+            <div className="mb-8">
+              <h1
+                className="text-[60px] font-bold text-[#0d3557] leading-tight mb-8"
+                data-aos="fade-up"
+                data-aos-delay="400"
+              >
+                Meet with our offshore 365 experts
+              </h1>
             </div>
-            <div data-aos="zoom-in" data-aos-delay="300">
-              <span className="text-[40px] md:text-[64px] font-bold text-yellow-500">25+</span> countries with active engagements
+
+            <div className="space-y-8">
+              <div className="border-b-2 border-yellow-500 pb-6" data-aos="fade-up" data-aos-delay="500">
+                <CountUp target={500} className="text-5xl lg:text-6xl font-bold text-yellow-500 mb-2" delay={500} />
+                <div className="text-gray-600 text-lg">projects completed globally</div>
+              </div>
+
+              <div className="border-b-2 border-blue-500 pb-6" data-aos="fade-up" data-aos-delay="600">
+                <CountUp target={150} className="text-5xl lg:text-6xl font-bold text-blue-500 mb-2" delay={600} />
+                <div className="text-gray-600 text-lg">AEC firms partnered</div>
+              </div>
+
+              <div className="border-b-2 border-red-500 pb-6" data-aos="fade-up" data-aos-delay="700">
+                <CountUp target={25} className="text-5xl lg:text-6xl font-bold text-red-500 mb-2" delay={700} />
+                <div className="text-gray-600 text-lg">countries with active engagements</div>
+              </div>
             </div>
           </div>
         </div>
-
-        {/* Form Section */}
-        <div
-          className="w-full lg:w-1/2 bg-white border border-gray-200 rounded-3xl shadow-xl p-3 md:p-12"
-          data-aos="fade-left"
-        >
-          <h2 className="text-3xl font-bold mb-2 text-[#1a2e45]">Let's Chat</h2>
-          <p className="text-gray-600 mb-6">An Offshore 365 expert will reach out to discuss your needs.</p>
-
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div className="flex flex-col md:flex-row gap-4">
-              <input
-                type="text"
-                name="firstName"
-                value={formData.firstName}
-                onChange={handleChange}
-                placeholder="First Name"
-                className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
-                required
-              />
-              <input
-                type="text"
-                name="lastName"
-                value={formData.lastName}
-                onChange={handleChange}
-                placeholder="Last Name"
-                className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
-                required
-              />
-            </div>
-
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              placeholder="Work Email"
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
-              required
-            />
-
-            <select
-              name="teamSize"
-              value={formData.teamSize}
-              onChange={handleChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-700 focus:ring-2 focus:ring-blue-500 outline-none"
-              required
-            >
-              <option value="">Select your team size</option>
-              <option value="1-10">1-10</option>
-              <option value="11-50">11-50</option>
-              <option value="51-200">51-200</option>
-              <option value="200+">200+</option>
-            </select>
-
-            <div>
-              <label className="block mb-2 font-semibold text-gray-700">Services Interested In:</label>
-              <div className="flex flex-wrap gap-4 text-gray-700">
-                {["BIM Modeling", "CAD Drafting", "3D Rendering", "Project Management", "MEP Services"].map((service) => (
-                  <label key={service} className="flex items-center gap-2">
-                    <input
-                      type="checkbox"
-                      name="services"
-                      value={service}
-                      checked={formData.services.includes(service)}
-                      onChange={handleChange}
-                      className="accent-blue-500"
-                    />
-                    {service}
-                  </label>
-                ))}
-              </div>
-            </div>
-
-            <textarea
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              placeholder="How can we help?"
-              rows="4"
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
-              required
-            />
-
-            <button
-              type="submit"
-              className="w-full bg-[#2d6bff] text-white py-3 rounded-lg font-semibold hover:bg-blue-600 transition"
-            >
-              Submit
-            </button>
-          </form>
-        </div>
       </div>
-    </section>
-  );
-};
 
-export default ContactSection;
+    
+    </div>
+  )
+}

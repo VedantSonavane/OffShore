@@ -36,10 +36,10 @@ const Navbar = () => {
       <nav className="relative z-10 flex items-center justify-between px-6 py-3 md:py-2">
         {/* Logo + Nav Links */}
         <div className="flex items-center gap-6" data-aos="fade-right">
-          <div className="text-2xl font-bold">OffShore365</div>
+          <div className="text-[20px] text-extrabold text-[#0d3557]">OffShore365</div>
           <ul className="hidden md:flex gap-8 text-sm">
             {navLinks.map((link, idx) => (
-              <li key={idx} className="cursor-pointer hover:text-blue-800">
+              <li key={idx} className="text-[16px] text-extrabold text-[#0d3557] ">
                 <Link to={link.href}>{link.label}</Link>
               </li>
             ))}

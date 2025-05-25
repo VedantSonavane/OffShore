@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 
-// Updated services array with 8 services
+// Updated services array with the requested services
 const services = [
   {
     name: "Architecture",
@@ -11,37 +11,37 @@ const services = [
     hoverColor: "hover:bg-blue-100",
   },
   {
-    name: "Interior Design",
+    name: "Interior",
     bgColor: "bg-white",
     hoverColor: "hover:bg-blue-100",
   },
   {
-    name: "3D Visualization",
+    name: "BIM",
     bgColor: "bg-white",
     hoverColor: "hover:bg-blue-100",
   },
   {
-    name: "BIM Services",
+    name: "3DVisualization",
     bgColor: "bg-white",
     hoverColor: "hover:bg-blue-100",
   },
   {
-    name: "Project Management",
+    name: "IT",
     bgColor: "bg-white",
     hoverColor: "hover:bg-blue-100",
   },
   {
-    name: "Urban Planning",
+    name: "Marketing",
     bgColor: "bg-white",
     hoverColor: "hover:bg-blue-100",
   },
   {
-    name: "Construction Consulting",
+    name: "Admin",
     bgColor: "bg-white",
     hoverColor: "hover:bg-blue-100",
   },
   {
-    name: "Sustainable Design",
+    name: "Others",
     bgColor: "bg-white",
     hoverColor: "hover:bg-blue-100",
   },
@@ -135,7 +135,7 @@ const CustomCalendar = ({ selected, onChange }) => {
   }
 
   return (
-    <div className="w-full h-[420px] bg-white rounded-lg p-4">
+    <div className="w-full h-[420px] bg-white rounded-lg p-4" id="schdeule">
       <div className="flex justify-between items-center mb-4">
         <button onClick={handlePrevMonth} className="text-gray-600 hover:text-blue-600">
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -351,7 +351,7 @@ const ScheduleMeeting = () => {
       {/* Header */}
       <div className="max-w-5xl mx-auto text-center mb-12">
         <motion.h1
-          className="text-[64px] font-extrabold text-gray-900 mb-3 tracking-wide"
+          className="text-[60px] font-extrabold text-[#0d3557] mb-3 tracking-wide"
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6 }}
@@ -435,7 +435,7 @@ const ScheduleMeeting = () => {
               className="flex-1"
             >
               {step === 1 && (
-                <div className="h-[450px]  flex flex-col">
+                <div className="h-[250px]  flex flex-col">
                   <h1 className="text-[34px] font-light text-center mb-6 tracking-tight">Select a Service</h1>
                   <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 flex-1">
                     {services.map((service) => (

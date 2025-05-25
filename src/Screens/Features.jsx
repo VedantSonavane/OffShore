@@ -145,7 +145,7 @@ const Features = () => {
 
   return (
     <div className="py-20 px-6 text-center" data-aos="fade-up">
-      <h1 className="text-[64px] font-bold text-gray-900 mb-2 tracking-wide gsap-heading">
+      <h1 className="text-[60px] font-bold text-[#0d3557] mb-2 tracking-wide gsap-heading">
         Innovate with Offshore 365
       </h1>
 
