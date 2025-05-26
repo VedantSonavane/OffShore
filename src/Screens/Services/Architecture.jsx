@@ -544,7 +544,7 @@ const Architecture = () => {
               <h1 className="text-[40px] font-bold mb-4 text-[#0d3557] tracking-wide leading-snug">
                 Amplify Productivity with Offshore 365
               </h1>
-              <p className="text-[20px] text-gray-500 leading-relaxed">
+              <p className="text-[20px]  text-gray-500 leading-relaxed">
                 Offshore 365 delivers end to end documentation services to a diverse range of sectors,
                 supported by our global team, we empower your projects with accuracy, quality, and efficiency,
                 no matter the scale or complexity.
@@ -579,7 +579,7 @@ const Architecture = () => {
                         />
                       </svg>
                     </div>
-                    <span className="text-gray-800 text-[14px]">{feature.name}</span>
+                    <span className="text-gray-800 regular text-[14px]">{feature.name}</span>
                   </motion.div>
                 ))}
               </div>
@@ -623,7 +623,7 @@ const Architecture = () => {
                             className="w-full h-full object-cover"
                           />
                         </div>
-                        <span className="text-gray-800 text-xs text-center">
+                        <span className="text-gray-800 regular text-[10px] text-center">
                           {feature.name}
                         </span>
                       </div>
@@ -798,7 +798,7 @@ const Architecture = () => {
                     <div className="text-[34px] mt-4 font-bold mb-2">
                       {stat.number}+
                     </div>
-                    <div className="text-[20px] text-gray-500 mb-2">{stat.label}</div>
+                    <div className="text-[20px] regular text-gray-500 mb-2">{stat.label}</div>
                     <div className="w-full bg-blue-300 rounded-full h-2.5">
                       <motion.div
                         className="bg-blue-500 h-2.5 rounded-full"
@@ -838,7 +838,7 @@ const Architecture = () => {
                           />
                         </svg>
                       </div>
-                      <h1 className="text-[18px] text-blue-800 tracking-wide font-semibold">
+                      <h1 className="text-[18px]  text-blue-800 tracking-wide font-semibold">
                         {benefit.title}
                       </h1>
                     </div>
@@ -879,7 +879,7 @@ const Architecture = () => {
                     data-aos="fade-up"
                     data-aos-delay={index * 100}
                   >
-                    <div className="bg-blue-100 rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0">
+                    <div className="bg-blue-100  rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0">
                       <svg
                         className="w-4 h-4 text-blue-600"
                         fill="none"
@@ -892,7 +892,7 @@ const Architecture = () => {
                         <path d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <span className="text-[14px]">{point}</span>
+                    <span className="text-[14px] regular">{point}</span>
                   </motion.div>
                 ))}
               </div>
@@ -993,7 +993,7 @@ const Architecture = () => {
                 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setShowSchedulingSection(true)}
-                className="px-6 py-3 bg-white text-gray-700 rounded-xl transition-all duration-300 font-semibold text-base shadow-lg"
+                className="px-6 py-3 bg-white regular text-gray-700 rounded-xl transition-all duration-300  text-base shadow-lg"
               >
                 Schedule a Consultation
               </motion.button>
@@ -1005,7 +1005,7 @@ const Architecture = () => {
                     boxShadow: "0 0 15px rgba(255, 255, 255, 0.6)",
                   }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-6 py-3 border border-white text-white rounded-xl hover:bg-white hover:text-black transition-all duration-300 font-semibold text-base shadow-lg"
+                  className="px-6 py-3 border regular border-white text-white rounded-xl hover:bg-white hover:text-black transition-all duration-300 font-semibold text-base shadow-lg"
                 >
                   Contact Our Team
                 </motion.button>

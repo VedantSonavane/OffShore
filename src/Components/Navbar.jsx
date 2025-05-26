@@ -33,15 +33,15 @@ const Navbar = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full py-2 bg-white text-blue-600 shadow-md">
+    <header className="sticky top-0   z-50 w-full py-2 bg-white text-blue-600 shadow-md">
       <nav className="relative z-10 flex items-center justify-between px-6 py-3 md:py-2">
         {/* Logo + Nav Links */}
-        <div className="flex items-center gap-6" data-aos="fade-right">
-          <div className="text-[20px] text-extrabold text-[#0d3557]">OffShore365</div>
-          <ul className="hidden md:flex gap-8 text-sm">
+        <div className="flex items-center regular gap-6" data-aos="fade-right">
+          <div className="text-[20px] regular  text-[#0d3557]">OffShore365</div>
+          <ul className="hidden md:flex  gap-8 text-sm">
             {navLinks.map((link, idx) => (
-              <li key={idx} className="text-[16px] text-extrabold text-[#0d3557] ">
-                <Link to={link.href}>{link.label}</Link>
+              <li key={idx} className="text-[16px] regular   text-[#0d3557] ">
+                <Link className="regular" to={link.href}>{link.label}</Link>
               </li>
             ))}
           </ul>
@@ -49,7 +49,7 @@ const Navbar = () => {
 
         {/* Schedule Button + Toggle (Desktop Only) */}
         <div className="hidden md:flex items-center gap-4" data-aos="fade-left">
-          <button className="bg-blue-100 text-sm border border-blue-600 text-blue-600 px-4 py-2 rounded-md hover:bg-blue-200 transition">
+          <button className="bg-blue-100 regular text-sm border border-blue-600 text-blue-600 px-4 py-2 rounded-md hover:bg-blue-200 transition">
             Schedule a Meet
           </button>
          <div
