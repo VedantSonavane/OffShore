@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X, ChevronDown, Users, Mail, Briefcase, FileText, Home, Zap, Award, Calendar } from "lucide-react";
-import toggleIcon from '/workspaces/OffShore/src/assets/toggle.png';
+import toggleIcon from '../assets/toggle.png';
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
