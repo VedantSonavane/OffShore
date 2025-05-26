@@ -165,15 +165,12 @@ const Navbar = () => {
               onMouseEnter={handleMoreToggle}
               onMouseLeave={handleMoreLeave}
             >
-              <button
-                className={`w-10 h-10 rounded-full  flex items-center justify-center transition-all duration-300 transform hover:scale-110 `}
-              >
-                <img
-                  src={toggleIcon}
-                  alt="Toggle Menu"
-                  className={`w-8 h-8 ${moreToggle ? 'opacity-80' : 'opacity-100'}`}
-                />
-              </button>
+             <button
+  className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110 bg-gradient-to-br from-blue-100 via-blue-700 to-blue-900 animate-gradient`}
+>
+  {/* Removed <img> */}
+</button>
+
               
               {/* More Dropdown */}
               {moreToggle && (
