@@ -126,7 +126,7 @@ const CardCarousel = () => {
                   <img src={card.image} alt={card.title} className="w-full h-full object-cover" />
                   <div className="absolute inset-0 flex items-end justify-center">
                     <motion.h2
-                      className="text-[60px] font-bold tracking-wide text-white"
+                      className="text-[34px] font-bold tracking-wide text-white"
                       initial={{ opacity: 0, scale: 0.8 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ delay: isActive ? 0.2 : 0 }}
