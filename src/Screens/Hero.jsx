@@ -183,7 +183,7 @@ const Hero = () => {
               <AnimatedText text="Productivity" className=" mb-2" delay={0.6} />
             </h1>
             <motion.p
-              className="mt-4 sm:mt-6  text-blue-500 text-[20px] leading-relaxed"
+              className="mt-4 sm:mt-6  text-[#0d3557] text-[20px] leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}
