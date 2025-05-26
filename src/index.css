@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: "PlusJakartaSans";
-  src: url("./Gilroy-Regular.ttf") format("truetype");
+  src: url("./Gilroy-Bold.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -21,8 +21,10 @@
   
 }/* Animation for Gradient */
 
-
-
+p{
+  font-family: "secondary";
+  
+}
 
 /* Blob Animation */
 @keyframes blob {

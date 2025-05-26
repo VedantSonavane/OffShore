@@ -53,7 +53,7 @@ const Architecture = () => {
       ],
     },
     tools: {
-      title: "Collaborate effortlessly with offshore 365 experts proficient in  your entire AEC software suite.",
+      title: "Seamless collaboration with offshore AEC 365 experts.",
       description: "Boost productivity with 100+ integrations",
       image: toolsImage,
       software: [
@@ -168,7 +168,7 @@ const Architecture = () => {
       },
     },
     faq: {
-      title: "Frequently Asked Questions",
+      title: "FAQ",
       description: "Here are some of the frequently asked questions",
       faqs: [
         {
@@ -433,14 +433,14 @@ const Architecture = () => {
         {/* Background Image Overlay */}
 
         <div className="relative text-center px-4 z-10" data-aos="fade-up">
-          <motion.h1
+          <h1
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="text-[120px] font-extrabold tracking-wide mb-4 drop-shadow-2xl"
+            className="text-[100px] font-extrabold tracking-wide mb-4 drop-shadow-2xl"
           >
             Architecture
-          </motion.h1>
+          </h1>
 
           <motion.p
             initial={{ y: 30, opacity: 0 }}
@@ -526,7 +526,7 @@ const Architecture = () => {
       </motion.div>
 
       {/* Main Content */}
-      <div className="container mx-auto px-4 sm:px-6 py-12 md:py-16">
+      <div className="container mx-auto px-24  ">
         {/* Services Section */}
         <motion.section
           ref={(ref) => setRef("services", ref)}
@@ -541,7 +541,7 @@ const Architecture = () => {
           <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-12 px-4 sm:px-8">
             {/* LEFT: TEXT SECTION */}
             <div className="flex-1" data-aos="fade-right">
-              <h1 className="text-[60px] font-bold mb-4 text-[#0d3557] tracking-wide leading-snug">
+              <h1 className="text-[40px] font-bold mb-4 text-[#0d3557] tracking-wide leading-snug">
                 Amplify Productivity with Offshore 365
               </h1>
               <p className="text-[20px] text-gray-500 leading-relaxed">
@@ -579,7 +579,7 @@ const Architecture = () => {
                         />
                       </svg>
                     </div>
-                    <span className="text-gray-800 text-base">{feature.name}</span>
+                    <span className="text-gray-800 text-[14px]">{feature.name}</span>
                   </motion.div>
                 ))}
               </div>
@@ -650,7 +650,7 @@ const Architecture = () => {
           <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-12">
 
             <div className="flex-1" data-aos="fade-left">
-              <h1 className="text-[60px] tracking-wide text-[#0d3557] text-center  font-extrabold  mb-4">
+              <h1 className="text-[40px] tracking-wide text-[#0d3557] text-center  font-extrabold  mb-4">
                 {tabData.tools.title}
               </h1>
               <p className="text-[20px]  text-center text-gray-500 mb-16 leading-relaxed">
@@ -693,7 +693,7 @@ const Architecture = () => {
         >
           <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-8">
-              <h1 className="text-[60px] tracking-wide text-[#0d3557] text-center  font-extrabold  mb-4">
+              <h1 className="text-[40px] tracking-wide text-[#0d3557] text-center  font-extrabold  mb-4">
                 {tabData.plans.title}
               </h1>
               <p className="text-[20px]  text-center text-gray-500 mb-16 leading-relaxed">
@@ -763,12 +763,7 @@ const Architecture = () => {
           <div className="flex flex-col lg:flex-row-reverse items-center gap-8 md:gap-12">
             {/* Right side content: title, description, stats, benefits */}
             <div className="flex-1" data-aos="fade-left">
-              <h1 className="text-[34px] font-extrabold mb-4 text-[#0d3557] tracking-wide leading-snug">
-                {tabData["why-us"].title}
-              </h1>
-              <p className="text-[20px] text-gray-500 leading-relaxed">
-                {tabData["why-us"].description}
-              </p>
+             
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 mb-8">
                 {tabData["why-us"].stats.map((stat, index) => (
                   <div
@@ -792,7 +787,7 @@ const Architecture = () => {
                   </div>
                 ))}
               </div>
-              <div className="grid grid-cols-2 sm:grid-cols-2 gap-6 mb-12">
+              <div className="grid grid-cols-2 sm:grid-cols-2 gap-6 ">
                 {tabData["why-us"].highlightedBenefits.map((benefit, index) => (
                   <motion.div
                     key={index}
@@ -840,7 +835,7 @@ const Architecture = () => {
               viewport={{ once: true }}
               data-aos="fade-right"
             >
-              <h1 className="text-[60px] font-bold mb-8 text-[#0d3557] tracking-wide leading-snug">
+              <h1 className="text-[40px] font-bold mb-8 text-[#0d3557] tracking-wide leading-snug">
                 Transform the way your organisation works
               </h1>
               <div className="grid grid-cols-2 gap-4 text-gray-800">
@@ -874,7 +869,7 @@ const Architecture = () => {
                         <path d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <span className="text-base">{point}</span>
+                    <span className="text-[14px]">{point}</span>
                   </motion.div>
                 ))}
               </div>
@@ -884,7 +879,7 @@ const Architecture = () => {
 
           {/* <div className="py-16 px-4 sm:px-6 lg:px-20">
             <div className="text-center mb-14">
-              <h1 className="text-[60px] font-bold mb-8 text-[#0d3557] tracking-wide leading-snug">
+              <h1 className="text-[40px] font-bold mb-8 text-[#0d3557] tracking-wide leading-snug">
                 Our Expertise</h1>
               <p className="text-gray-500 mt-3 text-base max-w-xl mx-auto">
                 We specialize in delivering solutions that drive real results. Here's what makes us stand out.
@@ -930,7 +925,7 @@ const Architecture = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.2 }}
-          className="py-20 px-4 sm:px-8 h-auto sm:h-[550px] transition-all duration-1000 text-white flex rounded-full justify-center items-center relative overflow-hidden"
+          className="py-20 px-4 sm:px-8 h-auto sm:h-[550px] transition-all duration-1000 text-white flex rounded-2xl justify-center items-center relative overflow-hidden"
           style={{ background: activeGradient }}
         >
           {/* Background Waves */}
@@ -952,7 +947,7 @@ const Architecture = () => {
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.8 }}
-              className="text-[60px] sm:text-[80px] md:text-[100px] lg:text-[120px] font-extrabold tracking-wide mb-4 drop-shadow-2xl leading-tight"
+              className="text-[50px]   font-extrabold tracking-wide mb-4 drop-shadow-2xl leading-tight"
             >
               Let’s Get Started
             </motion.h1>
@@ -975,7 +970,7 @@ const Architecture = () => {
                 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setShowSchedulingSection(true)}
-                className="px-6 py-3 bg-white text-gray-700 rounded-full transition-all duration-300 font-semibold text-base shadow-lg"
+                className="px-6 py-3 bg-white text-gray-700 rounded-xl transition-all duration-300 font-semibold text-base shadow-lg"
               >
                 Schedule a Consultation
               </motion.button>
@@ -987,7 +982,7 @@ const Architecture = () => {
                     boxShadow: "0 0 15px rgba(255, 255, 255, 0.6)",
                   }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-6 py-3 border border-white text-white rounded-full hover:bg-white hover:text-black transition-all duration-300 font-semibold text-base shadow-lg"
+                  className="px-6 py-3 border border-white text-white rounded-xl hover:bg-white hover:text-black transition-all duration-300 font-semibold text-base shadow-lg"
                 >
                   Contact Our Team
                 </motion.button>
@@ -1026,7 +1021,7 @@ const Architecture = () => {
         >
           <div className="p-4 sm:p-8 rounded-lg">
             {/* Title */}
-            <h4 className="text-[36px] sm:text-[48px] md:text-[54px] lg:text-[60px] font-extrabold text-[#0d3557] tracking-wide text-center leading-tight">
+            <h4 className="text-[36px] sm:text-[48px] md:text-[54px] lg:text-[40px] font-extrabold text-[#0d3557] tracking-wide text-center leading-tight">
               {tabData.faq.title}
             </h4>
 
@@ -1050,10 +1045,10 @@ const Architecture = () => {
                 >
                   <div className="mt-1">{faq.icon}</div>
                   <div>
-                    <h4 className="text-lg sm:text-xl md:text-2xl lg:text-[24px] font-bold text-[#0d3557]">
+                    <h4 className="text-[20px] font-bold text-[#0d3557]">
                       {faq.question}
                     </h4>
-                    <p className="text-gray-500 text-sm sm:text-base md:text-[16px] my-2 leading-relaxed">
+                    <p className="text-gray-500 text-[14px] my-2 leading-relaxed">
                       {faq.answer}
                     </p>
                   </div>
