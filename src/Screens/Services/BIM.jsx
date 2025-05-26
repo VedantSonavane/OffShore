@@ -35,9 +35,9 @@ const Architecture = () => {
 
   const tabData = {
     services: {
-      title: "Comprehensive Interior Design Services",
+      title: "Comprehensive BIM Design Services",
       description:
-        "We provide end-to-end Interior Design solutions from concept to completion. Our team delivers innovative designs tailored to your specific needs and vision.",
+        "We provide end-to-end BIM Design solutions from concept to completion. Our team delivers innovative designs tailored to your specific needs and vision.",
       image: architectureHero,
       features: [
 
@@ -47,9 +47,9 @@ const Architecture = () => {
         { name: "DESIGN DEVELOPMENT", image: serviceImage },
         { name: "CONSTRUCTION DOCUMENTS", image: serviceImage },
         { name: "SPACE PLANNING", image: serviceImage },
-        { name: "INTERIOR 3D MODELLING ", image: serviceImage },
-        { name: "360 DEGREE INTERIOR", image: serviceImage },
-        { name: "INTERIOR 3D Rendering", image: serviceImage },
+        { name: "BIM 3D MODELLING ", image: serviceImage },
+        { name: "360 DEGREE BIM", image: serviceImage },
+        { name: "BIM 3D Rendering", image: serviceImage },
         { name: "QUALITY CHECKS", image: serviceImage },
         { name: "BOQ AND MATERIAL TAKE OFF", image: serviceImage },
         { name: "MILLWORK DRAWINGS ", image: serviceImage },
@@ -106,14 +106,14 @@ const Architecture = () => {
     }
     ,
     "why-us": {
-      title: "Why Choose Our Interior Design Services?",
+      title: "Why Choose Our BIM Design Services?",
       description:
         "We combine creativity with technical expertise to deliver exceptional results.",
       image: whyUsImage,
       stats: [
-        { number: 250, label: "Interior Architects", max: 300, percentage: 83 },
-        { number: 21, label: "Countries", max: 20, percentage: 75 },
-        { number: 250, label: "Global Projects", max: 600, percentage: 83 },
+        { number: 250, label: "BIM Architects", max: 300, percentage: 83 },
+        { number: 15, label: "Countries", max: 20, percentage: 75 },
+        { number: 500, label: "Global Projects", max: 600, percentage: 83 },
       ],
       highlightedBenefits: [
         {
@@ -306,7 +306,7 @@ const Architecture = () => {
     }
     ,
     "get-started": {
-      title: "Start Your Interior Design Project Today",
+      title: "Start Your BIM Design Project Today",
       description:
         "Get in touch to discuss your project requirements and how we can help bring your vision to life.",
       image: getStartedImage,
@@ -452,35 +452,19 @@ const Architecture = () => {
                   transition={{ delay: 0.3, duration: 0.8 }}
                   className="text-[100px] font-extrabold tracking-wide mb-4 drop-shadow-2xl"
                 >
-                  Interior
+                  BIM
                 </h1>
 
-                <motion.div
-                  initial={{ y: 30, opacity: 0 }}
-                  animate={controls}
-                  className="text-[20px] regular gap-20  max-w-full mx-auto flex justify-around items-center"
-                >
-                  <div className="flex flex-col  regular items-center">
-                    <p className="text-[34px] ">
-                      60+
-                    </p>
-                    <p>Interiror Designers</p>
-                  </div>
-
-                  <div className="flex flex-col regular items-center">
-                    <p className="text-[34px] ">
-                      250+
-                    </p>
-                    <p>Interior Design Projects</p>
-                  </div>
-
-                  <div className="flex flex-col regular items-center">
-                    <p className="text-[34px] regular  ">
-                      21+
-                    </p>
-                    <p>Countries</p>
-                  </div>
-                </motion.div>
+                 <motion.p
+                            initial={{ y: 30, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            transition={{ delay: 0.7, duration: 0.2 }}
+                            className="text-[20px] font-light max-w-3xl mx-auto"
+                          >
+                            Offshore365 has completed over 200+ Large Scale Architectural Projects
+                            using BIM & CAD, produced in accordance with AIA and RIBA architecture
+                            standards.
+                          </motion.p>
               </>
             );
           })()}
@@ -574,7 +558,7 @@ const Architecture = () => {
             {/* LEFT: TEXT SECTION */}
             <div className="flex-1" data-aos="fade-right">
               <h1 className="text-[40px] font-bold mb-4 text-[#0d3557] tracking-wide leading-snug">
-                Efficient Design Documentation for interior professionals
+                Efficient Design Documentation for BIM professionals
 
               </h1>
               <p className="text-[20px]  text-gray-500 leading-relaxed">
