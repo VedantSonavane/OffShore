@@ -70,32 +70,32 @@ const Architecture = () => {
       ],
     },
     plans: {
-      title: "Pick the perfect plan for your team",
+      title: "Pick the perfect model for your team",
       description: "Choose from a variety of plans tailored to your needs.",
       image: plansImage,
       plans: [
         {
-          title: "Hourly Billing Model",
+          title: "Hourly Billing ",
           description: "Flexible billing based on hours worked.",
           backDescription: "Billing is based on team hours, ideal for dynamic, evolving project scopes."
         },
         {
-          title: "Fixed Fee Model",
+          title: "Fixed Fee ",
           description: "Set price for defined project scope.",
           backDescription: "A fixed cost is set upfront for clearly defined projects with stable requirements."
         },
         {
-          title: "Project Based Model",
+          title: "Project Based ",
           description: "Comprehensive pricing for entire projects.",
           backDescription: "Pricing aligns with project phases and milestones—great for phased delivery."
         },
         {
-          title: "Dedicated Team Model",
+          title: "Dedicated Team ",
           description: "Full-time team for ongoing collaboration.",
           backDescription: "A team works exclusively on your project—best for long-term collaboration."
         },
         {
-          title: "Performance Model",
+          title: "Performance Based",
           description: "Pricing tied to project outcomes.",
           backDescription: "Payment is based on results, motivating vendors to exceed targets."
         }
@@ -691,7 +691,7 @@ const Architecture = () => {
           className="py-16 sm:py-20 scroll-mt-20"
           id="plans"
         >
-          <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-full    ">
             <div className="text-center mb-8">
               <h1 className="text-[40px] tracking-wide text-[#0d3557] text-center  font-extrabold  mb-4">
                 {tabData.plans.title}
@@ -705,45 +705,68 @@ const Architecture = () => {
               {tabData.plans.plans.slice(0, 5).map((plan, index) => (
                 <motion.div
                   key={index}
-                  whileHover={{ scale: 1.02 }}
-                  className="flip-card"
+                  whileHover={{ scale: 1.05 }}
+                  className="group relative w-[250px] h-[200px] bg-blue-600 shadow-lg rounded-2xl overflow-hidden transition-all duration-500"
+                  style={{
+                    border: "2px solid transparent",
+                  }}
                 >
-                  <div className="flip-inner w-[300px] relative w-full h-full rounded-2xl shadow-lg border border-blue-500">
+                  {/* Wave Effect for Each Card with Multiple Shades of Blue */}
+                  {[...Array(3)].map((_, i) => (
+                    <div
+                      key={`wave-${index}-${i}`}
+                      className={`wave absolute w-[350px] h-[350px] opacity-50 left-0 ${i === 0 ? "top-0 -mt-[70%]" : "top-[150px]"} -ml-[50%] rounded-[40%]`}
+                      style={{
+                        background: i === 0 ? "#00008B" : i === 1 ? "#1E90FF" : "#00BFFF",
+                        animationDelay: `${i * 1}s`,
+                        animationDuration: `${5 + i * 2}s`,
+                      }}
+                    />
+                  ))}
 
-                    {/* FRONT SIDE */}
-                    <div className="flip-front absolute w-full h-full bg-gradient-to-br from-blue-500 to-blue-900 text-white rounded-2xl p-6 flex flex-col justify-between">
-                      <div>
-                        <h1 className="text-[28px] tracking-wide text-white text-left font-extrabold mb-4">
-                          {plan.title}
-                        </h1>
-                        <p className="text-[20px] text-left text-white/80 mb-16 leading-relaxed">
-                          {plan.description.slice(0, 60)}
-                        </p>
-                      </div>
-                      {/* Circle Arrow Button */}
-                      <div className="absolute bottom-4 right-4">
-                        <div className="w-10 h-10 rounded-full bg-white bg-blur-lg flex items-center justify-center text-blue-800 shadow-md">
-                          →
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* BACK SIDE */}
-                    <div className="flip-back absolute w-full h-full bg-gradient-to-br from-blue-500 to-blue-900 text-white rounded-2xl p-6 flex flex-col justify-between">
-                      <div>
-                        <p className="text-[20px] text-left text-white/80 mb-16 leading-relaxed">
-                          {plan.backDescription}</p>
-                      </div>
-                      <button className="w-full py-2 rounded-lg bg-white text-blue-700 font-semibold transition duration-300">
-                        Get started
-                      </button>
-                    </div>
-
+                  {/* Card Content - Centered */}
+                  <div className="relative z-10 flex flex-col items-center text-center justify-center h-full  text-white px-6">
+                    <h1 className="text-[20px] tracking-wider text-white font-regualr mb-2 transition-transform duration-300 group-hover:scale-110">
+                      {plan.title}
+                    </h1>
+                    <p className="text-[14px] text-white/80 mb-4 leading-relaxed transition-transform duration-300 group-hover:scale-110">
+                      {plan.description.slice(0, 60)}
+                    </p>
+                    <button className="w-full py-2 rounded-lg bg-white text-gray-500  font-light transition duration-300 hover:bg-gray-100">
+                      Get started
+                    </button>
                   </div>
                 </motion.div>
               ))}
             </div>
 
+            <style jsx>{`
+  .wave {
+    animation: wave 5s infinite linear;
+    pointer-events: none;
+  }
+
+  .wave:nth-child(2) {
+    animation-duration: 7s;
+  }
+
+  .wave:nth-child(3) {
+    animation-duration: 9s;
+  }
+
+  .group:hover .wave {
+    animation-play-state: paused;
+  }
+
+  @keyframes wave {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+`}</style>
 
 
           </div>
@@ -763,7 +786,7 @@ const Architecture = () => {
           <div className="flex flex-col lg:flex-row-reverse items-center gap-8 md:gap-12">
             {/* Right side content: title, description, stats, benefits */}
             <div className="flex-1" data-aos="fade-left">
-             
+
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 mb-8">
                 {tabData["why-us"].stats.map((stat, index) => (
                   <div
