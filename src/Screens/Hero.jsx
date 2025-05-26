@@ -126,7 +126,7 @@ const CardCarousel = () => {
                   <img src={card.image} alt={card.title} className="w-full h-full object-cover" />
                   <div className="absolute inset-0 flex top-[25rem] justify-center">
                     <motion.h2
-                      className="text-[34px] font-bold tracking-wide text-white"
+                      className="text-[34px] regular tracking-wide text-white"
                       initial={{ opacity: 0, scale: 0.8 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ delay: isActive ? 0.2 : 0 }}
@@ -176,7 +176,7 @@ const Hero = () => {
             className="w-full lg:w-5/12 text-center lg:text-left px-4 sm:px-8"
             initialX={-100}
           >
-            <h1 className="text-[60px] font-bold text-[#0d3557] leading-tight tracking-wide">
+            <h1 className="text-[60px] font-bold text-[#0d3557] leading-none tracking-wide">
               <AnimatedText text="Unlock" className=" text-[#0d3557" delay={0.2} />
               <br />
               <AnimatedText text="Infinite" className=" " delay={0.4} />
@@ -197,12 +197,12 @@ const Hero = () => {
               transition={{ duration: 0.6, delay: 1 }}
             >
               <motion.button
-                className="flex items-center text-[20px] justify-center gap-2 bg-[#256bff] text-white py-4  px-4  rounded-lg hover:bg-blue-700 transition-colors  sm:text-base"
+                className="flex items-center text-[20px]  w-80 justify-center gap-2 bg-[#256bff] text-white py-3  px-2  rounded-lg hover:bg-blue-700 transition-colors  sm:text-base"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 <motion.p
-                  className="inline-block "
+                  className="inline-block font-bold "
                   initial={{ x: 0 }}
                   whileHover={{ x: 5 }}
                   transition={{ duration: 0.3 }}
