@@ -118,17 +118,33 @@ const Architecture = () => {
         { number: 250, label: "Global Projects", max: 600, percentage: 83 },
       ],
       highlightedBenefits: [
+
         {
-          title: "Reduced Administrative Burden",
-          description:
-            "Offshore365 handles the administrative tasks associated with hiring and managing staff, such as recruitment, onboarding, and payroll. This allows clients to focus on their core business operations.",
+          title: "Delivery Models",
+          points: [
+            "Agile Design: Visualizing Creative Ideas",
+            "One Time Renderings - A three-step process to Realize Your Design Concept",
+            "Unreal Engine VR Walkthrough Package"
+          ]
         },
         {
-          title: "Time Zone Advantage",
-          description:
-            "Offshore teams can work while your in-house team is off, enabling faster project turnaround times and shorter project cycles. This can be a significant advantage for projects with tight deadlines.",
+          title: "Visualization Softwares",
+          points: [
+            "Expertise in 3ds Max",
+            "Unreal Engine Walkthroughs",
+            "Sketchup Renderings",
+            "Vray & Corona for high quality renderings"
+          ]
         },
-      ],
+        {
+          title: "Architectural Precision",
+          points: [
+            "The Renderings are Architecturally precise",
+            "3D team collaborates closely with architects and designers to grasp space dimensions"
+          ]
+        }
+      ]
+      ,
       benefits: [
         {
           title: "AEC Expertise",
@@ -774,8 +790,9 @@ const Architecture = () => {
 
 
             {/* Highlighted Benefits */}
-            <div className="grid grid-cols-2 sm:grid-cols-2 gap-6 w-full">
-              {tabData["why-us"].highlightedBenefits.map((benefit, index) => (
+            {/* Highlighted Benefits */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+              {tabData?.["why-us"]?.highlightedBenefits?.map((benefit, index) => (
                 <motion.div
                   key={index}
                   whileHover={{
@@ -786,10 +803,10 @@ const Architecture = () => {
                   data-aos="fade-up"
                   data-aos-delay={index * 100}
                 >
-                  <div className="flex items-start mb-2">
-                    <div className="bg-green-800 rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0">
+                  <div className="flex items-start mb-4">
+                    <div className="bg-green-800 rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">
                       <svg
-                        className="w-4 h-4 text-white"
+                        className="w-6 h-6 text-white"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -802,16 +819,25 @@ const Architecture = () => {
                         />
                       </svg>
                     </div>
-                    <h1 className="text-[18px]  text-green-800 tracking-wide font-semibold">
+                    <h1 className="text-[28px] text-green-800 tracking-wide font-semibold">
                       {benefit.title}
                     </h1>
                   </div>
-                  <p className="text-[16px] text-[#0d3557] leading-relaxed">
-                    {benefit.description}
-                  </p>
+
+                  {/* Custom bullet points with dark green circle */}
+                  <ul className="space-y-2 pl-2">
+                    {benefit.points?.map((point, i) => (
+                      <li key={i} className="flex items-start text-[#0d3557] regular text-[16px] leading-relaxed">
+                        <span className="w-2 h-2 mt-2 mr-3 rounded-full bg-green-600 flex-shrink-0"></span>
+                        <span className="regular">{point}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </motion.div>
               ))}
             </div>
+
+
 
             {/* Points List */}
 
