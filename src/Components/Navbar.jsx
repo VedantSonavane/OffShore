@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 import { Menu, X, ChevronDown, Users, Mail, Briefcase, FileText, Home, Zap, Award, Calendar } from "lucide-react";
 import toggleIcon from '../assets/toggle.png';
 
@@ -7,6 +8,7 @@ const Navbar = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [moreToggle, setMoreToggle] = useState(false);
   const [dropdownTimeout, setDropdownTimeout] = useState(null);
+  const navigate = useNavigate(); // Initialize useNavigate
 
   const navLinks = [
     { label: "Architecture", href: "/architecture" },
@@ -24,13 +26,13 @@ const Navbar = () => {
     { id: "plans", label: "Plans", icon: Briefcase },
     { id: "why-us", label: "Why Us?", icon: Award },
     { id: "get-started", label: "Get Started", icon: Calendar },
-    { id: "faq", label: "FAQ", icon: FileText }
+    { id: "faq", label: "FAQ", icon: FileText },
   ];
 
   const moreLinks = [
     { label: "About Us", href: "/about", icon: Users },
-    { label: "Carrer", href: "/carrers", icon: Briefcase },
-    { label: "Blogs", href: "/Blogs", icon: FileText },
+    { label: "Careers", href: "/careers", icon: Briefcase }, // Fix typo
+    { label: "Blogs", href: "/blogs", icon: FileText }, // Fix capitalization
     { label: "Contact", href: "/contact", icon: Mail },
   ];
 
@@ -46,7 +48,7 @@ const Navbar = () => {
     const timeout = setTimeout(() => {
       setActiveDropdown(null);
       setMoreToggle(false);
-    }, 200); // 1.5 seconds delay
+    }, 200);
     setDropdownTimeout(timeout);
   };
 
@@ -61,7 +63,7 @@ const Navbar = () => {
   const handleMoreLeave = () => {
     const timeout = setTimeout(() => {
       setMoreToggle(false);
-    }, 200); // 1.5 seconds delay
+    }, 200);
     setDropdownTimeout(timeout);
   };
 
@@ -84,7 +86,7 @@ const Navbar = () => {
   }, [dropdownTimeout]);
 
   const handleLinkClick = (href) => {
-    window.location.href = href; // Actual page navigation
+    navigate(href); // Use navigate instead of window.location.href
     closeDropdowns();
   };
 
@@ -118,12 +120,9 @@ const Navbar = () => {
                   >
                     {link.label}
                     <ChevronDown
-                      className={`ml-1 h-4 w-4 transition-transform duration-300 ${activeDropdown === index ? 'rotate-180' : ''
-                        }`}
+                      className={`ml-1 h-4 w-4 transition-transform duration-300 ${activeDropdown === index ? 'rotate-180' : ''}`}
                     />
                   </button>
-
-                  {/* Dropdown Menu - Only Tabs */}
                   {activeDropdown === index && (
                     <div className="absolute left-0 mt-[14px] w-80 bg-white rounded-br-2xl rounded-bl-2xl shadow-2xl border border-gray-100 z-50 transform animate-in fade-in zoom-in duration-200">
                       <div className="p-3">
@@ -133,7 +132,7 @@ const Navbar = () => {
                             return (
                               <button
                                 key={tab.id}
-                                onClick={() => handleLinkClick(link.href)} // Redirect to parent navLink href
+                                onClick={() => handleLinkClick(`${link.href}#${tab.id}`)} // Navigate to section
                                 className="flex items-center space-x-3 p-3 rounded-xl hover:bg-gray-50 transition-all duration-200 transform hover:scale-[1.02] text-left"
                               >
                                 <IconComponent size={18} className="text-blue-600" />
@@ -156,9 +155,8 @@ const Navbar = () => {
               onClick={() => handleLinkClick('/schedule')}
               className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm regular transition-all duration-200 transform hover:scale-105 flex items-center space-x-2"
             >
-              <span className="regular">   Schedule a  Meet</span>
+              <span className="regular">Schedule a Meet</span>
             </button>
-
             <div
               className="relative more-toggle"
               onMouseEnter={handleMoreToggle}
@@ -167,10 +165,9 @@ const Navbar = () => {
               <button
                 className="relative w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110 bg-gradient-to-br from-blue-100 via-blue-700 to-blue-900 overflow-hidden animate-gradient"
               >
-                {/* Diagonal glowing curved lines */}
                 <span className="absolute inset-0 animate-diagonal-line">
                   <svg
-                    className="w-20 h-20 absolute -top-10 -left-10 rotate-45  blur-sm"
+                    className="w-20 h-20 absolute -top-10 -left-10 rotate-45 blur-sm"
                     viewBox="0 0 100 100"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
@@ -184,11 +181,6 @@ const Navbar = () => {
                   </svg>
                 </span>
               </button>
-
-
-
-
-              {/* More Dropdown */}
               {moreToggle && (
                 <div className="absolute right-0 mt-[13px] w-64 bg-white rounded-br-2xl rounded-bl-2xl shadow-2xl border border-gray-100 z-50 transform animate-in fade-in zoom-in duration-200">
                   <div className="p-4">
@@ -243,8 +235,6 @@ const Navbar = () => {
                   <X size={20} />
                 </button>
               </div>
-
-              {/* Mobile Navigation Links */}
               <div className="space-y-2 mb-6">
                 {navLinks.map((link, index) => (
                   <div
@@ -262,7 +252,6 @@ const Navbar = () => {
                     >
                       {link.label}
                     </button>
-                    {/* Mobile Dropdown Tabs */}
                     {activeDropdown === index && (
                       <div className="pl-4 space-y-1">
                         {tabs.map((tab) => {
@@ -271,7 +260,7 @@ const Navbar = () => {
                             <button
                               key={tab.id}
                               onClick={() => {
-                                handleLinkClick(link.href); // Redirect to parent navLink href
+                                handleLinkClick(`${link.href}#${tab.id}`);
                                 setMobileOpen(false);
                               }}
                               className="flex items-center space-x-2 w-full p-2 text-left rounded-lg hover:bg-gray-50 transition-all duration-200 transform hover:scale-[1.02]"
@@ -286,8 +275,6 @@ const Navbar = () => {
                   </div>
                 ))}
               </div>
-
-              {/* Mobile More Links */}
               <div className="border-t border-gray-200 pt-4 space-y-2">
                 <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">More</h3>
                 {moreLinks.map((link, idx) => {
@@ -307,8 +294,6 @@ const Navbar = () => {
                   );
                 })}
               </div>
-
-              {/* Mobile Schedule Button */}
               <div className="border-t border-gray-200 pt-4 mt-6">
                 <button
                   onClick={() => {
@@ -317,7 +302,7 @@ const Navbar = () => {
                   }}
                   className="w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 rounded-lg text-center font-medium transition-all duration-200 transform hover:scale-[1.02] flex items-center justify-center space-x-2"
                 >
-                  <span>   Schedule a  Meet</span>
+                  <span>Schedule a Meet</span>
                 </button>
               </div>
             </div>
