@@ -436,7 +436,7 @@ const Architecture = () => {
         className={`z-20 bg-blue-500 backdrop-blur-xl shadow-lg transition-all duration-300 ${isSticky ? "fixed top-[64px] left-0 right-0 shadow-xl" : "relative"
           }`}
       >
-        <div className="container flex justify-center items-center mx-auto ">
+        <div className="container flex justify-center items-start mx-auto ">
           <div className="flex overflow-x-auto scrollbar-hide py-3">
             {tabs.map((tab) => (
               <motion.button
@@ -473,7 +473,7 @@ const Architecture = () => {
           id="services"
           data-aos="fade-up"
         >
-          <div className="flex flex-col lg:flex-row items-center gap-4  px-4 sm:px-8">
+          <div className="flex flex-col lg:flex-row items-start gap-4  px-4 sm:px-8">
             {/* LEFT: TEXT SECTION */}
             <div className="flex-1" data-aos="fade-right">
               <h1 className="text-[40px] font-bold mb-4 text-[#0d3557] tracking-wide leading-snug">
@@ -495,7 +495,7 @@ const Architecture = () => {
                   <motion.div
                     key={index}
                     whileHover={{ scale: 1.05, backgroundColor: "#f1f5f9" }}
-                    className="flex items-center p-2 bg-white rounded-xl   hover:shadow-lg transition-all duration-300"
+                    className="flex items-start p-2 bg-white rounded-xl   hover:shadow-lg transition-all duration-300"
                     data-aos="fade-up"
                     data-aos-delay={index * 100}
                   >
@@ -582,7 +582,7 @@ const Architecture = () => {
           id="tools"
           data-aos="fade-up"
         >
-          <div className="container max-w-4xl mx-auto flex flex-col lg:flex-row items-center gap-4">
+          <div className="container max-w-4xl mx-auto flex flex-col lg:flex-row items-start gap-4">
             <div className="flex-1" data-aos="fade-left">
               <h1 className="text-[32px] sm:text-[40px] tracking-wide text-[#0d3557] text-justify font-extrabold mb-4">
                 {tabData.tools.title}
@@ -594,7 +594,7 @@ const Architecture = () => {
                 {tabData.tools.software.slice(0, 8).map((tool, index) => (
                   <motion.div
                     key={index}
-                    className="flex flex-col items-center hover:scale-105 transition-all duration-300"
+                    className="flex flex-col items-start hover:scale-105 transition-all duration-300"
                     data-aos="fade-up"
                     data-aos-delay={index * 100}
                   >
@@ -718,7 +718,7 @@ const Architecture = () => {
           id="why-us"
           data-aos="zoom-in"
         >
-          <div className="flex flex-col lg:flex-row-reverse items-center gap-8 md:gap-12">
+          <div className="flex flex-col lg:flex-row-reverse items-start gap-8 md:gap-12">
             {/* Right side content: title, description, stats, benefits */}
             <div className="flex-1" data-aos="fade-left">
 
@@ -757,7 +757,7 @@ const Architecture = () => {
                     data-aos="fade-up"
                     data-aos-delay={index * 100}
                   >
-                    <div className="flex items-center mb-2">
+                    <div className="flex items-start mb-2">
                       <div className="bg-blue-800 rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0">
                         <svg
                           className="w-4 h-4 text-white"
@@ -810,7 +810,7 @@ const Architecture = () => {
                   <motion.div
                     key={index}
                     whileHover={{ scale: 1.05, backgroundColor: "#f1f5f9" }}
-                    className="flex items-center p-2 bg-white rounded-lg  hover:shadow-lg transition-all duration-300"
+                    className="flex items-start p-2 bg-white rounded-lg  hover:shadow-lg transition-all duration-300"
                     data-aos="fade-up"
                     data-aos-delay={index * 100}
                   >
@@ -847,10 +847,10 @@ const Architecture = () => {
               {tabData["why-us"].benefits.map((benefit, index) => (
                 <div
                   key={index}
-                  className="flex flex-col items-center text-center bg-white rounded-3xl shadow-md p-8 border border-gray-200 transform transition-all duration-300 hover:scale-105 hover:bg-blue-500 hover:text-white hover:shadow-2xl"
+                  className="flex flex-col items-start text-center bg-white rounded-3xl shadow-md p-8 border border-gray-200 transform transition-all duration-300 hover:scale-105 hover:bg-blue-500 hover:text-white hover:shadow-2xl"
                 >
                   <div className="mb-6 p-2">
-                    <div className="flex items-center justify-center w-12 h-12 border border-blue-500 rounded-full bg-blue-100 text-blue-600 shadow-md transition-all duration-300 group-hover:bg-white group-hover:text-blue-800">
+                    <div className="flex items-start justify-center w-12 h-12 border border-blue-500 rounded-full bg-blue-100 text-blue-600 shadow-md transition-all duration-300 group-hover:bg-white group-hover:text-blue-800">
                       <svg
                         className="w-6 h-6"
                         fill="none"
@@ -920,7 +920,7 @@ const Architecture = () => {
             </motion.p>
 
             {/* Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-6 sm:mt-8">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-start mt-6 sm:mt-8">
               <motion.button
                 whileHover={{
                   scale: 1.05,

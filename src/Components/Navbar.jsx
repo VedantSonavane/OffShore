@@ -165,7 +165,7 @@ const Navbar = () => {
               onMouseLeave={handleMoreLeave}
             >
               <button
-                className="relative w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110 bg-gradient-to-br from-blue-100 via-blue-700 to-blue-900 overflow-hidden"
+                className="relative w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110 bg-gradient-to-br from-blue-100 via-blue-700 to-blue-900 overflow-hidden animate-gradient"
               >
                 {/* Diagonal glowing curved lines */}
                 <span className="absolute inset-0 animate-diagonal-line">
