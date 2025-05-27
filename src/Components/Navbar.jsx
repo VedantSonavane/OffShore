@@ -12,7 +12,7 @@ const Navbar = () => {
     { label: "Architecture", href: "/architecture" },
     { label: "Interior", href: "/interior" },
     { label: "BIM", href: "/bim" },
-    { label: "3DVisualization", href: "/3dvisualization" },
+    { label: "3D Visualization", href: "/3dvisualization" },
     { label: "IT", href: "/it" },
     { label: "Marketing", href: "/marketing" },
     { label: "Admin", href: "/admin" },

@@ -85,10 +85,10 @@ const FeatureCard = React.memo(({ data, dataIndex }) => {
       animate="visible"
     >
       <div className="flex flex-col justify-start relative z-20">
-        <h3 className="text-[36px] tracking-wide font-bold text-gray-900 mb-4 text-left tracking-tight group-hover:text-white transition-colors duration-500">
+        <h3 className="text-[36px] tracking-wide font-bold text-[#0d3557] mb-4 text-left tracking-tight group-hover:text-white transition-colors duration-500">
           {data.title}
         </h3>
-        <p className="text-[16px] text-gray-500 text-left leading-relaxed group-hover:text-white transition-colors duration-500">
+        <p className="text-[16px] text-[#0d3557] text-left leading-relaxed group-hover:text-white transition-colors duration-500">
           {data.description}
         </p>
       </div>
@@ -150,7 +150,7 @@ const Features = () => {
         Innovate with Offshore 365
       </h1>
 
-      <p className="text-[20px] text-gray-500 mb-12 max-w-2xl mx-auto ">
+      <p className="text-[20px] text-[#0d3557] mb-12 max-w-2xl mx-auto ">
         Deliver seamless projects with our exceptional expertise
       </p>
 

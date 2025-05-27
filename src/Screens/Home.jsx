@@ -20,8 +20,9 @@ const Home = () => {
             <Features />
             <Steps />
             <Models />
+              <Testimonials />
             <Scheduling />
-            <Testimonials />
+          
             {/* <FAQ /> */}
             <Contact />
 

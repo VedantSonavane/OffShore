@@ -53,8 +53,8 @@ const Architecture = () => {
       ],
     },
     tools: {
-      title: "Seamless collaboration with offshore AEC 365 experts.",
-      description: "Boost productivity with 100+ integrations",
+      title: "Connect with Offshore365 with the tools to already use",
+      description: "Collaborate effortlessly with offshore 365 experts proficient in Autocad, Revit, SketchUp, and your entire AEC software suite.",
       image: toolsImage,
       software: [
         { name: "Zoom", icon: "Z" },
@@ -473,15 +473,15 @@ const Architecture = () => {
           id="services"
           data-aos="fade-up"
         >
-          <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-12 px-4 sm:px-8">
+          <div className="flex flex-col lg:flex-row items-center gap-4  px-4 sm:px-8">
             {/* LEFT: TEXT SECTION */}
             <div className="flex-1" data-aos="fade-right">
               <h1 className="text-[40px] font-bold mb-4 text-[#0d3557] tracking-wide leading-snug">
                 Amplify Productivity with Offshore 365
               </h1>
-              <p className="text-[20px]  text-gray-500 leading-relaxed">
-                Offshore 365 delivers end to end documentation services to a diverse range of sectors,
-                supported by our global team, we empower your projects with accuracy, quality, and efficiency,
+              <p className="text-[18px]  text-gray-500 leading-relaxed">
+                Offshore 365 delivers end to end documentation services to <br /> a diverse range of sectors,
+                supported by our global team, <br /> we empower your projects with accuracy, quality, and efficiency, <br />
                 no matter the scale or complexity.
               </p>
             </div>
@@ -490,12 +490,12 @@ const Architecture = () => {
             {/* RIGHT: FEATURES + CAROUSEL */}
             <div className="flex-1 flex flex-col gap-6" data-aos="fade-left">
               {/* Feature boxes */}
-              <div className="grid grid-cols-2 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 sm:grid-cols-2 gap-2">
                 {features.map((feature, index) => (
                   <motion.div
                     key={index}
                     whileHover={{ scale: 1.05, backgroundColor: "#f1f5f9" }}
-                    className="flex items-center p-4 bg-white rounded-xl border border-blue-500 shadow-md hover:shadow-lg transition-all duration-300"
+                    className="flex items-center p-2 bg-white rounded-xl   hover:shadow-lg transition-all duration-300"
                     data-aos="fade-up"
                     data-aos-delay={index * 100}
                   >
@@ -582,16 +582,16 @@ const Architecture = () => {
           id="tools"
           data-aos="fade-up"
         >
-          <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-12">
+          <div className="flex flex-col lg:flex-row items-center gap-2 ">
 
-            <div className="flex-1" data-aos="fade-left">
-              <h1 className="text-[40px] tracking-wide text-[#0d3557] text-center  font-extrabold  mb-4">
+            <div className="flex-1 " data-aos="fade-left">
+              <h1 className="text-[40px]  tracking-wide text-[#0d3557] text-center  font-extrabold  mb-4">
                 {tabData.tools.title}
               </h1>
               <p className="text-[20px]  text-center text-gray-500 mb-16 leading-relaxed">
                 {tabData.tools.description}
               </p>
-              <div className="grid grid-cols-4 sm:grid-cols-4 gap-4">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                 {tabData.tools.software.slice(0, 8).map((tool, index) => (
                   <motion.div
                     key={index}
@@ -606,7 +606,7 @@ const Architecture = () => {
                       <img
                         src={figmaLogo}
                         alt={tool.name}
-                        className="w-full h-full object-contain bg-white p-2"
+                        className="w-full h-full object-contain bg-white "
                       />
                     </motion.div>
                   </motion.div>
@@ -796,7 +796,7 @@ const Architecture = () => {
               <h1 className="text-[40px] font-bold mb-8 text-[#0d3557] tracking-wide leading-snug">
                 Transform the way your organisation works
               </h1>
-              <div className="grid grid-cols-2 gap-4 text-gray-800">
+              <div className="grid grid-cols-2 gap-2 text-gray-800">
                 {[
                   "AEC Expertise",
                   "Global Talent",
@@ -810,7 +810,7 @@ const Architecture = () => {
                   <motion.div
                     key={index}
                     whileHover={{ scale: 1.05, backgroundColor: "#f1f5f9" }}
-                    className="flex items-center p-4 bg-white rounded-xl border border-blue-500 shadow-md hover:shadow-lg transition-all duration-300"
+                    className="flex items-center p-2 bg-white  hover:shadow-lg transition-all duration-300"
                     data-aos="fade-up"
                     data-aos-delay={index * 100}
                   >
