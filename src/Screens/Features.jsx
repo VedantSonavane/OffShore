@@ -173,7 +173,7 @@ const Features = () => {
         <div className="absolute top-0 left-0 w-24 h-full z-10 bg-gradient-to-r from-white via-white/80 to-transparent pointer-events-none"></div>
         <div className="absolute top-0 right-0 w-24 h-full z-10 bg-gradient-to-l from-white via-white/80 to-transparent pointer-events-none"></div>
 
-        <p className="text-[20px] text-gray-500 mb-12 max-w-2xl mx-auto leading-relaxed" data-aos="fade-right">
+        <p className="text-[20px] text-[#0d3557] mb-12 max-w-2xl mx-auto leading-relaxed" data-aos="fade-right">
           We bring together the finest talent and the most advanced technologies to empower your business.
         </p>
 
@@ -201,7 +201,7 @@ const Features = () => {
                       alt={tool}
                       className="w-10 h-10"
                     />
-                    <p className="text-sm text-gray-600 mt-2">{tool}</p>
+                    <p className="text-sm text-[#0d3557] mt-2">{tool}</p>
                   </div>
                 ))}
               </div>

@@ -54,7 +54,7 @@ const Architecture = () => {
     },
     tools: {
       title: "Connect with Offshore365 with the tools to already use",
-      description: "Collaborate effortlessly with offshore 365 experts proficient in Autocad, Revit, SketchUp, and your entire AEC software suite.",
+      description: "Work seamlessly with offshore experts skilled in leading AEC software.",
       image: toolsImage,
       software: [
         { name: "Zoom", icon: "Z" },
@@ -167,74 +167,74 @@ const Architecture = () => {
           "Our academy provides comprehensive training programs aligned with international standards, ensuring our professionals are equipped with the latest skills and knowledge in the AEC industry.",
       },
     },
- faq: {
-  title: "FAQ",
-  description: "Here are some of the frequently asked questions",
-  faqs: [
-    {
-      question: "What architectural design services do you offer?",
-      answer:
-        "We provide schematic design, concept development, construction documentation, 3D rendering, walkthroughs, interior design, flythroughs, 360° views, and high-quality visualizations.",
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path d="M12 14l9-5-9-5-9 5 9 5z" />
-          <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
-        </svg>
-      ),
+    faq: {
+      title: "FAQ",
+      description: "Here are some of the frequently asked questions",
+      faqs: [
+        {
+          question: "What architectural design services do you offer?",
+          answer:
+            "We provide schematic design, concept development, construction documentation, 3D rendering, walkthroughs, interior design, flythroughs, 360° views, and high-quality visualizations.",
+          icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path d="M12 14l9-5-9-5-9 5 9 5z" />
+              <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
+            </svg>
+          ),
+        },
+        {
+          question: "How can our firm benefit from outsourcing architectural services?",
+          answer:
+            "Outsourcing helps reduce costs, access expert talent, improve project delivery speed, and lets you focus on core competencies without expanding internal resources.",
+          icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+          ),
+        },
+        {
+          question: "Do you provide permit drawings as per U.S. building codes?",
+          answer:
+            "We can help guide and review permit drawings for compliance with U.S. building codes, but we do not stamp final drawings for permit submission.",
+          icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+            </svg>
+          ),
+        },
+        {
+          question: "How do you ensure accuracy and quality in your work?",
+          answer:
+            "Our certified designers follow strict quality protocols, detailed reviews, and building codes, ensuring accurate, high-standard outputs on every project.",
+          icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+            </svg>
+          ),
+        },
+        {
+          question: "How does your team collaborate with in-house architects?",
+          answer:
+            "Our team integrates closely with your architects to align on design intent, offer support where needed, and ensure seamless documentation and execution.",
+          icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
+            </svg>
+          ),
+        },
+        {
+          question: "Do you offer dedicated teams for long-term architectural support?",
+          answer:
+            "Yes, we provide dedicated design teams for ongoing partnerships, offering consistent, customized support to match your firm’s workflow and goals.",
+          icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z" />
+            </svg>
+          ),
+        },
+      ],
     },
-    {
-      question: "How can our firm benefit from outsourcing architectural services?",
-      answer:
-        "Outsourcing helps reduce costs, access expert talent, improve project delivery speed, and lets you focus on core competencies without expanding internal resources.",
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-        </svg>
-      ),
-    },
-    {
-      question: "Do you provide permit drawings as per U.S. building codes?",
-      answer:
-        "We can help guide and review permit drawings for compliance with U.S. building codes, but we do not stamp final drawings for permit submission.",
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
-        </svg>
-      ),
-    },
-    {
-      question: "How do you ensure accuracy and quality in your work?",
-      answer:
-        "Our certified designers follow strict quality protocols, detailed reviews, and building codes, ensuring accurate, high-standard outputs on every project.",
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
-        </svg>
-      ),
-    },
-    {
-      question: "How does your team collaborate with in-house architects?",
-      answer:
-        "Our team integrates closely with your architects to align on design intent, offer support where needed, and ensure seamless documentation and execution.",
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
-        </svg>
-      ),
-    },
-    {
-      question: "Do you offer dedicated teams for long-term architectural support?",
-      answer:
-        "Yes, we provide dedicated design teams for ongoing partnerships, offering consistent, customized support to match your firm’s workflow and goals.",
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z" />
-        </svg>
-      ),
-    },
-  ],
-},
 
     "get-started": {
       title: "Start Your Architectural Excellence Project Today",
@@ -479,7 +479,7 @@ const Architecture = () => {
               <h1 className="text-[40px] font-bold mb-4 text-[#0d3557] tracking-wide leading-snug">
                 Amplify Productivity with Offshore 365
               </h1>
-              <p className="text-[18px]  text-gray-500 leading-relaxed">
+              <p className="text-[18px]  text-[#0d3557] leading-relaxed">
                 Offshore 365 delivers end to end documentation services to <br /> a diverse range of sectors,
                 supported by our global team, <br /> we empower your projects with accuracy, quality, and efficiency, <br />
                 no matter the scale or complexity.
@@ -514,7 +514,7 @@ const Architecture = () => {
                         />
                       </svg>
                     </div>
-                    <span className="text-gray-800 regular text-[14px]">{feature.name}</span>
+                    <span className="text-[#0d3557] regular text-[14px]">{feature.name}</span>
                   </motion.div>
                 ))}
               </div>
@@ -558,7 +558,7 @@ const Architecture = () => {
                             className="w-full h-full object-cover"
                           />
                         </div>
-                        <span className="text-gray-800 regular text-[10px] text-center">
+                        <span className="text-[#0d3557] regular text-[10px] text-center">
                           {feature.name}
                         </span>
                       </div>
@@ -582,16 +582,15 @@ const Architecture = () => {
           id="tools"
           data-aos="fade-up"
         >
-          <div className="flex flex-col lg:flex-row items-center gap-2 ">
-
-            <div className="flex-1 " data-aos="fade-left">
-              <h1 className="text-[40px]  tracking-wide text-[#0d3557] text-center  font-extrabold  mb-4">
+          <div className="container max-w-4xl mx-auto flex flex-col lg:flex-row items-center gap-4">
+            <div className="flex-1" data-aos="fade-left">
+              <h1 className="text-[32px] sm:text-[40px] tracking-wide text-[#0d3557] text-justify font-extrabold mb-4">
                 {tabData.tools.title}
               </h1>
-              <p className="text-[20px]  text-center text-gray-500 mb-16 leading-relaxed">
+              <p className="text-[18px] sm:text-[20px] text-left text-[#0d3557] mb-12 sm:mb-16 leading-relaxed">
                 {tabData.tools.description}
               </p>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+              <div className="grid grid-cols-3 sm:grid-cols-4 gap-0 justify-items-center">
                 {tabData.tools.software.slice(0, 8).map((tool, index) => (
                   <motion.div
                     key={index}
@@ -601,12 +600,12 @@ const Architecture = () => {
                   >
                     <motion.div
                       whileHover={{ scale: 1.05 }}
-                      className="w-24 h-24 rounded-2xl overflow-hidden mb-2"
+                      className="w-20 h-20 sm:w-24 sm:h-24 rounded-xl overflow-hidden mb-1 sm:mb-2"
                     >
                       <img
                         src={figmaLogo}
                         alt={tool.name}
-                        className="w-full h-full object-contain bg-white "
+                        className="w-full h-full object-contain bg-white"
                       />
                     </motion.div>
                   </motion.div>
@@ -615,6 +614,7 @@ const Architecture = () => {
             </div>
           </div>
         </motion.section>
+
 
         {/* Plans Section */}
         <motion.section
@@ -631,7 +631,7 @@ const Architecture = () => {
               <h1 className="text-[40px] tracking-wide text-[#0d3557] text-center  font-extrabold  mb-4">
                 {tabData.plans.title}
               </h1>
-              <p className="text-[20px]  text-center text-gray-500 mb-16 leading-relaxed">
+              <p className="text-[20px]  text-center text-[#0d3557] mb-16 leading-relaxed">
                 {tabData.plans.description}
               </p>
             </div>
@@ -667,7 +667,7 @@ const Architecture = () => {
                     <p className="text-[14px] text-white/80 mb-4 leading-relaxed transition-transform duration-300 group-hover:scale-110">
                       {plan.description.slice(0, 60)}
                     </p>
-                    <button className="w-full py-2 rounded-lg bg-white text-gray-500  font-light transition duration-300 hover:bg-gray-100">
+                    <button className="w-full py-2 rounded-lg bg-white text-[#0d3557]  regular transition duration-300 hover:bg-gray-100">
                       Get started
                     </button>
                   </div>
@@ -730,10 +730,10 @@ const Architecture = () => {
                     data-aos="fade-up"
                     data-aos-delay={index * 100}
                   >
-                    <div className="text-[34px] mt-4 font-bold mb-2">
+                    <div className="text-[34px] text-[#0d3557] mt-4 font-bold mb-2">
                       {stat.number}+
                     </div>
-                    <div className="text-[20px] regular text-gray-500 mb-2">{stat.label}</div>
+                    <div className="text-[20px] regular text-[#0d3557] mb-2">{stat.label}</div>
                     <div className="w-full bg-blue-300 rounded-full h-2.5">
                       <motion.div
                         className="bg-blue-500 h-2.5 rounded-full"
@@ -777,7 +777,7 @@ const Architecture = () => {
                         {benefit.title}
                       </h1>
                     </div>
-                    <p className="text-[16px] text-gray-500 leading-relaxed">
+                    <p className="text-[16px] text-[#0d3557] leading-relaxed">
                       {benefit.description}
                     </p>
                   </motion.div>
@@ -810,7 +810,7 @@ const Architecture = () => {
                   <motion.div
                     key={index}
                     whileHover={{ scale: 1.05, backgroundColor: "#f1f5f9" }}
-                    className="flex items-center p-2 bg-white  hover:shadow-lg transition-all duration-300"
+                    className="flex items-center p-2 bg-white rounded-lg  hover:shadow-lg transition-all duration-300"
                     data-aos="fade-up"
                     data-aos-delay={index * 100}
                   >
@@ -827,7 +827,7 @@ const Architecture = () => {
                         <path d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <span className="text-[14px] regular">{point}</span>
+                    <span className="text-[14px] text-[#0d3557]  regular">{point}</span>
                   </motion.div>
                 ))}
               </div>
@@ -984,7 +984,7 @@ const Architecture = () => {
             </h4>
 
             {/* Subtitle */}
-            <p className="text-center text-gray-500 text-base sm:text-lg md:text-xl lg:text-[20px] mt-2 max-w-3xl mx-auto">
+            <p className="text-center text-[#0d3557] text-base sm:text-lg md:text-xl lg:text-[20px] mt-2 max-w-3xl mx-auto">
               {tabData.faq.description}
             </p>
 
@@ -1006,7 +1006,7 @@ const Architecture = () => {
                     <h4 className="text-[20px] font-bold text-[#0d3557]">
                       {faq.question}
                     </h4>
-                    <p className="text-gray-500 text-[14px] my-2 leading-relaxed">
+                    <p className="text-[#0d3557] text-[14px] my-2 leading-relaxed">
                       {faq.answer}
                     </p>
                   </div>

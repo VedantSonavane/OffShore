@@ -94,8 +94,8 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <div 
-              className="flex items-center cursor-pointer transform transition-all duration-200 hover:scale-105" 
+            <div
+              className="flex items-center cursor-pointer transform transition-all duration-200 hover:scale-105"
               onClick={() => handleLinkClick('/')}
             >
               <span className="text-[24px] regular text-blue-600">OffShore365</span>
@@ -106,8 +106,8 @@ const Navbar = () => {
           <div className="hidden lg:block">
             <div className="flex items-center space-x-1">
               {navLinks.map((link, index) => (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                   className="relative dropdown-container"
                   onMouseEnter={() => handleDropdownToggle(index)}
                   onMouseLeave={closeDropdowns}
@@ -117,13 +117,12 @@ const Navbar = () => {
                     className="flex items-center text-gray-700 hover:text-blue-600 px-3 py-2 text-sm regular transition-all duration-200 rounded-lg hover:bg-gray-50 transform hover:scale-105"
                   >
                     {link.label}
-                    <ChevronDown 
-                      className={`ml-1 h-4 w-4 transition-transform duration-300 ${
-                        activeDropdown === index ? 'rotate-180' : ''
-                      }`} 
+                    <ChevronDown
+                      className={`ml-1 h-4 w-4 transition-transform duration-300 ${activeDropdown === index ? 'rotate-180' : ''
+                        }`}
                     />
                   </button>
-                  
+
                   {/* Dropdown Menu - Only Tabs */}
                   {activeDropdown === index && (
                     <div className="absolute left-0 mt-[14px] w-80 bg-white rounded-br-2xl rounded-bl-2xl shadow-2xl border border-gray-100 z-50 transform animate-in fade-in zoom-in duration-200">
@@ -159,19 +158,36 @@ const Navbar = () => {
             >
               <span className="regular">   Schedule a  Meet</span>
             </button>
-            
-            <div 
+
+            <div
               className="relative more-toggle"
               onMouseEnter={handleMoreToggle}
               onMouseLeave={handleMoreLeave}
             >
-             <button
-  className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110 bg-gradient-to-br from-blue-100 via-blue-700 to-blue-900 animate-gradient`}
->
-  {/* Removed <img> */}
-</button>
+              <button
+                className="relative w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110 bg-gradient-to-br from-blue-100 via-blue-700 to-blue-900 overflow-hidden"
+              >
+                {/* Diagonal glowing curved lines */}
+                <span className="absolute inset-0 animate-diagonal-line">
+                  <svg
+                    className="w-20 h-20 absolute -top-10 -left-10 rotate-45  blur-sm"
+                    viewBox="0 0 100 100"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0,50 Q25,30 50,50 T100,50"
+                      stroke="white"
+                      strokeWidth="2"
+                      fill="white"
+                    />
+                  </svg>
+                </span>
+              </button>
 
-              
+
+
+
               {/* More Dropdown */}
               {moreToggle && (
                 <div className="absolute right-0 mt-[13px] w-64 bg-white rounded-br-2xl rounded-bl-2xl shadow-2xl border border-gray-100 z-50 transform animate-in fade-in zoom-in duration-200">
@@ -212,7 +228,7 @@ const Navbar = () => {
       {/* Mobile Sidebar */}
       {mobileOpen && (
         <>
-          <div 
+          <div
             className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden transform animate-in fade-in duration-300"
             onClick={() => setMobileOpen(false)}
           />
@@ -231,8 +247,8 @@ const Navbar = () => {
               {/* Mobile Navigation Links */}
               <div className="space-y-2 mb-6">
                 {navLinks.map((link, index) => (
-                  <div 
-                    key={index} 
+                  <div
+                    key={index}
                     className="relative"
                     onMouseEnter={() => handleDropdownToggle(index)}
                     onMouseLeave={closeDropdowns}

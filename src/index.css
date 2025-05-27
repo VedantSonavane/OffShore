@@ -439,3 +439,15 @@ p{
 .flip-back {
   transform: rotateY(180deg);
 }
+@keyframes diagonal-line {
+  0% {
+    transform: translate(150%, -150%) rotate(45deg);
+  }
+  100% {
+    transform: translate(-50%, 50%) rotate(45deg);
+  }
+}
+
+.animate-diagonal-line {
+  animation: diagonal-line 2.5s linear infinite;
+}

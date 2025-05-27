@@ -102,7 +102,7 @@ export default function ContactPage() {
         <h1 className="text-[60px] font-bold text-[#0d3557] mb-4 tracking-tight">
           Get in Touch with Offshore365
         </h1>
-        <p className="text-base sm:text-lg text-gray-500 max-w-2xl mx-auto">
+        <p className="text-base sm:text-lg text-[#0d3557] max-w-2xl mx-auto">
           We're here to help you scale productivity — reach out and let's build success together.
         </p>
       </div>
@@ -132,8 +132,8 @@ export default function ContactPage() {
             data-aos-delay="100"
           >
             <div className="mb-8" data-aos="fade-up" data-aos-delay="200">
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-3">Let's Chat</h2>
-              <p className="text-gray-600 text-lg">An Offshore expert will reach out to discuss your needs.</p>
+              <h2 className="text-3xl lg:text-4xl font-bold text-[#0d3557] mb-3">Let's Chat</h2>
+              <p className="text-[#0d3557] text-lg">An Offshore expert will reach out to discuss your needs.</p>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -143,7 +143,7 @@ export default function ContactPage() {
                   placeholder="First Name"
                   value={formData.firstName}
                   onChange={(e) => handleChange("firstName", e.target.value)}
-                  className="h-12 px-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors"
+                  className="h-12 px-4  regular border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors"
                   required
                 />
                 <input
@@ -151,7 +151,7 @@ export default function ContactPage() {
                   placeholder="Last Name"
                   value={formData.lastName}
                   onChange={(e) => handleChange("lastName", e.target.value)}
-                  className="h-12 px-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors"
+                  className="h-12 px-4 regular border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors"
                   required
                 />
               </div>
@@ -162,7 +162,7 @@ export default function ContactPage() {
                   placeholder="Work Email"
                   value={formData.email}
                   onChange={(e) => handleChange("email", e.target.value)}
-                  className="w-full h-12 px-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors"
+                  className="w-full h-12 px-4 regular border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors"
                   required
                 />
               </div>
@@ -171,10 +171,10 @@ export default function ContactPage() {
                 <select
                   value={formData.usage}
                   onChange={(e) => handleChange("usage", e.target.value)}
-                  className="w-full h-12 px-4 pr-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors appearance-none bg-white text-gray-900"
+                  className="w-full h-12 px-4 pr-10 regular border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors appearance-none bg-white text-[#0d3557]"
                   required
                 >
-                  <option value="" disabled className="text-gray-500">
+                  <option value="" disabled className="text-[#0d3557] ">
                     How do you plan on using Calendly?
                   </option>
                   <option value="sales">Sales meetings</option>
@@ -183,8 +183,8 @@ export default function ContactPage() {
                   <option value="education">Education</option>
                   <option value="other">Other</option>
                 </select>
-                <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
-                  <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="absolute inset-y-0 right-0  flex items-center pr-3 pointer-events-none">
+                  <svg className="w-5 h-5 text-[#0d3557]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </div>
@@ -195,7 +195,7 @@ export default function ContactPage() {
                   placeholder="How can we help?"
                   value={formData.message}
                   onChange={(e) => handleChange("message", e.target.value)}
-                  className="w-full min-h-[120px] px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors resize-none"
+                  className="w-full min-h-[120px] regular px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors resize-none"
                   required
                 />
               </div>
@@ -203,7 +203,7 @@ export default function ContactPage() {
               <div data-aos="fade-up" data-aos-delay="700">
                 <button
                   type="submit"
-                  className="w-full h-12 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors duration-200 transform hover:scale-105"
+                  className="w-full h-12 bg-blue-600 regular hover:bg-blue-700 text-white  rounded-lg transition-colors duration-200 transform hover:scale-105"
                 >
                   Submit
                 </button>
@@ -226,17 +226,17 @@ export default function ContactPage() {
             <div className="space-y-8">
               <div className="border-b-2 border-yellow-500 pb-6" data-aos="fade-up" data-aos-delay="500">
                 <CountUp target={500} className="text-5xl lg:text-6xl font-bold text-yellow-500 mb-2" delay={500} />
-                <div className="text-gray-600 text-lg">projects completed globally</div>
+                <div className="text-yellow-500 regular text-lg">projects completed globally</div>
               </div>
 
               <div className="border-b-2 border-blue-500 pb-6" data-aos="fade-up" data-aos-delay="600">
                 <CountUp target={150} className="text-5xl lg:text-6xl font-bold text-blue-500 mb-2" delay={600} />
-                <div className="text-gray-600 text-lg">AEC firms partnered</div>
+                <div className="text-blue-500 regular text-lg">AEC firms partnered</div>
               </div>
 
               <div className="border-b-2 border-red-500 pb-6" data-aos="fade-up" data-aos-delay="700">
                 <CountUp target={25} className="text-5xl lg:text-6xl font-bold text-red-500 mb-2" delay={700} />
-                <div className="text-gray-600 text-lg">countries with active engagements</div>
+                <div className="text-red-500 regular text-lg">countries with active engagements</div>
               </div>
             </div>
           </div>

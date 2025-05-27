@@ -180,7 +180,7 @@ export default function TestimonialMetrics() {
               This Impact Is Real
             </motion.h1>
             <motion.p
-              className="text-gray-500 text-[20px]"
+              className="text-[#0d3557] text-[20px]"
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -196,7 +196,7 @@ export default function TestimonialMetrics() {
               data-aos="zoom-in"
               data-aos-delay="300"
             >
-              <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6 text-gray-600" />
+              <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6 text-[#0d3557]" />
             </button>
             <button
               onClick={nextSlide}
@@ -205,7 +205,7 @@ export default function TestimonialMetrics() {
               data-aos="zoom-in"
               data-aos-delay="350"
             >
-              <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6 text-gray-600" />
+              <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6 text-[#0d3557]" />
             </button>
           </div>
         </div>

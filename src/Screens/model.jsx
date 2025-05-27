@@ -79,7 +79,7 @@ const Model = () => {
         <h1 className="text-[60px] font-bold text-[#0d3557] mb-4 tracking-tight">
           Scalable Productivity Models
         </h1>
-        <p className="text-base sm:text-lg text-gray-500 max-w-2xl mx-auto">
+        <p className="text-base sm:text-lg text-[#0d3557] max-w-2xl mx-auto">
           Optimised for your success
         </p>
       </div>
@@ -98,7 +98,7 @@ const Model = () => {
                 <div className="flex items-center mb-2">
                   {section.icon}
                   <h1
-                    className={`text-[20px] tracking-wide font-bold transition-all duration-300 ${activeSection === index ? 'text-gray-900' : 'text-gray-500'
+                    className={`text-[20px] tracking-wide font-bold transition-all duration-300 ${activeSection === index ? 'text-[#0d3557]' : 'text-gray-500'
                       }`}
                   >
                     {section.title}
@@ -109,7 +109,7 @@ const Model = () => {
                   className={`overflow-hidden transition-all duration-500 ease-in-out ${activeSection === index ? 'max-h-40 opacity-100 mt-2 p-2' : 'max-h-0 opacity-0'
                     }`}
                 >
-                  <p className="text-[16px]  text-gray-400">{section.description}</p>
+                  <p className="text-[16px]  text-[#0d3557]">{section.description}</p>
                 </div>
                 {/* Progress Bar */}
                 <div className="h-0.5 bg-gray-200 w-full mt-3 rounded">
@@ -162,11 +162,11 @@ const Model = () => {
             </div>
           </div>
           <div className="mt-4 text-center">
-            <p className="text-base sm:text-lg text-gray-500">
+            <p className="text-base sm:text-lg text-[#0d3557]">
               Not sure which model is right for you?{" "}
               <a
                 href="#schdeule"
-                className="text-blue-600 hover:underline cursor-pointer"
+                className="text-blue-600 underline regular cursor-pointer"
               >
                 Schedule a meet
               </a>{" "}
