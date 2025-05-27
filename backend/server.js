@@ -4,7 +4,8 @@ const express = require('express');
 const app = express();
 
 // Define port
-const PORT = 8556;
+const PORT = process.env.PORT || 8556;
+const HOST = '0.0.0.0';
 
 // Basic route to confirm server is running
 app.get('/', (req, res) => {
@@ -12,6 +13,6 @@ app.get('/', (req, res) => {
 });
 
 // Start server
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+app.listen(PORT, HOST, () => {
+  console.log(`Server running on http://${HOST}:${PORT}`);
 });
