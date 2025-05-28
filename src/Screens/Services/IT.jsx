@@ -9,11 +9,10 @@ import plansImage from "../../assets/architectplans.png";
 import whyUsImage from "../../assets/architectwhy.png";
 import getStartedImage from "../../assets/architecture.png";
 import { Link } from "react-router-dom";
-import architectureVideo from "../../assets/architecture.mp4";
 import Scheduling from "../Scheduling";
+import figmaLogo from "../../assets/ms.png";
 
-const figmaLogo =
-  "https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg";
+
 
 const Architecture = () => {
   const [activeTab, setActiveTab] = useState("services");
@@ -30,30 +29,38 @@ const Architecture = () => {
     { id: "tools", label: "Tools" },
     { id: "plans", label: "Plans" },
     { id: "why-us", label: "Why Us?" },
-   
     { id: "get-started", label: "Get Started" },
-     { id: "faq", label: "FAQ" },
+    { id: "faq", label: "FAQ" },
   ];
 
   const tabData = {
     services: {
-      title: "Comprehensive IT Services",
+      title: "Comprehensive Architechural Excellence Services",
       description:
-        "We provide end-to-end IT solutions from concept to completion. Our team delivers innovative designs tailored to your specific needs and vision.",
+        "We provide end-to-end Architectural Excellence solutions from concept to completion. Our team delivers innovative designs tailopurple to your specific needs and vision.",
       image: architectureHero,
       features: [
-  
 
-        { name: "WEB DEVELOPMENT ", image: serviceImage },
+
+        { name: "WEB DEVELOPMENT", image: serviceImage },
         { name: "DIGITAL MARKETING", image: serviceImage },
         { name: "APP DEVELOPMENT", image: serviceImage },
         { name: "CRM / ERP", image: serviceImage },
-       
+        { name: "SHOP DRAWINGS", image: serviceImage },
+        { name: "WEB DEVELOPMENT", image: serviceImage },
+        { name: "DIGITAL MARKETING", image: serviceImage },
+        { name: "APP DEVELOPMENT", image: serviceImage },
+        { name: "CRM / ERP", image: serviceImage },
+        { name: "SHOP DRAWINGS", image: serviceImage },
+        { name: "CRM / ERP", image: serviceImage },
+        { name: "SHOP DRAWINGS", image: serviceImage },
+
       ],
+
     },
     tools: {
-      title: "Connect with Offshore365 to the tools you already use",
-      description: "Boost productivity with 100+ integrations",
+      title: "Connect with Offshore365 with the tools to already use",
+      description: "Work seamlessly with offshore experts skilled in leading AEC software.",
       image: toolsImage,
       software: [
         { name: "Zoom", icon: "Z" },
@@ -69,44 +76,40 @@ const Architecture = () => {
       ],
     },
     plans: {
-      title: "Pick the perfect plan for your team",
-      description: "Choose from a variety of plans tailored to your needs.",
+      title: "Pick the perfect model for your team",
+      description: "Choose from a variety of plans tailopurple to your needs.",
       image: plansImage,
       plans: [
         {
-          title: "Hourly Billing Model",
-          price: "$50/hr",
+          title: "Hourly Billing ",
           description: "Flexible billing based on hours worked.",
-          recommended: false,
+          backDescription: "Billing is based on team hours, ideal for dynamic, evolving project scopes."
         },
         {
-          title: "Fixed Fee Model",
-          price: "$5,000/project",
+          title: "Fixed Fee ",
           description: "Set price for defined project scope.",
-          recommended: false,
+          backDescription: "A fixed cost is set upfront for clearly defined projects with stable requirements."
         },
         {
-          title: "Project Based Model",
-          price: "$10,000/project",
+          title: "Project Based ",
           description: "Comprehensive pricing for entire projects.",
-          recommended: true,
+          backDescription: "Pricing aligns with project phases and milestones—great for phased delivery."
         },
         {
-          title: "Dedicated Team Model",
-          price: "$20,000/mo",
-          description: "Full-time team for ongoing projects.",
-          recommended: false,
+          title: "Dedicated Team ",
+          description: "Full-time team for ongoing collaboration.",
+          backDescription: "A team works exclusively on your project—best for long-term collaboration."
         },
         {
-          title: "Performance Model",
-          price: "Custom",
-          description: "Pricing based on project outcomes.",
-          recommended: false,
-        },
-      ],
-    },
+          title: "Performance Based",
+          description: "Pricing tied to project outcomes.",
+          backDescription: "Payment is based on results, motivating vendors to exceed targets."
+        }
+      ]
+    }
+    ,
     "why-us": {
-      title: "Why Choose Our IT Services?",
+      title: "Why Choose Our Architectural Excellence Services?",
       description:
         "We combine creativity with technical expertise to deliver exceptional results.",
       image: whyUsImage,
@@ -117,16 +120,14 @@ const Architecture = () => {
       ],
       highlightedBenefits: [
         {
-          title: "Customized Solutions",
-        },
-         {
-          title: "Integration Expertise",
-        },
-         {
-          title: "User-Centric Design",
+          title: "purpleuced Administrative Burden",
+          description:
+            "Offshore365 handles the administrative tasks associated with hiring and managing staff, such as recruitment, onboarding, and payroll. This allows clients to focus on their core business operations.",
         },
         {
-          title: "Scalable Architecture",
+          title: "Time Zone Advantage",
+          description:
+            "Offshore teams can work while your in-house team is off, enabling faster project turnaround times and shorter project cycles. This can be a significant advantage for projects with tight deadlines.",
         },
       ],
       benefits: [
@@ -142,7 +143,7 @@ const Architecture = () => {
         {
           title: "Cost-Effective",
           description:
-            "Reduce costs significantly compared to in-house hiring.",
+            "purpleuce costs significantly compapurple to in-house hiring.",
         },
         {
           title: "Scalable Teams",
@@ -173,141 +174,77 @@ const Architecture = () => {
       },
     },
     faq: {
-      title: "Frequently Asked Questions",
+      title: "FAQ",
       description: "Here are some of the frequently asked questions",
       faqs: [
         {
-          question: "What types of interior design projects do you handle?",
+          question: "What web development services do you offer?",
           answer:
-            "We handle a wide range of projects, including residential, commercial, and hospitality spaces. From schematic design to 3D rendering, our team manages every aspect to bring your vision to life.",
+            "We provide a wide range of web development services including Shopify development, WordPress development, Magento development, API development and integration, Wix development, and custom web designing.",
           icon: (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-12 w-12 text-purple-600"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path d="M12 14l9-5-9-5-9 5 9 5z" />
               <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="1"
-                d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
-              />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
             </svg>
           ),
         },
         {
-          question: "How long does a typical interior design project take?",
+          question: "What platforms do you specialize in for e-commerce development?",
           answer:
-            "Project timelines vary based on scope and complexity. A typical residential project may take 3-6 months, while commercial projects can range from 6-12 months, depending on requirements.",
+            "We specialize in Shopify and Magento development for e-commerce solutions, ensuring a seamless online shopping experience for your customers.",
           icon: (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-12 w-12 text-purple-600"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="1"
-                d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-              />
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
             </svg>
           ),
         },
         {
-          question: "Can you work with my existing tools and software?",
+          question: "Can you help with custom web design?",
           answer:
-            "Yes, we integrate seamlessly with over 100 tools, including Zoom, Slack, and Salesforce, ensuring smooth collaboration with your existing workflows.",
+            "Yes, we offer custom web designing services tailored to meet your specific business needs and branding requirements.",
           icon: (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-12 w-12 text-purple-600"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="1"
-                d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"
-              />
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
             </svg>
           ),
         },
         {
-          question: "What is included in your design process?",
+          question: "Do you provide WordPress development services?",
           answer:
-            "Our process includes consultation, schematic design, design development, construction documents, and final execution, ensuring a comprehensive approach tailored to your needs.",
+            "Absolutely! We offer comprehensive WordPress development services, from theme customization to plugin development and site maintenance.",
           icon: (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-12 w-12 text-purple-600"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="1"
-                d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"
-              />
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
             </svg>
           ),
         },
         {
-          question: "How do you ensure the quality of your designs?",
+          question: "What is included in your API development and integration services?",
           answer:
-            "We conduct rigorous quality checks at every stage, employ skilled professionals trained to international standards, and use advanced tools like 3D modeling and rendering to ensure precision and excellence.",
+            "Our API development and integration services include creating custom APIs, integrating third-party APIs, and ensuring seamless data flow between different software systems.",
           icon: (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-12 w-12 text-purple-600"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="1"
-                d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"
-              />
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
             </svg>
           ),
         },
         {
-          question: "What is the cost structure for your services?",
+          question: "How do you approach custom web designing projects?",
           answer:
-            "We offer flexible pricing models, including hourly billing ($50/hr), fixed fee ($5,000/project), project-based ($10,000/project), dedicated team ($20,000/mo), and custom performance-based pricing.",
+            "We start with a thorough understanding of your business goals and target audience, followed by creating a unique design that aligns with your brand identity and delivers an exceptional user experience.",
           icon: (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-12 w-12 text-purple-600"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="1"
-                d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z"
-              />
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z" />
             </svg>
           ),
         },
       ],
     },
+
+
     "get-started": {
-      title: "Start Your IT Project Today",
+      title: "Start Your Architectural Excellence Project Today",
       description:
         "Get in touch to discuss your project requirements and how we can help bring your vision to life.",
       image: getStartedImage,
@@ -397,42 +334,94 @@ const Architecture = () => {
 
   const [activeIndex, setActiveIndex] = useState(0);
   const features = tabData.services.features;
-  const doubledFeatures = [...features, ...features]; // Double for continuous loop
-  const imageWidth = 100; // w-24 (24 * 4px/rem = 96px)
-  const gap = 16; // mx-2 (2 * 0.5rem * 16px/rem = 16px)
+  const doubledFeatures = [...features, ...features];
+  const imageWidth = 100;
+  const gap = 16;
 
-  // Auto-slide with pause
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((prevIndex) =>
         prevIndex === features.length - 1 ? 0 : prevIndex + 1
       );
-    }, 3000); // Pause for 3 seconds
+    }, 3000);
 
     return () => clearInterval(interval);
   }, [features.length]);
 
+  const activeGradient = "linear-gradient(744deg, #800080, #8A2BE2 60%, #EE82EE)";
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <motion.div
+      <motion.section
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.2 }}
-        className="relative h-[500px] sm:h-[600px] w-full bg-fixed bg-cover bg-center flex items-center justify-center"
-        style={{ backgroundImage: `url(${architectureHero})` }}
+        className="py-20 h-[600px] transition-all duration-1000 text-white flex justify-center items-center relative overflow-hidden"
+        style={{ background: activeGradient }}
       >
+        {/* Background Waves */}
+        {[...Array(3)].map((_, i) => (
+          <div
+            key={`bg-wave-${i}`}
+            className="wave absolute w-[300%] h-[300%] opacity-30 left-[-50%] top-[-50%] rounded-[100%]"
+            style={{
+              background: activeGradient,
+              animationDelay: `${i * 2}s`,
+              animationDuration: `${15 + i * 5}s`,
+            }}
+          />
+        ))}
+        {/* Background Image Overlay */}
+
         <div className="relative text-center px-4 z-10" data-aos="fade-up">
-          <motion.h1
+          <h1
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="text-8xl font-extrabold text-white tracking-tight mb-4 drop-shadow-2xl"
+            className="text-[100px] font-extrabold tracking-wide mb-4 drop-shadow-2xl"
           >
-            IT
-          </motion.h1>
+            IT          </h1>
+
+          <motion.p
+            initial={{ y: 30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.7, duration: 0.2 }}
+            className="text-[20px] font-light max-w-3xl mx-auto"
+          >
+            Offshore 365 empowers its global clientele with robust IT solutions, consistently achieving successful outcomes on intricate projects across diverse sizes, sectors, and specialized fields.
+
+          </motion.p>
         </div>
-      </motion.div>
+      </motion.section>
+
+      <style jsx>{`
+        .wave {
+          animation: wave 5s infinite linear;
+          pointer-events: none;
+        }
+
+        .wave:nth-child(2) {
+          animation-duration: 2s;
+        }
+
+        .wave:nth-child(3) {
+          animation-duration: 2s;
+        }
+
+        .group:hover .wave {
+          animation-play-state: paused;
+        }
+
+        @keyframes wave {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+      `}</style>
 
       {/* Placeholder for Tabs Bar */}
       <div
@@ -449,11 +438,10 @@ const Architecture = () => {
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className={`z-20 bg-purple-500 backdrop-blur-xl shadow-lg transition-all duration-300 ${
-          isSticky ? "fixed top-[72px] left-0 right-0 shadow-xl" : "relative"
-        }`}
+        className={`z-20 bg-purple-500 backdrop-blur-xl shadow-lg transition-all duration-300 ${isSticky ? "fixed top-[64px] left-0 right-0 shadow-xl" : "relative"
+          }`}
       >
-        <div className="container flex justify-center items-center mx-auto ">
+        <div className="container flex justify-center items-start mx-auto ">
           <div className="flex overflow-x-auto scrollbar-hide py-3">
             {tabs.map((tab) => (
               <motion.button
@@ -478,7 +466,7 @@ const Architecture = () => {
       </motion.div>
 
       {/* Main Content */}
-      <div className="container mx-auto px-4 sm:px-6 py-12 md:py-16">
+      <div className="container mx-auto px-24  ">
         {/* Services Section */}
         <motion.section
           ref={(ref) => setRef("services", ref)}
@@ -490,20 +478,29 @@ const Architecture = () => {
           id="services"
           data-aos="fade-up"
         >
-          <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-12 px-4 sm:px-8">
+          <div className="flex flex-col lg:flex-row items-start gap-4  px-4 sm:px-8">
+            {/* LEFT: TEXT SECTION */}
             <div className="flex-1" data-aos="fade-right">
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-                {tabData.services.title}
-              </h2>
-              <p className="text-base sm:text-lg text-gray-600 mb-8 leading-relaxed">
-                {tabData.services.description}
+              <h1 className="text-[40px] font-bold mb-4 text-[#0d3557] tracking-wide leading-snug">
+                Transform Your Brand With Offshore365
+
+              </h1>
+              <p className="text-[18px]  text-[#0d3557] leading-relaxed">
+                we help you transform your brand by providing customized marketing <br /> and development solutions tailored specifically <br /> to your business needs.
+
               </p>
-              <div className="grid grid-cols-2 sm:grid-cols-2 gap-4">
+            </div>
+
+
+            {/* RIGHT: FEATURES + CAROUSEL */}
+            <div className="flex-1 flex flex-col gap-6" data-aos="fade-left">
+              {/* Feature boxes */}
+              <div className="grid grid-cols-2 sm:grid-cols-2 gap-2">
                 {features.map((feature, index) => (
                   <motion.div
                     key={index}
                     whileHover={{ scale: 1.05, backgroundColor: "#f1f5f9" }}
-                    className="flex items-center p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+                    className="flex items-start p-2 bg-white rounded-xl   hover:shadow-lg transition-all duration-300"
                     data-aos="fade-up"
                     data-aos-delay={index * 100}
                   >
@@ -522,24 +519,20 @@ const Architecture = () => {
                         />
                       </svg>
                     </div>
-                    <span className="text-gray-800 text-base">{feature.name}</span>
+                    <span className="text-[#0d3557] regular text-[14px]">{feature.name}</span>
                   </motion.div>
                 ))}
               </div>
-            </div>
-            <div className="flex-1" data-aos="fade-left">
+
+              {/* Carousel below feature boxes */}
               <motion.div
                 initial={{ scale: 0.9, opacity: 0 }}
                 whileInView={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
-                className="relative w-full h-[600px]"
+                className="relative w-full h-[150px]"
               >
-                <img
-                  src={features[activeIndex].image}
-                  alt={features[activeIndex].name}
-                  className="w-full h-[400px] rounded-xl shadow-2xl object-cover transform hover:scale-105 transition-transform duration-500"
-                />
+
                 <div className="absolute bottom-0 w-full h-[140px] overflow-hidden">
                   <motion.div
                     className="flex"
@@ -561,9 +554,8 @@ const Architecture = () => {
                         onClick={() => setActiveIndex(index % features.length)}
                       >
                         <div
-                          className={`w-24 h-24 rounded-lg overflow-hidden mb-1 cursor-pointer ${
-                            activeIndex === index % features.length ? "scale-105" : ""
-                          }`}
+                          className={`w-24 h-24 rounded-lg overflow-hidden mb-1 cursor-pointer ${activeIndex === index % features.length ? "scale-105" : ""
+                            }`}
                         >
                           <img
                             src={feature.image}
@@ -571,7 +563,7 @@ const Architecture = () => {
                             className="w-full h-full object-cover"
                           />
                         </div>
-                        <span className="text-gray-800 text-xs text-center">
+                        <span className="text-[#0d3557] regular text-[10px] text-center">
                           {feature.name}
                         </span>
                       </div>
@@ -582,6 +574,7 @@ const Architecture = () => {
             </div>
           </div>
         </motion.section>
+
 
         {/* Tools Section */}
         <motion.section
@@ -594,44 +587,30 @@ const Architecture = () => {
           id="tools"
           data-aos="fade-up"
         >
-          <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-12">
-            <motion.div
-              className="flex-1"
-              initial={{ scale: 0.9, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              data-aos="fade-right"
-            >
-              <img
-                src={tabData.tools.image}
-                alt={tabData.tools.title}
-                className="w-full border border-white h-[550px] rounded-xl shadow-2xl object-cover transform hover:scale-105 transition-transform duration-500"
-              />
-            </motion.div>
+          <div className="container max-w-4xl mx-auto flex flex-col lg:flex-row items-start gap-4">
             <div className="flex-1" data-aos="fade-left">
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-6">
+              <h1 className="text-[32px] sm:text-[40px] tracking-wide text-[#0d3557] text-justify font-extrabold mb-4">
                 {tabData.tools.title}
-              </h2>
-              <p className="text-base sm:text-lg text-gray-600 mb-8 leading-relaxed">
+              </h1>
+              <p className="text-[18px] sm:text-[20px] text-left text-[#0d3557] mb-12 sm:mb-16 leading-relaxed">
                 {tabData.tools.description}
               </p>
-              <div className="grid grid-cols-4 sm:grid-cols-4 gap-4">
+              <div className="grid grid-cols-3 sm:grid-cols-4 gap-0 justify-items-center">
                 {tabData.tools.software.slice(0, 8).map((tool, index) => (
                   <motion.div
                     key={index}
-                    className="flex flex-col items-center hover:scale-105 transition-all duration-300"
+                    className="flex flex-col items-start hover:scale-105 transition-all duration-300"
                     data-aos="fade-up"
                     data-aos-delay={index * 100}
                   >
                     <motion.div
                       whileHover={{ scale: 1.05 }}
-                      className="w-24 h-24 rounded-2xl overflow-hidden mb-2"
+                      className="w-20 h-20 sm:w-24 sm:h-24 rounded-xl overflow-hidden mb-1 sm:mb-2"
                     >
                       <img
                         src={figmaLogo}
                         alt={tool.name}
-                        className="w-full h-full object-contain bg-white p-2"
+                        className="w-full h-full object-contain bg-white"
                       />
                     </motion.div>
                   </motion.div>
@@ -641,268 +620,154 @@ const Architecture = () => {
           </div>
         </motion.section>
 
-        {/* Plans Section */}
-        <motion.section
-          ref={(ref) => setRef("plans", ref)}
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="py-16 sm:py-20 scroll-mt-20"
-          id="plans"
-        >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-8">
-              <h2 className="text-4xl font-extrabold text-gray-900">
-                {tabData.plans.title}
-              </h2>
-              <p className="mt-4 text-lg text-gray-600">
-                {tabData.plans.description}
-              </p>
-            </div>
-            <motion.div
-              className="mb-12"
-              initial={{ scale: 0.95, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <img
-                src={tabData.plans.image}
-                alt={tabData.plans.title}
-                className="w-full h-[350px] border-2 border-purple-200 rounded-2xl shadow-2xl object-cover hover:scale-105 transition-transform duration-500"
-              />
-            </motion.div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-              {tabData.plans.plans.slice(0, 5).map((plan, index) => (
-                <motion.div
-                  key={index}
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                  className="relative group bg-white text-purple-900 rounded-2xl shadow-lg p-6 flex flex-col justify-between h-full border border-purple-500 transition-all duration-300"
-                >
-                  <div className="transition-all duration-300 group-hover:text-white">
-                    <h3 className="text-lg font-semibold mb-2">{plan.title}</h3>
-                    <p className="text-sm mb-6">{plan.description}</p>
-                  </div>
-                  <button className="mt-auto w-full py-2 rounded-lg bg-purple-600 text-white font-semibold group-hover:bg-white group-hover:text-purple-700 transition duration-300">
-                    Get started
-                  </button>
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-purple-700 opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity duration-300 -z-10"></div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </motion.section>
 
-        {/* Why Us Section */}
-        <motion.section
-          ref={(ref) => setRef("why-us", ref)}
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="py-12 sm:py-16 scroll-mt-20 rounded-2xl px-4 sm:px-8 text-gray-800"
-          id="why-us"
-          data-aos="zoom-in"
-        >
-          <div className="flex flex-col lg:flex-row-reverse items-center gap-8 md:gap-12">
-            <div className="flex-1" data-aos="fade-left">
-              <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-                {tabData["why-us"].title}
-              </h2>
-              <p className="text-base sm:text-lg mb-8 leading-relaxed">
-                {tabData["why-us"].description}
-              </p>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 mb-8">
-                {tabData["why-us"].stats.map((stat, index) => (
-                  <div
-                    key={index}
-                    className="flex flex-col items-start"
-                    data-aos="fade-up"
-                    data-aos-delay={index * 100}
-                  >
-                    <div className="text-2xl font-bold mb-2">
-                      {stat.number}+
-                    </div>
-                    <div className="text-base mb-2">{stat.label}</div>
-                    <div className="w-full bg-purple-300 rounded-full h-2.5">
-                      <motion.div
-                        className="bg-purple-500 h-2.5 rounded-full"
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${stat.percentage}%` }}
-                        transition={{ duration: 1, delay: index * 0.2 }}
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <div className="grid grid-cols-2 sm:grid-cols-2 gap-6 mb-12">
-                {tabData["why-us"].highlightedBenefits.map((benefit, index) => (
-                  <motion.div
-                    key={index}
-                    whileHover={{
-                      scale: 1.05,
-                      boxShadow: "0 10px 20px rgba(0, 0, 0, 0.2)",
-                    }}
-                    className="p-4 bg-white rounded-xl shadow-lg border border-purple-600/30 transition-all duration-300"
-                    data-aos="fade-up"
-                    data-aos-delay={index * 100}
-                  >
-                    <div className="flex items-center mb-2">
-                      <div className="bg-purple-600 rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0">
-                        <svg
-                          className="w-4 h-4 text-white"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M5 13l4 4L19 7"
-                          />
-                        </svg>
-                      </div>
-                      <h3 className="text-lg text-purple-600 font-semibold">
-                        {benefit.title}
-                      </h3>
-                    </div>
-                    <p className="text-sm text-gray-600 leading-relaxed">
-                      {benefit.description}
-                    </p>
-                  </motion.div>
-                ))}
-              </div>
+
+
+       {/* Why Us Section - Redesigned */}
+<motion.section
+  ref={(ref) => setRef("why-us", ref)}
+  initial={{ opacity: 0, y: 50 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8 }}
+  viewport={{ once: true }}
+  className="py-16 px-4 sm:px-10 bg-white text-[#3c2063] scroll-mt-20"
+  id="why-us"
+>
+  <div className="flex flex-col lg:flex-row items-start gap-12 max-w-7xl mx-auto">
+    {/* Left Side: Heading + Numbered Features */}
+    <div className="w-full lg:w-1/2 space-y-6">
+      <h2 className="text-[34px] font-bold tracking-wide text-[#0d3557]">
+        Transform the way your organisation works
+      </h2>
+      <div className="space-y-4">
+        {[
+          "Experience & Expertise",
+          "Customization",
+          "Affordable Pricing",
+          "Proven Track Record",
+          "Excellent Customer Support",
+        ].map((item, idx) => (
+          <div
+            key={idx}
+            className={`flex items-center p-4 rounded-md shadow-md ${
+              idx === 1 ? "bg-purple-200" : "bg-purple-50"
+            }`}
+          >
+            <div className="bg-purple-800 text-white font-bold w-10 h-10 flex items-center justify-center rounded-full mr-4">
+              {idx + 1}
             </div>
-            <motion.div
-              className="flex-1"
-              initial={{ scale: 0.9, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              data-aos="fade-right"
+            <div className="text-purple-900 font-semibold text-base uppercase tracking-wide">
+              {item}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    {/* Right Side: Paragraph + Benefits + Button */}
+    <div className="w-full lg:w-1/2 space-y-6">
+      <p className="text-[#0d3557] text-[18px]">
+        Our CRM and ERP development services combine years of expertise with a commitment to building trusted, customized solutions that drive your business’ success.
+      </p>
+
+      <ul className="space-y-3 text-base text-purple-800">
+        {[
+          "Customized Solutions",
+          "Scalable Architecture",
+          "Integration Expertise",
+          "User-Centric Design",
+        ].map((item, i) => (
+          <li key={i} className="flex items-center">
+            <svg
+              className="w-5 h-5 text-purple-600 mr-2 flex-shrink-0"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
             >
-              <img
-                src={tabData["why-us"].image}
-                alt={tabData["why-us"].title}
-                className="w-full h-[550px] border border-white rounded-xl shadow-2xl object-cover transform hover:scale-105 transition-transform duration-500"
-              />
-            </motion.div>
-          </div>
-          <div className="py-16 px-4 sm:px-6 lg:px-20">
-            <div className="text-center mb-14">
-              <h2 className="text-4xl font-bold text-gray-800">Our Expertise</h2>
-              <p className="text-gray-500 mt-3 text-base max-w-xl mx-auto">
-                We specialize in delivering solutions that drive real results. Here's what makes us stand out.
-              </p>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-              {tabData["why-us"].benefits.map((benefit, index) => (
-                <div
-                  key={index}
-                  className="flex flex-col items-center text-center bg-white rounded-3xl shadow-md p-8 border border-gray-200 transform transition-all duration-300 hover:scale-105 hover:bg-purple-500 hover:text-white hover:shadow-2xl"
-                >
-                  <div className="mb-6">
-                    <div className="flex items-center justify-center w-12 h-12 border border-purple-500 rounded-full bg-purple-100 text-purple-600 shadow-md transition-all duration-300 group-hover:bg-white group-hover:text-purple-800">
-                      <svg
-                        className="w-6 h-6"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth={2}
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2 transition-colors duration-300">
-                    {benefit.title}
-                  </h3>
-                  <p className="text-sm leading-relaxed transition-colors duration-300">
-                    {benefit.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </motion.section>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+            {item}
+          </li>
+        ))}
+      </ul>
+
+      <button className="bg-[#0d3557] text-white px-6 py-3 rounded-md font-semibold transition-all duration-300">
+        Book A Quote
+      </button>
+    </div>
+  </div>
+</motion.section>
+
+
 
         {/* Get Started Section */}
         <motion.section
-          ref={(ref) => setRef("get-started", ref)}
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          id="get-started"
-          className="relative py-20 sm:py-24 mt-20 rounded-xl text-white overflow-hidden"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.2 }}
+          className="py-20 px-4 sm:px-8 h-auto sm:h-[550px] transition-all duration-1000 text-white flex rounded-2xl justify-center items-center relative overflow-hidden"
+          style={{ background: activeGradient }}
         >
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover z-0"
-          >
-            <source src={architectureVideo} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-          <div className="absolute inset-0 bg-black bg-opacity-50 z-0"></div>
-          <div className="relative z-10 container mx-auto px-6 flex flex-col lg:flex-row items-center gap-12">
-            <div className="flex-1">
-              <h2 className="text-4xl sm:text-5xl font-bold mb-6">
-                {tabData["get-started"].title}
-              </h2>
-              <p className="text-lg sm:text-xl text-gray-200 mb-8 leading-relaxed">
-                {tabData["get-started"].description}
-              </p>
-              <div className="space-y-4 mb-8">
-                {tabData["get-started"].steps.map((step, index) => (
-                  <motion.div
-                    key={index}
-                    whileHover={{ x: 10 }}
-                    className="flex items-center"
-                    data-aos="fade-up"
-                    data-aos-delay={index * 100}
-                  >
-                    <div className="bg-white text-black rounded-full w-8 h-8 flex items-center justify-center mr-4 font-bold text-base">
-                      {index + 1}
-                    </div>
-                    <span className="text-white text-lg">{step}</span>
-                  </motion.div>
-                ))}
-              </div>
-              <div className="flex flex-col sm:flex-row gap-4">
+          {/* Background Waves */}
+          {[...Array(3)].map((_, i) => (
+            <div
+              key={`bg-wave-${i}`}
+              className="wave absolute w-[300%] h-[300%] opacity-30 left-[-0%] top-[-0%] rounded-[100%]"
+              style={{
+                background: activeGradient,
+                animationDelay: `${i * 2}s`,
+                animationDuration: `${15 + i * 5}s`,
+              }}
+            />
+          ))}
+
+          {/* Content */}
+          <div className="relative text-center z-10 max-w-6xl mx-auto">
+            <motion.h1
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.3, duration: 0.8 }}
+              className="text-[50px]   font-extrabold tracking-wide mb-4 drop-shadow-2xl leading-tight"
+            >
+              Let’s Get Started
+            </motion.h1>
+
+            <motion.p
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.7, duration: 0.2 }}
+              className="text-base sm:text-lg md:text-xl lg:text-[20px] font-light max-w-2xl mx-auto text-gray-200"
+            >
+              Power up your productivity with Offshore365
+            </motion.p>
+
+            {/* Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-start mt-6 sm:mt-8">
+              <motion.button
+                whileHover={{
+                  scale: 1.05,
+                  boxShadow: "0 0 15px rgba(255, 255, 255, 0.6)",
+                }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => setShowSchedulingSection(true)}
+                className="px-6 py-3 bg-white regular text-gray-700 rounded-xl transition-all duration-300  text-base shadow-lg"
+              >
+                Schedule a Consultation
+              </motion.button>
+
+              <Link to="/contact">
                 <motion.button
                   whileHover={{
                     scale: 1.05,
                     boxShadow: "0 0 15px rgba(255, 255, 255, 0.6)",
                   }}
                   whileTap={{ scale: 0.95 }}
-                  onClick={() => setShowSchedulingSection(true)}
-                  className="px-6 py-3 bg-white text-black rounded-xl transition-all duration-300 font-semibold text-base shadow-lg"
+                  className="px-6 py-3 border regular border-white text-white rounded-xl hover:bg-white hover:text-black transition-all duration-300 font-semibold text-base shadow-lg"
                 >
-                  Schedule a Consultation
+                  Contact Our Team
                 </motion.button>
-                <Link to="/contact-us">
-                  <motion.button
-                    whileHover={{
-                      scale: 1.05,
-                      boxShadow: "0 0 15px rgba(255, 255, 255, 0.6)",
-                    }}
-                    whileTap={{ scale: 0.95 }}
-                    className="px-6 py-3 border border-white text-white rounded-xl hover:bg-white hover:text-black transition-all duration-300 font-semibold text-base shadow-lg"
-                  >
-                    Contact Our Team
-                  </motion.button>
-                </Link>
-              </div>
+              </Link>
             </div>
           </div>
         </motion.section>
@@ -931,18 +796,23 @@ const Architecture = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="py-12 sm:py-16 scroll-mt-20  rounded-2xl px-4 sm:px-8"
+          className="py-12 sm:py-16 scroll-mt-20 rounded-2xl px-4 sm:px-8"
           id="faq"
           data-aos="fade-up"
         >
-          <div className="  p-4 sm:p-8 rounded-lg ">
-            <h4 className="text-4xl font-bold text-gray-800 tracking-widest uppercase text-center">
+          <div className="p-4 sm:p-8 rounded-lg">
+            {/* Title */}
+            <h4 className="text-[36px] sm:text-[48px] md:text-[54px] lg:text-[40px] font-extrabold text-[#0d3557] tracking-wide text-center leading-tight">
               {tabData.faq.title}
             </h4>
-            <p className="text-center text-gray-600 text-sm mt-2">
+
+            {/* Subtitle */}
+            <p className="text-center text-[#0d3557] text-base sm:text-lg md:text-xl lg:text-[20px] mt-2 max-w-3xl mx-auto">
               {tabData.faq.description}
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 xl:gap-12 px-2 xl:px-12 mt-4">
+
+            {/* FAQ Cards Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 xl:gap-12 px-2 xl:px-12 mt-8">
               {tabData.faq.faqs.map((faq, index) => (
                 <motion.div
                   key={index}
@@ -950,27 +820,25 @@ const Architecture = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="flex space-x-8 mt-8"
+                  className="flex items-start space-x-4"
                   data-aos="fade-up"
                   data-aos-delay={index * 100}
                 >
-                  <div>{faq.icon}</div>
+                  <div className="mt-1">{faq.icon}</div>
                   <div>
-                    <h4 className="text-xl font-bold text-gray-700">{faq.question}</h4>
-                    <p className="text-gray-600 my-2">{faq.answer}</p>
-                    <Link
-                      to="/contact-us"
-                      className="text-purple-600 hover:text-purple-800 hover:underline capitalize"
-                      title="Read More"
-                    >
-                      Read More
-                    </Link>
+                    <h4 className="text-[20px] font-bold text-[#0d3557]">
+                      {faq.question}
+                    </h4>
+                    <p className="text-[#0d3557] text-[14px] my-2 leading-relaxed">
+                      {faq.answer}
+                    </p>
                   </div>
                 </motion.div>
               ))}
             </div>
           </div>
         </motion.section>
+
       </div>
     </div>
   );

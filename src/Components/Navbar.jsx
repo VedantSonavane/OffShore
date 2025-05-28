@@ -31,7 +31,7 @@ const Navbar = () => {
 
   const moreLinks = [
     { label: "About Us", href: "/about", icon: Users },
-    { label: "Careers", href: "/careers", icon: Briefcase }, // Fix typo
+    { label: "Careers", href: "/carrers", icon: Briefcase }, // Fix typo
     { label: "Blogs", href: "/blogs", icon: FileText }, // Fix capitalization
     { label: "Contact", href: "/contact", icon: Mail },
   ];
