@@ -789,24 +789,25 @@ const Architecture = () => {
 
 
 
-            {/* Highlighted Benefits */}
-            {/* Highlighted Benefits */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
               {tabData?.["why-us"]?.highlightedBenefits?.map((benefit, index) => (
                 <motion.div
                   key={index}
                   whileHover={{
                     scale: 1.05,
-                    boxShadow: "0 10px 20px rgba(0, 0, 0, 0.2)",
                   }}
-                  className="p-4 bg-white rounded-xl shadow-lg border border-green-600/30 transition-all duration-300"
+                  className="relative p-6 rounded-2xl border border-green-600 bg-green-600 backdrop-blur-lg shadow-xl transition-all duration-100 group overflow-hidden"
                   data-aos="fade-up"
                   data-aos-delay={index * 100}
                 >
-                  <div className="flex items-start mb-4">
-                    <div className="bg-green-800 rounded-full w-8 h-8 flex items-center justify-center mr-3 flex-shrink-0">
+                  {/* Glow effect on hover */}
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-green-600/40 to-green-800/40 opacity-0 group-hover:opacity-10 transition-all duration-500"></div>
+
+                  {/* Title with icon */}
+                  <div className="flex items-start mb-4 relative z-10">
+                    <div className="bg-green-600 border border-white  rounded-full w-9 h-9 flex items-center justify-center mr-3 flex-shrink-0">
                       <svg
-                        className="w-6 h-6 text-white"
+                        className="w-5 h-5 text-white"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -819,16 +820,14 @@ const Architecture = () => {
                         />
                       </svg>
                     </div>
-                    <h1 className="text-[28px] text-green-800 tracking-wide font-semibold">
-                      {benefit.title}
-                    </h1>
+                    <h1 className="text-xl font-semibold text-white">{benefit.title}</h1>
                   </div>
 
-                  {/* Custom bullet points with dark green circle */}
-                  <ul className="space-y-2 pl-2">
+                  {/* Points */}
+                  <ul className="space-y-2 pl-2 relative z-10">
                     {benefit.points?.map((point, i) => (
-                      <li key={i} className="flex items-start text-[#0d3557] regular text-[16px] leading-relaxed">
-                        <span className="w-2 h-2 mt-2 mr-3 rounded-full bg-green-600 flex-shrink-0"></span>
+                      <li key={i} className="flex items-start text-white text-[16px] leading-relaxed">
+                        <span className="w-2 h-2  mt-2 mr-3 rounded-full bg-white/80 flex-shrink-0"></span>
                         <span className="regular">{point}</span>
                       </li>
                     ))}
@@ -836,6 +835,7 @@ const Architecture = () => {
                 </motion.div>
               ))}
             </div>
+
 
 
 

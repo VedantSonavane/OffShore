@@ -9,11 +9,10 @@ import plansImage from "../../assets/architectplans.png";
 import whyUsImage from "../../assets/architectwhy.png";
 import getStartedImage from "../../assets/architecture.png";
 import { Link } from "react-router-dom";
-import architectureVideo from "../../assets/architecture.mp4";
 import Scheduling from "../Scheduling";
+import figmaLogo from "../../assets/ms.png";
 
-const figmaLogo =
-  "https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg";
+
 
 const Architecture = () => {
   const [activeTab, setActiveTab] = useState("services");
@@ -30,31 +29,38 @@ const Architecture = () => {
     { id: "tools", label: "Tools" },
     { id: "plans", label: "Plans" },
     { id: "why-us", label: "Why Us?" },
-   
     { id: "get-started", label: "Get Started" },
-     { id: "faq", label: "FAQ" },
+    { id: "faq", label: "FAQ" },
   ];
 
   const tabData = {
     services: {
-      title: "Comprehensive Marketing  Services",
+      title: "Comprehensive Architechural Excellence Services",
       description:
-        "We provide end-to-end Marketing  solutions from concept to completion. Our team delivers innovative designs tailored to your specific needs and vision.",
+        "We provide end-to-end Architectural Excellence solutions from concept to completion. Our team delivers innovative designs tailopink to your specific needs and vision.",
       image: architectureHero,
-    features: [
-  { name: "LEAD GENERATION", image: serviceImage },
-  { name: "EMAIL CAMPAIGN CREATION", image: serviceImage },
-  { name: "CONTACT BUILDING", image: serviceImage },
-  { name: "CAMPAIGN TRACKING", image: serviceImage },
-  { name: "QUALIFIED LEAD DELIVERY", image: serviceImage },
-  { name: "INBOUND MARKETING STRATEGY", image: serviceImage },
-  { name: "CONTENT MARKETING", image: serviceImage },
-  { name: "CUSTOMIZED CRM SUPPORT", image: serviceImage },
-],
+      features: [
+
+
+        { name: "WEB DEVELOPMENT", image: serviceImage },
+        { name: "DIGITAL MARKETING", image: serviceImage },
+        { name: "APP DEVELOPMENT", image: serviceImage },
+        { name: "CRM / ERP", image: serviceImage },
+        { name: "SHOP DRAWINGS", image: serviceImage },
+        { name: "WEB DEVELOPMENT", image: serviceImage },
+        { name: "DIGITAL MARKETING", image: serviceImage },
+        { name: "APP DEVELOPMENT", image: serviceImage },
+        { name: "CRM / ERP", image: serviceImage },
+        { name: "SHOP DRAWINGS", image: serviceImage },
+        { name: "CRM / ERP", image: serviceImage },
+        { name: "SHOP DRAWINGS", image: serviceImage },
+
+      ],
+
     },
     tools: {
-      title: "Connect with Offshore365 to the tools you already use",
-      description: "Boost productivity with 100+ integrations",
+      title: "Connect with Offshore365 with the tools to already use",
+      description: "Work seamlessly with offshore experts skilled in leading AEC software.",
       image: toolsImage,
       software: [
         { name: "Zoom", icon: "Z" },
@@ -70,44 +76,40 @@ const Architecture = () => {
       ],
     },
     plans: {
-      title: "Pick the perfect plan for your team",
-      description: "Choose from a variety of plans tailored to your needs.",
+      title: "Pick the perfect model for your team",
+      description: "Choose from a variety of plans tailopink to your needs.",
       image: plansImage,
       plans: [
         {
-          title: "Hourly Billing Model",
-          price: "$50/hr",
+          title: "Hourly Billing ",
           description: "Flexible billing based on hours worked.",
-          recommended: false,
+          backDescription: "Billing is based on team hours, ideal for dynamic, evolving project scopes."
         },
         {
-          title: "Fixed Fee Model",
-          price: "$5,000/project",
+          title: "Fixed Fee ",
           description: "Set price for defined project scope.",
-          recommended: false,
+          backDescription: "A fixed cost is set upfront for clearly defined projects with stable requirements."
         },
         {
-          title: "Project Based Model",
-          price: "$10,000/project",
+          title: "Project Based ",
           description: "Comprehensive pricing for entire projects.",
-          recommended: true,
+          backDescription: "Pricing aligns with project phases and milestones—great for phased delivery."
         },
         {
-          title: "Dedicated Team Model",
-          price: "$20,000/mo",
-          description: "Full-time team for ongoing projects.",
-          recommended: false,
+          title: "Dedicated Team ",
+          description: "Full-time team for ongoing collaboration.",
+          backDescription: "A team works exclusively on your project—best for long-term collaboration."
         },
         {
-          title: "Performance Model",
-          price: "Custom",
-          description: "Pricing based on project outcomes.",
-          recommended: false,
-        },
-      ],
-    },
+          title: "Performance Based",
+          description: "Pricing tied to project outcomes.",
+          backDescription: "Payment is based on results, motivating vendors to exceed targets."
+        }
+      ]
+    }
+    ,
     "why-us": {
-      title: "Why Choose Our Marketing  Services?",
+      title: "Why Choose Our Architectural Excellence Services?",
       description:
         "We combine creativity with technical expertise to deliver exceptional results.",
       image: whyUsImage,
@@ -116,30 +118,18 @@ const Architecture = () => {
         { number: 15, label: "Countries", max: 20, percentage: 75 },
         { number: 500, label: "Global Projects", max: 600, percentage: 83 },
       ],
-   highlightedBenefits: [
-  
-  {
-    title: "Comprehensive Workspace Setup",
-    description:
-      "Includes all office space, desks, and essential tools to ensure your remote team operates efficiently from day one.",
-  },
- 
-  {
-    title: "Payroll and Benefits Management",
-    description:
-      "Handles payroll administration, taxes, and benefits, reducing compliance risks and internal workload.",
-  },
-  {
-    title: "Remote Worker Enablement",
-    description:
-      "Equips teams with the necessary tools, training, and support to excel in remote work environments.",
-  },
-  {
-    title: "Employee Health Coverage",
-    description:
-      "Includes family health insurance for team members, ensuring well-being and peace of mind.",
-  },
-],
+      highlightedBenefits: [
+        {
+          title: "pinkuced Administrative Burden",
+          description:
+            "Offshore365 handles the administrative tasks associated with hiring and managing staff, such as recruitment, onboarding, and payroll. This allows clients to focus on their core business operations.",
+        },
+        {
+          title: "Time Zone Advantage",
+          description:
+            "Offshore teams can work while your in-house team is off, enabling faster project turnaround times and shorter project cycles. This can be a significant advantage for projects with tight deadlines.",
+        },
+      ],
       benefits: [
         {
           title: "AEC Expertise",
@@ -153,7 +143,7 @@ const Architecture = () => {
         {
           title: "Cost-Effective",
           description:
-            "Reduce costs significantly compared to in-house hiring.",
+            "pinkuce costs significantly compapink to in-house hiring.",
         },
         {
           title: "Scalable Teams",
@@ -184,141 +174,77 @@ const Architecture = () => {
       },
     },
     faq: {
-      title: "Frequently Asked Questions",
+      title: "FAQ",
       description: "Here are some of the frequently asked questions",
       faqs: [
         {
-          question: "What types of interior design projects do you handle?",
+          question: "What web development services do you offer?",
           answer:
-            "We handle a wide range of projects, including residential, commercial, and hospitality spaces. From schematic design to 3D rendering, our team manages every aspect to bring your vision to life.",
+            "We provide a wide range of web development services including Shopify development, WordPress development, Magento development, API development and integration, Wix development, and custom web designing.",
           icon: (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-12 w-12 text-pink-600"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-pink-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path d="M12 14l9-5-9-5-9 5 9 5z" />
               <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="1"
-                d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
-              />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
             </svg>
           ),
         },
         {
-          question: "How long does a typical interior design project take?",
+          question: "What platforms do you specialize in for e-commerce development?",
           answer:
-            "Project timelines vary based on scope and complexity. A typical residential project may take 3-6 months, while commercial projects can range from 6-12 months, depending on requirements.",
+            "We specialize in Shopify and Magento development for e-commerce solutions, ensuring a seamless online shopping experience for your customers.",
           icon: (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-12 w-12 text-pink-600"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="1"
-                d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-              />
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-pink-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
             </svg>
           ),
         },
         {
-          question: "Can you work with my existing tools and software?",
+          question: "Can you help with custom web design?",
           answer:
-            "Yes, we integrate seamlessly with over 100 tools, including Zoom, Slack, and Salesforce, ensuring smooth collaboration with your existing workflows.",
+            "Yes, we offer custom web designing services tailored to meet your specific business needs and branding requirements.",
           icon: (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-12 w-12 text-pink-600"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="1"
-                d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"
-              />
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-pink-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
             </svg>
           ),
         },
         {
-          question: "What is included in your design process?",
+          question: "Do you provide WordPress development services?",
           answer:
-            "Our process includes consultation, schematic design, design development, construction documents, and final execution, ensuring a comprehensive approach tailored to your needs.",
+            "Absolutely! We offer comprehensive WordPress development services, from theme customization to plugin development and site maintenance.",
           icon: (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-12 w-12 text-pink-600"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="1"
-                d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"
-              />
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-pink-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
             </svg>
           ),
         },
         {
-          question: "How do you ensure the quality of your designs?",
+          question: "What is included in your API development and integration services?",
           answer:
-            "We conduct rigorous quality checks at every stage, employ skilled professionals trained to international standards, and use advanced tools like 3D modeling and rendering to ensure precision and excellence.",
+            "Our API development and integration services include creating custom APIs, integrating third-party APIs, and ensuring seamless data flow between different software systems.",
           icon: (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-12 w-12 text-pink-600"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="1"
-                d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"
-              />
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-pink-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
             </svg>
           ),
         },
         {
-          question: "What is the cost structure for your services?",
+          question: "How do you approach custom web designing projects?",
           answer:
-            "We offer flexible pricing models, including hourly billing ($50/hr), fixed fee ($5,000/project), project-based ($10,000/project), dedicated team ($20,000/mo), and custom performance-based pricing.",
+            "We start with a thorough understanding of your business goals and target audience, followed by creating a unique design that aligns with your brand identity and delivers an exceptional user experience.",
           icon: (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-12 w-12 text-pink-600"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="1"
-                d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z"
-              />
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-pink-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z" />
             </svg>
           ),
         },
       ],
     },
+
+
     "get-started": {
-      title: "Start Your Marketing  Project Today",
+      title: "Start Your Architectural Excellence Project Today",
       description:
         "Get in touch to discuss your project requirements and how we can help bring your vision to life.",
       image: getStartedImage,
@@ -408,42 +334,93 @@ const Architecture = () => {
 
   const [activeIndex, setActiveIndex] = useState(0);
   const features = tabData.services.features;
-  const doubledFeatures = [...features, ...features]; // Double for continuous loop
-  const imageWidth = 100; // w-24 (24 * 4px/rem = 96px)
-  const gap = 16; // mx-2 (2 * 0.5rem * 16px/rem = 16px)
+  const doubledFeatures = [...features, ...features];
+  const imageWidth = 100;
+  const gap = 16;
 
-  // Auto-slide with pause
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((prevIndex) =>
         prevIndex === features.length - 1 ? 0 : prevIndex + 1
       );
-    }, 3000); // Pause for 3 seconds
+    }, 3000);
 
     return () => clearInterval(interval);
   }, [features.length]);
 
+  const activeGradient = "linear-gradient(744deg, #FF69B4, #FF1493 60%, #FFC0CB)";
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <motion.div
+      <motion.section
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.2 }}
-        className="relative h-[500px] sm:h-[600px] w-full bg-fixed bg-cover bg-center flex items-center justify-center"
-        style={{ backgroundImage: `url(${architectureHero})` }}
+        className="py-20 h-[600px] transition-all duration-1000 text-white flex justify-center items-center relative overflow-hidden"
+        style={{ background: activeGradient }}
       >
+        {/* Background Waves */}
+        {[...Array(3)].map((_, i) => (
+          <div
+            key={`bg-wave-${i}`}
+            className="wave absolute w-[300%] h-[300%] opacity-30 left-[-50%] top-[-50%] rounded-[100%]"
+            style={{
+              background: activeGradient,
+              animationDelay: `${i * 2}s`,
+              animationDuration: `${15 + i * 5}s`,
+            }}
+          />
+        ))}
+        {/* Background Image Overlay */}
+
         <div className="relative text-center px-4 z-10" data-aos="fade-up">
-          <motion.h1
+          <h1
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="text-8xl font-extrabold text-white tracking-tight mb-4 drop-shadow-2xl"
+            className="text-[100px] font-extrabold tracking-wide mb-4 drop-shadow-2xl"
           >
-            Marketing 
-          </motion.h1>
+            Marketing          </h1>
+
+          <motion.p
+            initial={{ y: 30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.7, duration: 0.2 }}
+            className="text-[34px] regular max-w-3xl mx-auto"
+          >
+            ALL-IN-ONE DIGITAL SERVICES
+          </motion.p>
         </div>
-      </motion.div>
+      </motion.section>
+
+      <style jsx>{`
+        .wave {
+          animation: wave 5s infinite linear;
+          pointer-events: none;
+        }
+
+        .wave:nth-child(2) {
+          animation-duration: 2s;
+        }
+
+        .wave:nth-child(3) {
+          animation-duration: 2s;
+        }
+
+        .group:hover .wave {
+          animation-play-state: paused;
+        }
+
+        @keyframes wave {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+      `}</style>
 
       {/* Placeholder for Tabs Bar */}
       <div
@@ -460,11 +437,10 @@ const Architecture = () => {
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className={`z-20 bg-pink-500 backdrop-blur-xl shadow-lg transition-all duration-300 ${
-          isSticky ? "fixed top-[72px] left-0 right-0 shadow-xl" : "relative"
-        }`}
+        className={`z-20 bg-pink-500 backdrop-blur-xl shadow-lg transition-all duration-300 ${isSticky ? "fixed top-[64px] left-0 right-0 shadow-xl" : "relative"
+          }`}
       >
-        <div className="container flex justify-center items-center mx-auto ">
+        <div className="container flex justify-center items-start mx-auto ">
           <div className="flex overflow-x-auto scrollbar-hide py-3">
             {tabs.map((tab) => (
               <motion.button
@@ -489,7 +465,7 @@ const Architecture = () => {
       </motion.div>
 
       {/* Main Content */}
-      <div className="container mx-auto px-4 sm:px-6 py-12 md:py-16">
+      <div className="container mx-auto px-24  ">
         {/* Services Section */}
         <motion.section
           ref={(ref) => setRef("services", ref)}
@@ -501,56 +477,171 @@ const Architecture = () => {
           id="services"
           data-aos="fade-up"
         >
-          <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-12 px-4 sm:px-8">
+          <div className="flex flex-col lg:flex-row items-start gap-4  px-4 sm:px-8">
+            {/* LEFT: TEXT SECTION */}
             <div className="flex-1" data-aos="fade-right">
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-                {tabData.services.title}
-              </h2>
-              <p className="text-base sm:text-lg text-gray-600 mb-8 leading-relaxed">
-                {tabData.services.description}
+              <h1 className="text-[40px] font-bold mb-4 text-[#0d3557] tracking-wide leading-snug">
+                Transform Your Brand With Offshore365
+
+              </h1>
+              <p className="text-[18px]  text-[#0d3557] leading-relaxed">
+                we help you transform your brand by providing customized marketing <br /> and development solutions tailored specifically <br /> to your business needs.
+
               </p>
-              <div className="grid grid-cols-2 sm:grid-cols-2 gap-4">
-                {features.map((feature, index) => (
-                  <motion.div
-                    key={index}
-                    whileHover={{ scale: 1.05, backgroundColor: "#f1f5f9" }}
-                    className="flex items-center p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
-                    data-aos="fade-up"
-                    data-aos-delay={index * 100}
-                  >
-                    <div className="bg-pink-100 rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0">
-                      <svg
-                        className="w-4 h-4 text-pink-600"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                    </div>
-                    <span className="text-gray-800 text-base">{feature.name}</span>
-                  </motion.div>
-                ))}
-              </div>
             </div>
-            <div className="flex-1" data-aos="fade-left">
+
+
+            {/* RIGHT: FEATURES + CAROUSEL */}
+            <div className="flex-1 flex flex-col gap-6" data-aos="fade-left">
+              {/* Feature boxes */}
+            <div className="grid grid-cols-2 sm:grid-cols-2 gap-4 p-4">
+  {/* Feature 1: Search Engine Optimization */}
+  <motion.div
+    whileHover={{ scale: 1.05 }}
+    className="flex items-center p-4  transition-all duration-300"
+    data-aos="fade-up"
+    data-aos-delay="100"
+  >
+    <svg
+      className="w-8 h-8 text-pink-500 mr-4 flex-shrink-0"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={1.5}
+        d="M21 21l-4.35-4.35m2.85-5.65a7 7 0 11-14 0 7 7 0 0114 0z"
+      />
+    </svg>
+    <span className="text-gray-800 text-[16px] font-medium">Search Engine Optimization</span>
+  </motion.div>
+
+  {/* Feature 2: Content Marketing */}
+  <motion.div
+    whileHover={{ scale: 1.05 }}
+    className="flex items-center p-4  transition-all duration-300"
+    data-aos="fade-up"
+    data-aos-delay="200"
+  >
+    <svg
+      className="w-8 h-8 text-pink-500 mr-4 flex-shrink-0"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={1.5}
+        d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+      />
+    </svg>
+    <span className="text-gray-800 text-[16px] font-medium">Content Marketing</span>
+  </motion.div>
+
+  {/* Feature 3: Pay-Per-Click (PPC) */}
+  <motion.div
+    whileHover={{ scale: 1.05 }}
+    className="flex items-center p-4  transition-all duration-300"
+    data-aos="fade-up"
+    data-aos-delay="300"
+  >
+    <svg
+      className="w-8 h-8 text-pink-500 mr-4 flex-shrink-0"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={1.5}
+        d="M12 8c-1.104 0-2 .896-2 2s.896 2 2 2 2-.896 2-2-.896-2-2-2zm0 8c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm0 0c-3.314 0-6-2.686-6-6s2.686-6 6-6 6 2.686 6 6-2.686 6-6 6z"
+      />
+    </svg>
+    <span className="text-gray-800 text-[16px] font-medium">Pay-Per-Click (PPC)</span>
+  </motion.div>
+
+  {/* Feature 4: Social Media Marketing */}
+  <motion.div
+    whileHover={{ scale: 1.05 }}
+    className="flex items-center p-4  transition-all duration-300"
+    data-aos="fade-up"
+    data-aos-delay="400"
+  >
+    <svg
+      className="w-8 h-8 text-pink-500 mr-4 flex-shrink-0"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={1.5}
+        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+      />
+    </svg>
+    <span className="text-gray-800 text-[16px] font-medium">Social Media Marketing</span>
+  </motion.div>
+
+  {/* Feature 5: Online Reputation Management */}
+  <motion.div
+    whileHover={{ scale: 1.05 }}
+    className="flex items-center p-4  transition-all duration-300"
+    data-aos="fade-up"
+    data-aos-delay="500"
+  >
+    <svg
+      className="w-8 h-8 text-pink-500 mr-4 flex-shrink-0"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={1.5}
+        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+      />
+    </svg>
+    <span className="text-gray-800 text-[16px] font-medium">Online Reputation Management</span>
+  </motion.div>
+
+  {/* Feature 6: Influencer Marketing */}
+  <motion.div
+    whileHover={{ scale: 1.05 }}
+    className="flex items-center p-4  transition-all duration-300"
+    data-aos="fade-up"
+    data-aos-delay="600"
+  >
+    <svg
+      className="w-8 h-8 text-pink-500 mr-4 flex-shrink-0"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={1.5}
+        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+      />
+    </svg>
+    <span className="text-gray-800 text-[16px] font-medium">Influencer Marketing</span>
+  </motion.div>
+</div>
+              {/* Carousel below feature boxes */}
               <motion.div
                 initial={{ scale: 0.9, opacity: 0 }}
                 whileInView={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
-                className="relative w-full h-[600px]"
+                className="relative w-full h-[150px]"
               >
-                <img
-                  src={features[activeIndex].image}
-                  alt={features[activeIndex].name}
-                  className="w-full h-[400px] rounded-xl shadow-2xl object-cover transform hover:scale-105 transition-transform duration-500"
-                />
+
                 <div className="absolute bottom-0 w-full h-[140px] overflow-hidden">
                   <motion.div
                     className="flex"
@@ -572,9 +663,8 @@ const Architecture = () => {
                         onClick={() => setActiveIndex(index % features.length)}
                       >
                         <div
-                          className={`w-24 h-24 rounded-lg overflow-hidden mb-1 cursor-pointer ${
-                            activeIndex === index % features.length ? "scale-105" : ""
-                          }`}
+                          className={`w-24 h-24 rounded-lg overflow-hidden mb-1 cursor-pointer ${activeIndex === index % features.length ? "scale-105" : ""
+                            }`}
                         >
                           <img
                             src={feature.image}
@@ -582,7 +672,7 @@ const Architecture = () => {
                             className="w-full h-full object-cover"
                           />
                         </div>
-                        <span className="text-gray-800 text-xs text-center">
+                        <span className="text-[#0d3557] regular text-[10px] text-center">
                           {feature.name}
                         </span>
                       </div>
@@ -593,6 +683,7 @@ const Architecture = () => {
             </div>
           </div>
         </motion.section>
+
 
         {/* Tools Section */}
         <motion.section
@@ -605,44 +696,30 @@ const Architecture = () => {
           id="tools"
           data-aos="fade-up"
         >
-          <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-12">
-            <motion.div
-              className="flex-1"
-              initial={{ scale: 0.9, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              data-aos="fade-right"
-            >
-              <img
-                src={tabData.tools.image}
-                alt={tabData.tools.title}
-                className="w-full border border-white h-[550px] rounded-xl shadow-2xl object-cover transform hover:scale-105 transition-transform duration-500"
-              />
-            </motion.div>
+          <div className="container max-w-4xl mx-auto flex flex-col lg:flex-row items-start gap-4">
             <div className="flex-1" data-aos="fade-left">
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-6">
+              <h1 className="text-[32px] sm:text-[40px] tracking-wide text-[#0d3557] text-justify font-extrabold mb-4">
                 {tabData.tools.title}
-              </h2>
-              <p className="text-base sm:text-lg text-gray-600 mb-8 leading-relaxed">
+              </h1>
+              <p className="text-[18px] sm:text-[20px] text-left text-[#0d3557] mb-12 sm:mb-16 leading-relaxed">
                 {tabData.tools.description}
               </p>
-              <div className="grid grid-cols-4 sm:grid-cols-4 gap-4">
+              <div className="grid grid-cols-3 sm:grid-cols-4 gap-0 justify-items-center">
                 {tabData.tools.software.slice(0, 8).map((tool, index) => (
                   <motion.div
                     key={index}
-                    className="flex flex-col items-center hover:scale-105 transition-all duration-300"
+                    className="flex flex-col items-start hover:scale-105 transition-all duration-300"
                     data-aos="fade-up"
                     data-aos-delay={index * 100}
                   >
                     <motion.div
                       whileHover={{ scale: 1.05 }}
-                      className="w-24 h-24 rounded-2xl overflow-hidden mb-2"
+                      className="w-20 h-20 sm:w-24 sm:h-24 rounded-xl overflow-hidden mb-1 sm:mb-2"
                     >
                       <img
                         src={figmaLogo}
                         alt={tool.name}
-                        className="w-full h-full object-contain bg-white p-2"
+                        className="w-full h-full object-contain bg-white"
                       />
                     </motion.div>
                   </motion.div>
@@ -652,61 +729,9 @@ const Architecture = () => {
           </div>
         </motion.section>
 
-        {/* Plans Section */}
-        <motion.section
-          ref={(ref) => setRef("plans", ref)}
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="py-16 sm:py-20 scroll-mt-20"
-          id="plans"
-        >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-8">
-              <h2 className="text-4xl font-extrabold text-gray-900">
-                {tabData.plans.title}
-              </h2>
-              <p className="mt-4 text-lg text-gray-600">
-                {tabData.plans.description}
-              </p>
-            </div>
-            <motion.div
-              className="mb-12"
-              initial={{ scale: 0.95, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <img
-                src={tabData.plans.image}
-                alt={tabData.plans.title}
-                className="w-full h-[350px] border-2 border-pink-200 rounded-2xl shadow-2xl object-cover hover:scale-105 transition-transform duration-500"
-              />
-            </motion.div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-              {tabData.plans.plans.slice(0, 5).map((plan, index) => (
-                <motion.div
-                  key={index}
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                  className="relative group bg-white text-pink-900 rounded-2xl shadow-lg p-6 flex flex-col justify-between h-full border border-pink-500 transition-all duration-300"
-                >
-                  <div className="transition-all duration-300 group-hover:text-white">
-                    <h3 className="text-lg font-semibold mb-2">{plan.title}</h3>
-                    <p className="text-sm mb-6">{plan.description}</p>
-                  </div>
-                  <button className="mt-auto w-full py-2 rounded-lg bg-pink-600 text-white font-semibold group-hover:bg-white group-hover:text-pink-700 transition duration-300">
-                    Get started
-                  </button>
-                  <div className="absolute inset-0 bg-gradient-to-br from-pink-500 to-pink-700 opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity duration-300 -z-10"></div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </motion.section>
 
-        {/* Why Us Section */}
+
+
         <motion.section
           ref={(ref) => setRef("why-us", ref)}
           initial={{ opacity: 0, y: 50 }}
@@ -717,76 +742,69 @@ const Architecture = () => {
           id="why-us"
           data-aos="zoom-in"
         >
-          <div className="flex flex-col lg:flex-row-reverse items-center gap-8 md:gap-12">
-            <div className="flex-1" data-aos="fade-left">
-              <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-                {tabData["why-us"].title}
-              </h2>
-              <p className="text-base sm:text-lg mb-8 leading-relaxed">
-                {tabData["why-us"].description}
-              </p>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 mb-8">
-                {tabData["why-us"].stats.map((stat, index) => (
-                  <div
-                    key={index}
-                    className="flex flex-col items-start"
-                    data-aos="fade-up"
-                    data-aos-delay={index * 100}
-                  >
-                    <div className="text-2xl font-bold mb-2">
-                      {stat.number}+
-                    </div>
-                    <div className="text-base mb-2">{stat.label}</div>
-                    <div className="w-full bg-pink-300 rounded-full h-2.5">
-                      <motion.div
-                        className="bg-pink-500 h-2.5 rounded-full"
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${stat.percentage}%` }}
-                        transition={{ duration: 1, delay: index * 0.2 }}
-                      />
-                    </div>
+          <div className="flex flex-col lg:flex-row-reverse items-start gap-8 md:gap-12">
+            <div className="flex-1 grid grid-cols-2 gap-6 place-items-center" data-aos="fade-left">
+
+              {/* Box 1 */}
+              <div className="bg-white rounded-xl   hover:scale-105 hover:shadow-2xl transition-all duration-300 text-center w-full max-w-xs">
+                <div className="flex justify-center mb-4">
+                  {/* Office icon */}
+                  <svg className="w-10 h-10 text-pink-500" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+                    <path d="M3 21V3h6v6h6v6h6v6H3z" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </div>
+                <h2 className="text-[20px] text-[#0d3557] regular">Office Space, Desks & Tools</h2>
+              </div>
+
+              {/* Box 2 */}
+              <div className="bg-white rounded-xl   hover:scale-105 hover:shadow-2xl transition-all duration-300 text-center w-full max-w-xs">
+                <div className="flex justify-center mb-4">
+                  {/* Laptop icon */}
+                  <svg className="w-10 h-10 text-pink-500" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+                    <path d="M4 6h16v10H4V6zm0 10h16v2H4v-2z" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </div>
+                <h2 className="text-[20px] text-[#0d3557] regular">Computer Hardware + Office Software</h2>
+              </div>
+
+              {/* Box 3 (centered) */}
+              <div className="col-span-2 flex justify-center">
+                <div className="bg-white rounded-xl   hover:scale-105 hover:shadow-2xl transition-all duration-300 text-center w-full max-w-xs">
+                  <div className="flex justify-center mb-4">
+                    {/* Money icon */}
+                    <svg className="w-10 h-10 text-pink-500" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+                      <path d="M12 8c-1.5 0-2.5.5-2.5 1.5s1 1.5 2.5 1.5 2.5.5 2.5 1.5-1 1.5-2.5 1.5M12 5v14" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
                   </div>
-                ))}
+                  <h2 className="text-[20px] text-[#0d3557] regular">Payroll, Taxes & Benefits</h2>
+                </div>
               </div>
-              <div className="grid grid-cols-2 sm:grid-cols-2 gap-6 mb-12">
-                {tabData["why-us"].highlightedBenefits.map((benefit, index) => (
-                  <motion.div
-                    key={index}
-                    whileHover={{
-                      scale: 1.05,
-                      boxShadow: "0 10px 20px rgba(0, 0, 0, 0.2)",
-                    }}
-                    className="p-4 bg-white rounded-xl shadow-lg border border-pink-600/30 transition-all duration-300"
-                    data-aos="fade-up"
-                    data-aos-delay={index * 100}
-                  >
-                    <div className="flex items-center mb-2">
-                      <div className="bg-pink-600 rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0">
-                        <svg
-                          className="w-4 h-4 text-white"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M5 13l4 4L19 7"
-                          />
-                        </svg>
-                      </div>
-                      <h3 className="text-lg text-pink-600 font-semibold">
-                        {benefit.title}
-                      </h3>
-                    </div>
-                    <p className="text-sm text-gray-600 leading-relaxed">
-                      {benefit.description}
-                    </p>
-                  </motion.div>
-                ))}
+
+              {/* Box 4 */}
+              <div className="bg-white rounded-xl   hover:scale-105 hover:shadow-2xl transition-all duration-300 text-center w-full max-w-xs">
+                <div className="flex justify-center mb-4">
+                  {/* Remote icon */}
+                  <svg className="w-10 h-10 text-pink-500" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+                    <path d="M12 3v18m-9-9h18" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </div>
+                <h2 className="text-[20px] text-[#0d3557] regular">Remote Tools, Training & Support</h2>
               </div>
+
+              {/* Box 5 */}
+              <div className="bg-white rounded-xl   hover:scale-105 hover:shadow-2xl transition-all duration-300 text-center w-full max-w-xs">
+                <div className="flex justify-center mb-4">
+                  {/* Health icon */}
+                  <svg className="w-10 h-10 text-pink-500" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+                    <path d="M12 21C12 21 3 13.5 3 8.5 3 5.4 5.4 3 8.5 3c1.8 0 3.4.9 4.5 2.1C14.1 3.9 15.7 3 17.5 3 20.6 3 23 5.4 23 8.5c0 5-9 12.5-9 12.5z" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </div>
+                <h2 className="text-[20px] text-[#0d3557] regular">Family Health Insurance</h2>
+              </div>
+
             </div>
+
+
             <motion.div
               className="flex-1"
               initial={{ scale: 0.9, opacity: 0 }}
@@ -795,125 +813,125 @@ const Architecture = () => {
               viewport={{ once: true }}
               data-aos="fade-right"
             >
-              <img
-                src={tabData["why-us"].image}
-                alt={tabData["why-us"].title}
-                className="w-full h-[550px] border border-white rounded-xl shadow-2xl object-cover transform hover:scale-105 transition-transform duration-500"
-              />
-            </motion.div>
-          </div>
-          <div className="py-16 px-4 sm:px-6 lg:px-20">
-            <div className="text-center mb-14">
-              <h2 className="text-4xl font-bold text-gray-800">Our Expertise</h2>
-              <p className="text-gray-500 mt-3 text-base max-w-xl mx-auto">
-                We specialize in delivering solutions that drive real results. Here's what makes us stand out.
-              </p>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-              {tabData["why-us"].benefits.map((benefit, index) => (
-                <div
-                  key={index}
-                  className="flex flex-col items-center text-center bg-white rounded-3xl shadow-md p-8 border border-gray-200 transform transition-all duration-300 hover:scale-105 hover:bg-pink-500 hover:text-white hover:shadow-2xl"
-                >
-                  <div className="mb-6">
-                    <div className="flex items-center justify-center w-12 h-12 border border-pink-500 rounded-full bg-pink-100 text-pink-600 shadow-md transition-all duration-300 group-hover:bg-white group-hover:text-pink-800">
-                      <svg
-                        className="w-6 h-6"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth={2}
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2 transition-colors duration-300">
-                    {benefit.title}
-                  </h3>
-                  <p className="text-sm leading-relaxed transition-colors duration-300">
-                    {benefit.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </motion.section>
+              <h1 className="text-[40px] font-bold mb-4 text-[#0d3557] tracking-wide leading-snug">
+                Transform the way your organisation works
+              </h1>
 
-        {/* Get Started Section */}
-        <motion.section
-          ref={(ref) => setRef("get-started", ref)}
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          id="get-started"
-          className="relative py-20 sm:py-24 mt-20 rounded-xl text-white overflow-hidden"
-        >
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover z-0"
-          >
-            <source src={architectureVideo} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-          <div className="absolute inset-0 bg-black bg-opacity-50 z-0"></div>
-          <div className="relative z-10 container mx-auto px-6 flex flex-col lg:flex-row items-center gap-12">
-            <div className="flex-1">
-              <h2 className="text-4xl sm:text-5xl font-bold mb-6">
-                {tabData["get-started"].title}
-              </h2>
-              <p className="text-lg sm:text-xl text-gray-200 mb-8 leading-relaxed">
-                {tabData["get-started"].description}
+              {/* New paragraph below the title */}
+              <p className="mb-8 text-[18px] text-[#0d3557] leading-relaxed regular">
+                Grow your business with our reliable digital marketing services. We use proven strategies to build trust, drive traffic, and increase sales, ensuring your success online.
               </p>
-              <div className="space-y-4 mb-8">
-                {tabData["get-started"].steps.map((step, index) => (
+
+              <div className="grid grid-cols-2 gap-2 text-gray-800">
+                {[
+
+
+                  "Personal Campaign Manager",
+                  "Monthly Meetings",
+                  "Experienced Resources",
+                  "One-on-one Consultation",
+
+                ].map((point, index) => (
                   <motion.div
                     key={index}
-                    whileHover={{ x: 10 }}
-                    className="flex items-center"
+                    whileHover={{ scale: 1.05, backgroundColor: "#f1f5f9" }}
+                    className="flex items-start p-2 bg-white rounded-lg hover:shadow-lg transition-all duration-300"
                     data-aos="fade-up"
                     data-aos-delay={index * 100}
                   >
-                    <div className="bg-white text-black rounded-full w-8 h-8 flex items-center justify-center mr-4 font-bold text-base">
-                      {index + 1}
+                    <div className="bg-pink-100 rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0">
+                      <svg
+                        className="w-4 h-4 text-pink-600"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M5 13l4 4L19 7" />
+                      </svg>
                     </div>
-                    <span className="text-white text-lg">{step}</span>
+                    <span className="text-[14px] text-[#0d3557] regular">{point}</span>
                   </motion.div>
                 ))}
               </div>
-              <div className="flex flex-col sm:flex-row gap-4">
+            </motion.div>
+
+          </div>
+
+
+        </motion.section>
+
+
+
+        {/* Get Started Section */}
+        <motion.section
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.2 }}
+          className="py-20 px-4 sm:px-8 h-auto sm:h-[550px] transition-all duration-1000 text-white flex rounded-2xl justify-center items-center relative overflow-hidden"
+          style={{ background: activeGradient }}
+        >
+          {/* Background Waves */}
+          {[...Array(3)].map((_, i) => (
+            <div
+              key={`bg-wave-${i}`}
+              className="wave absolute w-[300%] h-[300%] opacity-30 left-[-0%] top-[-0%] rounded-[100%]"
+              style={{
+                background: activeGradient,
+                animationDelay: `${i * 2}s`,
+                animationDuration: `${15 + i * 5}s`,
+              }}
+            />
+          ))}
+
+          {/* Content */}
+          <div className="relative text-center z-10 max-w-6xl mx-auto">
+            <motion.h1
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.3, duration: 0.8 }}
+              className="text-[50px]   font-extrabold tracking-wide mb-4 drop-shadow-2xl leading-tight"
+            >
+              Let’s Get Started
+            </motion.h1>
+
+            <motion.p
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.7, duration: 0.2 }}
+              className="text-base sm:text-lg md:text-xl lg:text-[20px] font-light max-w-2xl mx-auto text-gray-200"
+            >
+              Power up your productivity with Offshore365
+            </motion.p>
+
+            {/* Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-start mt-6 sm:mt-8">
+              <motion.button
+                whileHover={{
+                  scale: 1.05,
+                  boxShadow: "0 0 15px rgba(255, 255, 255, 0.6)",
+                }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => setShowSchedulingSection(true)}
+                className="px-6 py-3 bg-white regular text-gray-700 rounded-xl transition-all duration-300  text-base shadow-lg"
+              >
+                Schedule a Consultation
+              </motion.button>
+
+              <Link to="/contact">
                 <motion.button
                   whileHover={{
                     scale: 1.05,
                     boxShadow: "0 0 15px rgba(255, 255, 255, 0.6)",
                   }}
                   whileTap={{ scale: 0.95 }}
-                  onClick={() => setShowSchedulingSection(true)}
-                  className="px-6 py-3 bg-white text-black rounded-xl transition-all duration-300 font-semibold text-base shadow-lg"
+                  className="px-6 py-3 border regular border-white text-white rounded-xl hover:bg-white hover:text-black transition-all duration-300 font-semibold text-base shadow-lg"
                 >
-                  Schedule a Consultation
+                  Contact Our Team
                 </motion.button>
-                <Link to="/contact-us">
-                  <motion.button
-                    whileHover={{
-                      scale: 1.05,
-                      boxShadow: "0 0 15px rgba(255, 255, 255, 0.6)",
-                    }}
-                    whileTap={{ scale: 0.95 }}
-                    className="px-6 py-3 border border-white text-white rounded-xl hover:bg-white hover:text-black transition-all duration-300 font-semibold text-base shadow-lg"
-                  >
-                    Contact Our Team
-                  </motion.button>
-                </Link>
-              </div>
+              </Link>
             </div>
           </div>
         </motion.section>
@@ -942,18 +960,23 @@ const Architecture = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="py-12 sm:py-16 scroll-mt-20  rounded-2xl px-4 sm:px-8"
+          className="py-12 sm:py-16 scroll-mt-20 rounded-2xl px-4 sm:px-8"
           id="faq"
           data-aos="fade-up"
         >
-          <div className="  p-4 sm:p-8 rounded-lg ">
-            <h4 className="text-4xl font-bold text-gray-800 tracking-widest uppercase text-center">
+          <div className="p-4 sm:p-8 rounded-lg">
+            {/* Title */}
+            <h4 className="text-[36px] sm:text-[48px] md:text-[54px] lg:text-[40px] font-extrabold text-[#0d3557] tracking-wide text-center leading-tight">
               {tabData.faq.title}
             </h4>
-            <p className="text-center text-gray-600 text-sm mt-2">
+
+            {/* Subtitle */}
+            <p className="text-center text-[#0d3557] text-base sm:text-lg md:text-xl lg:text-[20px] mt-2 max-w-3xl mx-auto">
               {tabData.faq.description}
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 xl:gap-12 px-2 xl:px-12 mt-4">
+
+            {/* FAQ Cards Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 xl:gap-12 px-2 xl:px-12 mt-8">
               {tabData.faq.faqs.map((faq, index) => (
                 <motion.div
                   key={index}
@@ -961,27 +984,25 @@ const Architecture = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="flex space-x-8 mt-8"
+                  className="flex items-start space-x-4"
                   data-aos="fade-up"
                   data-aos-delay={index * 100}
                 >
-                  <div>{faq.icon}</div>
+                  <div className="mt-1">{faq.icon}</div>
                   <div>
-                    <h4 className="text-xl font-bold text-gray-700">{faq.question}</h4>
-                    <p className="text-gray-600 my-2">{faq.answer}</p>
-                    <Link
-                      to="/contact-us"
-                      className="text-pink-600 hover:text-pink-800 hover:underline capitalize"
-                      title="Read More"
-                    >
-                      Read More
-                    </Link>
+                    <h4 className="text-[20px] font-bold text-[#0d3557]">
+                      {faq.question}
+                    </h4>
+                    <p className="text-[#0d3557] text-[14px] my-2 leading-relaxed">
+                      {faq.answer}
+                    </p>
                   </div>
                 </motion.div>
               ))}
             </div>
           </div>
         </motion.section>
+
       </div>
     </div>
   );

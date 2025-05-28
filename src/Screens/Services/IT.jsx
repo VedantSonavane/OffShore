@@ -387,10 +387,9 @@ const Architecture = () => {
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.7, duration: 0.2 }}
-            className="text-[20px] font-light max-w-3xl mx-auto"
+            className="text-[34px] regular max-w-3xl mx-auto"
           >
-            Offshore 365 empowers its global clientele with robust IT solutions, consistently achieving successful outcomes on intricate projects across diverse sizes, sectors, and specialized fields.
-
+            ALL-IN-ONE DIGITAL SERVICES
           </motion.p>
         </div>
       </motion.section>
@@ -623,81 +622,118 @@ const Architecture = () => {
 
 
 
-       {/* Why Us Section - Redesigned */}
-<motion.section
-  ref={(ref) => setRef("why-us", ref)}
-  initial={{ opacity: 0, y: 50 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.8 }}
-  viewport={{ once: true }}
-  className="py-16 px-4 sm:px-10 bg-white text-[#3c2063] scroll-mt-20"
-  id="why-us"
->
-  <div className="flex flex-col lg:flex-row items-start gap-12 max-w-7xl mx-auto">
-    {/* Left Side: Heading + Numbered Features */}
-    <div className="w-full lg:w-1/2 space-y-6">
-      <h2 className="text-[34px] font-bold tracking-wide text-[#0d3557]">
-        Transform the way your organisation works
-      </h2>
-      <div className="space-y-4">
-        {[
-          "Experience & Expertise",
-          "Customization",
-          "Affordable Pricing",
-          "Proven Track Record",
-          "Excellent Customer Support",
-        ].map((item, idx) => (
-          <div
-            key={idx}
-            className={`flex items-center p-4 rounded-md shadow-md ${
-              idx === 1 ? "bg-purple-200" : "bg-purple-50"
-            }`}
-          >
-            <div className="bg-purple-800 text-white font-bold w-10 h-10 flex items-center justify-center rounded-full mr-4">
-              {idx + 1}
+        <motion.section
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="py-16 px-6 sm:px-12 bg-white text-[#3c2063] scroll-mt-20"
+          id="why-us"
+        >
+          <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-start gap-12">
+            {/* Left Side */}
+            <div className="w-full lg:w-1/2 space-y-6">
+              <h2 className="text-[34px] font-bold tracking-wide text-[#0d3557] leading-snug">
+                Transform the way your organisation works
+              </h2>
+
+              <div className="space-y-4">
+                {[
+                  "Experience & Expertise",
+                  "Customization",
+                  "Affordable Pricing",
+                  "Proven Track Record",
+                  "Excellent Customer Support",
+                ].map((item, idx) => (
+                  <motion.div
+                    key={idx}
+                    whileHover={{ scale: 1.03 }}
+                    whileTap={{ scale: 0.98 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                    className="flex items-center p-4 rounded-xl shadow-md bg-purple-50 hover:bg-purple-100 transition-all duration-300"
+                  >
+                    <div className="bg-purple-800 text-white font-bold w-10 h-10 flex items-center justify-center rounded-full mr-4">
+                      {String(idx + 1).padStart(2, "0")}
+                    </div>
+                    <div className="text-purple-900 font-semibold text-base tracking-wide">
+                      {item}
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
             </div>
-            <div className="text-purple-900 font-semibold text-base uppercase tracking-wide">
-              {item}
+
+            {/* Right Side */}
+            <div className="w-full lg:w-1/2 space-y-6">
+              <p className="text-[#0d3557] text-[18px] leading-relaxed">
+                Our CRM and ERP development services combine years of expertise with a commitment to
+                building trusted, customized solutions that drive your business’ success.
+              </p>
+
+              {/* Benefits */}
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  {
+                    text: "Customized Solutions",
+                    icon: (
+                      <svg className="w-6 h-6 text-purple-900" fill="none" stroke="currentColor" strokeWidth="2"
+                        viewBox="0 0 24 24">
+                        <path d="M9.75 3L8.25 21M15.75 3L14.25 21M3 9.75L21 8.25M3 15.75L21 14.25" />
+                      </svg>
+                    ),
+                  },
+                  {
+                    text: "Scalable Architecture",
+                    icon: (
+                      <svg className="w-6 h-6 text-purple-900" fill="none" stroke="currentColor" strokeWidth="2"
+                        viewBox="0 0 24 24">
+                        <path d="M4 6h16M4 12h16M4 18h7" />
+                      </svg>
+                    ),
+                  },
+                  {
+                    text: "Integration Expertise",
+                    icon: (
+                      <svg className="w-6 h-6 text-purple-900" fill="none" stroke="currentColor" strokeWidth="2"
+                        viewBox="0 0 24 24">
+                        <path d="M12 8v8m0 0l-4-4m4 4l4-4M4 4h16v16H4z" />
+                      </svg>
+                    ),
+                  },
+                  {
+                    text: "User-Centric Design",
+                    icon: (
+                      <svg className="w-6 h-6 text-purple-900" fill="none" stroke="currentColor" strokeWidth="2"
+                        viewBox="0 0 24 24">
+                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zM4 20c0-4 4-6 8-6s8 2 8 6" />
+                      </svg>
+                    ),
+                  },
+                ].map((benefit, i) => (
+                  <motion.div
+                    key={i}
+                    whileHover={{ scale: 1.05, rotate: [0, 1, -1, 0] }}
+                    transition={{ duration: 0.4, ease: "easeInOut" }}
+                    className="flex items-center gap-3 bg-purple-100/60 backdrop-blur-md rounded-lg px-4 py-3 shadow-sm hover:shadow-md cursor-pointer"
+                  >
+                    {benefit.icon}
+                    <p className="text-purple-900 font-medium text-sm">{benefit.text}</p>
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* CTA Button */}
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ duration: 0.3 }}
+                className="bg-[#0d3557] text-white px-6 py-3 rounded-md font-semibold shadow-md hover:bg-[#1a4475] transition-colors duration-300"
+              >
+                Book A Quote
+              </motion.button>
             </div>
           </div>
-        ))}
-      </div>
-    </div>
-
-    {/* Right Side: Paragraph + Benefits + Button */}
-    <div className="w-full lg:w-1/2 space-y-6">
-      <p className="text-[#0d3557] text-[18px]">
-        Our CRM and ERP development services combine years of expertise with a commitment to building trusted, customized solutions that drive your business’ success.
-      </p>
-
-      <ul className="space-y-3 text-base text-purple-800">
-        {[
-          "Customized Solutions",
-          "Scalable Architecture",
-          "Integration Expertise",
-          "User-Centric Design",
-        ].map((item, i) => (
-          <li key={i} className="flex items-center">
-            <svg
-              className="w-5 h-5 text-purple-600 mr-2 flex-shrink-0"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-            </svg>
-            {item}
-          </li>
-        ))}
-      </ul>
-
-      <button className="bg-[#0d3557] text-white px-6 py-3 rounded-md font-semibold transition-all duration-300">
-        Book A Quote
-      </button>
-    </div>
-  </div>
-</motion.section>
+        </motion.section>
 
 
 
