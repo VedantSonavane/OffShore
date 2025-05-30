@@ -52,8 +52,7 @@ const Architecture = () => {
         { name: "APP DEVELOPMENT", image: serviceImage },
         { name: "CRM / ERP", image: serviceImage },
         { name: "SHOP DRAWINGS", image: serviceImage },
-        { name: "CRM / ERP", image: serviceImage },
-        { name: "SHOP DRAWINGS", image: serviceImage },
+       
 
       ],
 
@@ -523,53 +522,7 @@ const Architecture = () => {
                 ))}
               </div>
 
-              {/* Carousel below feature boxes */}
-              <motion.div
-                initial={{ scale: 0.9, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
-                className="relative w-full h-[150px]"
-              >
-
-                <div className="absolute bottom-0 w-full h-[140px] overflow-hidden">
-                  <motion.div
-                    className="flex"
-                    animate={{
-                      x: `-${activeIndex * (imageWidth + gap)}px`,
-                      transition: {
-                        x: {
-                          duration: 0.5,
-                          ease: "easeInOut",
-                        },
-                      },
-                    }}
-                    style={{ width: `${doubledFeatures.length * (imageWidth + gap)}px` }}
-                  >
-                    {doubledFeatures.map((feature, index) => (
-                      <div
-                        key={index}
-                        className="flex flex-col items-center mx-2 py-2"
-                        onClick={() => setActiveIndex(index % features.length)}
-                      >
-                        <div
-                          className={`w-24 h-24 rounded-lg overflow-hidden mb-1 cursor-pointer ${activeIndex === index % features.length ? "scale-105" : ""
-                            }`}
-                        >
-                          <img
-                            src={feature.image}
-                            alt={feature.name}
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                        <span className="text-[#0d3557] regular text-[10px] text-center">
-                          {feature.name}
-                        </span>
-                      </div>
-                    ))}
-                  </motion.div>
-                </div>
-              </motion.div>
+             
             </div>
           </div>
         </motion.section>
@@ -627,7 +580,7 @@ const Architecture = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="py-16 px-6 sm:px-12 bg-white text-[#3c2063] scroll-mt-20"
+          className="py-16 mb-20 px-6 sm:px-12 bg-white text-[#3c2063] scroll-mt-20"
           id="why-us"
         >
           <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-start gap-12">

@@ -738,7 +738,7 @@ const Architecture = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="py-12 sm:py-16 scroll-mt-20 rounded-2xl px-4 sm:px-8 text-gray-800"
+          className="py-12 mb-20 sm:py-16 scroll-mt-20 rounded-2xl px-4 sm:px-8 text-gray-800"
           id="why-us"
           data-aos="zoom-in"
         >
@@ -746,60 +746,60 @@ const Architecture = () => {
             <div className="flex-1 grid grid-cols-2 gap-6 place-items-center" data-aos="fade-left">
 
               {/* Box 1 */}
-              <div className="bg-white rounded-xl   hover:scale-105 hover:shadow-2xl transition-all duration-300 text-center w-full max-w-xs">
+              <div className="bg-white rounded-xl p-2  hover:scale-105 hover:shadow-2xl  transition-all duration-300 text-center w-full max-w-xs">
                 <div className="flex justify-center mb-4">
                   {/* Office icon */}
-                  <svg className="w-10 h-10 text-pink-500" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+                  <svg className="w-8 h-8 text-pink-500" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
                     <path d="M3 21V3h6v6h6v6h6v6H3z" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </div>
-                <h2 className="text-[20px] text-[#0d3557] regular">Office Space, Desks & Tools</h2>
+                <h2 className="text-[14px] text-[#0d3557] regular">Office Space, Desks & Tools</h2>
               </div>
 
               {/* Box 2 */}
-              <div className="bg-white rounded-xl   hover:scale-105 hover:shadow-2xl transition-all duration-300 text-center w-full max-w-xs">
+              <div className="bg-white rounded-xl p-2  hover:scale-105 hover:shadow-2xl  transition-all duration-300 text-center w-full max-w-xs">
                 <div className="flex justify-center mb-4">
                   {/* Laptop icon */}
-                  <svg className="w-10 h-10 text-pink-500" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+                  <svg className="w-8 h-8 text-pink-500" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
                     <path d="M4 6h16v10H4V6zm0 10h16v2H4v-2z" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </div>
-                <h2 className="text-[20px] text-[#0d3557] regular">Computer Hardware + Office Software</h2>
+                <h2 className="text-[14px] text-[#0d3557] regular">Computer Hardware + Office Software</h2>
               </div>
 
               {/* Box 3 (centered) */}
               <div className="col-span-2 flex justify-center">
-                <div className="bg-white rounded-xl   hover:scale-105 hover:shadow-2xl transition-all duration-300 text-center w-full max-w-xs">
+              <div className="bg-white rounded-xl p-2  hover:scale-105 hover:shadow-2xl  transition-all duration-300 text-center w-full max-w-xs">
                   <div className="flex justify-center mb-4">
                     {/* Money icon */}
-                    <svg className="w-10 h-10 text-pink-500" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+                    <svg className="w-8 h-8 text-pink-500" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
                       <path d="M12 8c-1.5 0-2.5.5-2.5 1.5s1 1.5 2.5 1.5 2.5.5 2.5 1.5-1 1.5-2.5 1.5M12 5v14" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </div>
-                  <h2 className="text-[20px] text-[#0d3557] regular">Payroll, Taxes & Benefits</h2>
+                  <h2 className="text-[14px] text-[#0d3557] regular">Payroll, Taxes & Benefits</h2>
                 </div>
               </div>
 
               {/* Box 4 */}
-              <div className="bg-white rounded-xl   hover:scale-105 hover:shadow-2xl transition-all duration-300 text-center w-full max-w-xs">
+              <div className="bg-white rounded-xl p-2  hover:scale-105 hover:shadow-2xl  transition-all duration-300 text-center w-full max-w-xs">
                 <div className="flex justify-center mb-4">
                   {/* Remote icon */}
-                  <svg className="w-10 h-10 text-pink-500" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+                  <svg className="w-8 h-8 text-pink-500" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
                     <path d="M12 3v18m-9-9h18" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </div>
-                <h2 className="text-[20px] text-[#0d3557] regular">Remote Tools, Training & Support</h2>
+                <h2 className="text-[14px] text-[#0d3557] regular">Remote Tools, Training & Support</h2>
               </div>
 
               {/* Box 5 */}
-              <div className="bg-white rounded-xl   hover:scale-105 hover:shadow-2xl transition-all duration-300 text-center w-full max-w-xs">
+              <div className="bg-white rounded-xl p-2  hover:scale-105 hover:shadow-2xl  transition-all duration-300 text-center w-full max-w-xs">
                 <div className="flex justify-center mb-4">
                   {/* Health icon */}
-                  <svg className="w-10 h-10 text-pink-500" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+                  <svg className="w-8 h-8 text-pink-500" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
                     <path d="M12 21C12 21 3 13.5 3 8.5 3 5.4 5.4 3 8.5 3c1.8 0 3.4.9 4.5 2.1C14.1 3.9 15.7 3 17.5 3 20.6 3 23 5.4 23 8.5c0 5-9 12.5-9 12.5z" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </div>
-                <h2 className="text-[20px] text-[#0d3557] regular">Family Health Insurance</h2>
+                <h2 className="text-[14px] text-[#0d3557] regular">Family Health Insurance</h2>
               </div>
 
             </div>

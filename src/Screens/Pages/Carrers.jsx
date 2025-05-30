@@ -1,780 +1,530 @@
-"use client"
-
-import { useEffect, useState } from "react"
-import {
-  ArrowRight,
-  MapPin,
-  Clock,
-  Users,
-  Zap,
-  Shield,
-  Heart,
-  Coffee,
-  Briefcase,
-  Code,
-  Palette,
-  BarChart3,
-} from "lucide-react"
-
-export default function CareersPage() {
-  const [scrollY, setScrollY] = useState(0)
-
+import React, { useEffect } from 'react';
+import { motion } from "framer-motion";
+const AboutOffshore365 = () => {
   useEffect(() => {
-    // AOS-like animation setup
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: "0px 0px -50px 0px",
+    // Initialize AOS animation library
+    if (typeof window !== 'undefined' && typeof AOS !== 'undefined') {
+      AOS.init({
+        duration: 1000,
+        easing: 'ease-in-out',
+        once: true,
+        mirror: false
+      });
     }
+  }, []);
+  const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = "1"
-          entry.target.style.transform = "translateY(0) translateX(0)"
-        }
-      })
-    }, observerOptions)
-
-    const animatedElements = document.querySelectorAll(".animate-on-scroll")
-    animatedElements.forEach((el) => observer.observe(el))
-
-    // Parallax scroll effect
-    const handleScroll = () => setScrollY(window.scrollY)
-    window.addEventListener("scroll", handleScroll)
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll)
-      observer.disconnect()
-    }
-  }, [])
-
-  const positions = [
+  const items = [
     {
-      title: "Senior Frontend Developer",
-      department: "Engineering",
-      location: "Remote / San Francisco",
-      type: "Full-time",
-      icon: Code,
+      title: "Vision",
+      metric:
+        "To be the most trusted offshore partner, delivering innovative solutions for Architecture, Interior Design, and Engineering through expertise and excellence.", borderColor: "border-blue-500",
+      textColor: "text-blue-500",
+      circleColor: "bg-blue-500",
     },
     {
-      title: "UX/UI Designer",
-      department: "Design",
-      location: "New York / Remote",
-      type: "Full-time",
-      icon: Palette,
+      title: "Mission",
+      metric:
+        "Improving the quality of every project building process by delivering cutting-edge solutions and empowering client success through innovation and excellence.",
+      borderColor: "border-yellow-500",
+      textColor: "text-yellow-500",
+      circleColor: "bg-yellow-500",
     },
     {
-      title: "Product Manager",
-      department: "Product",
-      location: "London / Remote",
-      type: "Full-time",
-      icon: BarChart3,
+      title: "Core Values",
+      metric:
+        "Commitment to Excellence, Continuous Process Innovation, Partner in Growth, and upholding Integrity and Trust in every interaction.",
+      borderColor: "border-purple-500",
+      textColor: "text-purple-500",
+      circleColor: "bg-purple-500",
     },
-    {
-      title: "DevOps Engineer",
-      department: "Engineering",
-      location: "Berlin / Remote",
-      type: "Full-time",
-      icon: Shield,
-    },
-  ]
-
-  const benefits = [
-    {
-      icon: Heart,
-      title: "Health & Wellness",
-      description: "Comprehensive health insurance and wellness programs",
-    },
-    {
-      icon: Coffee,
-      title: "Work-Life Balance",
-      description: "Flexible hours and unlimited PTO policy",
-    },
-    {
-      icon: Zap,
-      title: "Growth & Learning",
-      description: "Annual learning budget and conference attendance",
-    },
-    {
-      icon: Users,
-      title: "Team Culture",
-      description: "Collaborative environment with amazing people",
-    },
-  ]
-
-  // Use standard system font stack
-  const fontFamily =  "PlusJakartaSans"
-
-  const buttonStyle = {
-    display: "inline-flex",
-    alignItems: "center",
-    justifyContent: "center",
-    padding: "12px 24px",
-    fontSize: "16px",
-    fontWeight: "500",
-    borderRadius: "8px",
-    border: "none",
-    cursor: "pointer",
-    transition: "all 0.3s ease",
-    textDecoration: "none",
-    fontFamily,
-  }
-
-  const primaryButtonStyle = {
-    ...buttonStyle,
-    backgroundColor: "#000",
-    color: "#fff",
-  }
-
-  const outlineButtonStyle = {
-    ...buttonStyle,
-    backgroundColor: "transparent",
-    color: "#000",
-    border: "1px solid #000",
-  }
-
-  const cardStyle = {
-    backgroundColor: "#fff",
-    borderRadius: "16px",
-    padding: "32px",
-    boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
-    transition: "all 0.3s ease",
-    border: "1px solid #e5e5e5",
-  }
-
-  const badgeStyle = {
-    display: "inline-flex",
-    alignItems: "center",
-    padding: "4px 12px",
-    fontSize: "12px",
-    fontWeight: "500",
-    borderRadius: "20px",
-    border: "1px solid #d1d5db",
-    color: "#374151",
-    backgroundColor: "transparent",
-  }
+  ];
 
   return (
-    <div
-      style={{
-        minHeight: "100vh",
-        backgroundColor: "#fff",
-        color: "#000",
-        overflowX: "hidden",
-        fontFamily,
-        lineHeight: "1.6",
-      }}
-    >
-      {/* Hero Section with Parallax */}
-      <section
-        style={{
-          position: "relative",
-          height: "100vh",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          overflow: "hidden",
-        }}
-      >
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            backgroundImage: `url('https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            transform: `translateY(${scrollY * 0.5}px)`,
-            filter: "grayscale(100%) contrast(1.2)",
-            willChange: "transform",
-          }}
-        />
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            backgroundColor: "rgba(0, 0, 0, 0.6)",
-          }}
-        />
-        <div
-          style={{
-            position: "relative",
-            zIndex: 10,
-            textAlign: "center",
-            color: "#fff",
-            maxWidth: "1024px",
-            margin: "0 auto",
-            padding: "0 24px",
-          }}
-        >
+    <div className="font-sans text-[#0d3557]  text-center">
+      {/* Hero Section */}
+      <section className="py-12 px-6 md:px-12 lg:px-24 bg-white ">
+        <div className="max-w-5xl mx-auto ">
+          <div
+            className="inline-block bg-blue-100 rounded-full px-6 py-2 mb-8"
+            data-aos="fade-up"
+          >
+            <span className="text-blue-600 regular ">Career 
+            </span>
+          </div>
+
           <h1
-            className="animate-on-scroll"
-            style={{
-              fontSize: "clamp(3rem, 8vw, 6rem)",
-              fontWeight: "bold",
-              marginBottom: "24px",
-              opacity: 0,
-              transform: "translateY(32px)",
-              transition: "all 1s ease",
-              fontFamily,
-            }}
+            className="text-[50px] font-extrabold leading-tight mb-8"
+            data-aos="fade-up"
+            data-aos-delay="100"
           >
-            Build the Future
-          </h1>
+Ready to Build the Future with Us?
+</h1>
+
           <p
-            className="animate-on-scroll"
-            style={{
-              fontSize: "clamp(1.25rem, 3vw, 1.5rem)",
-              marginBottom: "32px",
-              opacity: 0,
-              transform: "translateY(32px)",
-              transition: "all 1s ease 0.3s",
-              fontFamily,
-            }}
+            className="text-[20px]  mb-12 font-medium opacity-80 leading-relaxed"
+            data-aos="fade-up"
+            data-aos-delay="200"
           >
-            Join our mission to create tomorrow's technology today
-          </p>
+At Offshore 365, we cultivate a vibrant culture through clear values, effective communication, and teamwork, fostering a positive and supportive atmosphere. Joining us offers continuous learning, exposure to cutting-edge technology, global clients, and an empowering environment for your personal and professional growth.
+</p>
+
           <button
-            className="animate-on-scroll"
-            style={{
-              ...primaryButtonStyle,
-              backgroundColor: "#fff",
-              color: "#000",
-              fontSize: "18px",
-              padding: "16px 32px",
-              opacity: 0,
-              transform: "translateY(32px)",
-              transition: "all 1s ease 0.5s",
-            }}
-            onMouseEnter={(e) => (e.target.style.backgroundColor = "#f3f4f6")}
-            onMouseLeave={(e) => (e.target.style.backgroundColor = "#fff")}
+            className="bg-[#006bff] hover:bg-blue-800  text-white font-medium px-6 py-4 rounded-lg text-[20px] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+            data-aos="fade-up"
+            data-aos-delay="300"
           >
-            Explore Opportunities <ArrowRight style={{ marginLeft: "8px", width: "20px", height: "20px" }} />
+           Contact Us
+          </button>
+
+          <p
+            className="mt-24 text-[20px] font-medium"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            The trusted offshore AEC partner for firms globally, from dynamic design studios to large-scale construction enterprises.
+          </p>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-24 px-6 md:px-12 lg:px-24 bg-white">
+        <div className="max-w-7xl mx-auto">
+
+
+          <div className="text-center">
+            <h2
+              className="text-[50px]  font-bold mb-8"
+              data-aos="fade-up"
+            >
+              Offshore 365 - One stop solution
+            </h2>
+
+            <p
+              className="text-[20px]  leading-relaxed max-w-5xl mx-auto regular"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              Offshore 365 seamlessly extends your in-house capabilities, serving as your singular hub for comprehensive AEC solutions. Our expertise spans specialized BIM Consultancy, meticulous Design Documentation, and stunning 3D Visualization for Interior Design, Architecture, and Engineering projects. With proficiency across diverse sectors, we adeptly manage projects of any scale, ensuring peak efficiency with minimal client oversight.
+            </p>
+          </div>
+          <div className="grid grid-cols-3 md:grid-cols-3 gap-8 mb-20 mt-20">
+            <div
+
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <h2 className="text-[50px] text-red-500  font-bold mb-4">500+</h2>
+              <p className="text-[20px] ">Projects Completed</p>
+            </div>
+
+            <div
+
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <h2 className="text-[50px] text-blue-500 font-bold mb-4">250+</h2>
+              <p className="text-[20px] ">Satisfied Clients</p>
+            </div>
+
+            <div
+
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <h2 className="text-[50px] text-green-500 font-bold mb-4">6+</h2>
+              <p className="text-[20px] ">Years of Excellence</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 px-6 md:px-12 lg:px-24 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <h2
+            className="text-[50px] font-bold  mb-20 text-center"
+            data-aos="fade-up"
+          >
+            Improving the quality <br /> of every project building process
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {items.map((item, index) => (
+              <motion.div
+                key={index}
+                className={`bg-white border-2 ${item.borderColor} rounded-2xl shadow-lg overflow-hidden relative group`}
+                style={{ height: "340px" }}
+                variants={cardVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                data-aos="zoom-in"
+                data-aos-delay={200 + index * 200}
+              >
+                {/* Abstract blurred circle inside */}
+                <div
+                  className={`absolute -bottom-10 -right-10 w-40 h-40 rounded-full ${item.circleColor} opacity-20 blur-2xl`}
+                ></div>
+
+                {/* Subtle shape top-left */}
+                <div
+                  className={`absolute -top-5 -left-5 w-24 h-24 rounded-full ${item.circleColor} opacity-10 blur-2xl`}
+                ></div>
+
+                {/* Card Content */}
+                <div className="relative z-10 text-center px-6 sm:px-8 py-10">
+                  <h3
+                    className={`text-[34px] font-bold mb-4 ${item.textColor}`}
+                    data-aos="fade-up"
+                    data-aos-delay={300 + index * 100}
+                  >
+                    {item.title}
+                  </h3>
+                  <p
+                    className="text-[20px] leading-relaxed font-medium"
+                    data-aos="fade-up"
+                    data-aos-delay={400 + index * 100}
+                  >
+                    {item.metric}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="py-12 px-16  text-[#0d3557]    mb-20 sm:py-16 scroll-mt-20 rounded-2xl px-4 sm:px-8 text-gray-800"
+        data-aos="zoom-in"
+      >
+        <div className="flex flex-col lg:flex-row-reverse items-start gap-8 md:gap-12 container px-24">
+          <div className="flex-1 grid grid-cols-2 gap-6 place-items-center" data-aos="fade-left">
+
+            {/* Office Space */}
+            <div className="bg-white rounded-xl p-2 hover:scale-105 hover:shadow-2xl transition-all duration-300 text-center w-full max-w-xs">
+              <div className="flex justify-center mb-4">
+                {/* Building Icon (Red) */}
+                <svg className="w-8 h-8 text-red-500" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+                  <path d="M3 21V3h6v6h6v6h6v6H3z" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
+              <h2 className="text-[14px] text-[#0d3557] regular">Office Space, Desks & Tools</h2>
+            </div>
+
+            {/* Computer Hardware */}
+            <div className="bg-white rounded-xl p-2 hover:scale-105 hover:shadow-2xl transition-all duration-300 text-center w-full max-w-xs">
+              <div className="flex justify-center mb-4">
+                {/* Laptop Icon (Green) */}
+                <svg className="w-8 h-8 text-green-500" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+                  <path d="M4 6h16v10H4V6zm0 10h16v2H4v-2z" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
+              <h2 className="text-[14px] text-[#0d3557] regular">Computer Hardware + Office Software</h2>
+            </div>
+
+            {/* Data Security */}
+            <div className="bg-white rounded-xl p-2 hover:scale-105 hover:shadow-2xl transition-all duration-300 text-center w-full max-w-xs">
+              <div className="flex justify-center mb-4">
+                {/* Shield Lock Icon (Blue) */}
+                <svg className="w-8 h-8 text-blue-500" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+                  <path d="M12 12v2m0-6a2 2 0 0 1 2 2v2a2 2 0 0 1-4 0V10a2 2 0 0 1 2-2zm0-6l7 4v6c0 5-7 9-7 9s-7-4-7-9V4l7-4z" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
+              <h2 className="text-[14px] text-[#0d3557] regular">Data Security</h2>
+            </div>
+
+            {/* Payroll, Taxes & Benefits */}
+            <div className="bg-white rounded-xl p-2 hover:scale-105 hover:shadow-2xl transition-all duration-300 text-center w-full max-w-xs">
+              <div className="flex justify-center mb-4">
+                {/* Dollar Coin Icon (Yellow) */}
+                <svg className="w-8 h-8 text-yellow-500" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+                  <path d="M12 8c-1.5 0-2.5.5-2.5 1.5s1 1.5 2.5 1.5 2.5.5 2.5 1.5-1 1.5-2.5 1.5M12 5v14" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
+              <h2 className="text-[14px] text-[#0d3557] regular">Payroll, Taxes & Benefits</h2>
+            </div>
+
+            {/* Remote Tools */}
+            <div className="bg-white rounded-xl p-2 hover:scale-105 hover:shadow-2xl transition-all duration-300 text-center w-full max-w-xs">
+              <div className="flex justify-center mb-4">
+                {/* Globe Wifi Icon (Purple) */}
+                <svg className="w-8 h-8 text-purple-500" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+                  <path d="M12 3v18m-9-9h18" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
+              <h2 className="text-[14px] text-[#0d3557] regular">Remote Tools, Training & Support</h2>
+            </div>
+
+            {/* Health Insurance */}
+            <div className="bg-white rounded-xl p-2 hover:scale-105 hover:shadow-2xl transition-all duration-300 text-center w-full max-w-xs">
+              <div className="flex justify-center mb-4">
+                {/* Heart Icon (Pink) */}
+                <svg className="w-8 h-8 text-pink-500" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+                  <path d="M12 21S3 13.5 3 8.5 5.4 3 8.5 3c1.8 0 3.4.9 4.5 2.1C14.1 3.9 15.7 3 17.5 3 20.6 3 23 5.4 23 8.5c0 5-9 12.5-9 12.5z" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
+              <h2 className="text-[14px] text-[#0d3557] regular">Family Health Insurance</h2>
+            </div>
+
+          </div>
+
+
+
+          <motion.div
+            className="flex-1 text-left  text-[#0d3557]  "
+            initial={{ scale: 0.9, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            data-aos="fade-right"
+          >
+            <h1 className="text-[40px]  font-bold mb-4  tracking-wide leading-snug">
+              Offshore 365 Infrastructure
+            </h1>
+
+            {/* New paragraph below the title */}
+            <p className="mb-8 text-[18px] leading-relaxed font-medium">
+              Offshore 365 operates on a secure, redundant infrastructure with high-speed leased lines and no single point of failure. Our systems are protected by multi-layered security protocols and backed by on-site power generation. Physical facilities are secured round-the-clock with restricted access, while modern training rooms and video conferencing support continuous collaboration and professional development.            </p>
+
+
+          </motion.div>
+
+        </div>
+
+
+      </motion.section>
+
+      {/* Leadership Section */}
+      <section className="py-24 px-6 md:px-12 lg:px-24 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <h2
+            className="text-4xl md:text-5xl font-bold mb-8 text-center"
+            data-aos="fade-up"
+          >
+            Offshore 365 leadership
+          </h2>
+
+          <p
+            className="text-xl opacity-80 text-center max-w-3xl mx-auto mb-16"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            Our team is customer-obsessed, mission-oriented, and believes anything is possible.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div
+              className="bg-white rounded-2xl shadow-xl overflow-hidden"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div className="h-64 bg-gradient-to-r from-blue-400 to-blue-600 flex items-center justify-center">
+                <span className="text-white text-6xl font-bold">NM</span>
+              </div>
+              <div className="p-8">
+                <h3 className="text-2xl font-bold mb-2">Nilesh Malhotra</h3>
+                <p className="text-lg opacity-70">Chief Executive Officer</p>
+              </div>
+            </div>
+
+            <div
+              className="bg-white rounded-2xl shadow-xl overflow-hidden"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <div className="h-64 bg-gradient-to-r from-purple-400 to-purple-600 flex items-center justify-center">
+                <span className="text-white text-6xl font-bold">RM</span>
+              </div>
+              <div className="p-8">
+                <h3 className="text-2xl font-bold mb-2">Ruby Malhotra</h3>
+                <p className="text-lg opacity-70">Chief Operating Officer</p>
+              </div>
+            </div>
+
+            <div
+              className="bg-white rounded-2xl shadow-xl overflow-hidden"
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
+              <div className="h-64 bg-gradient-to-r from-teal-400 to-teal-600 flex items-center justify-center">
+                <span className="text-white text-6xl font-bold">SM</span>
+              </div>
+              <div className="p-8">
+                <h3 className="text-2xl font-bold mb-2">Shivani Malhotra</h3>
+                <p className="text-lg opacity-70">Chief Financial Officer</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Mission & Vision Section */}
+      <section className="py-24 px-6 md:px-12 lg:px-24 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex items-center justify-center mb-12">
+            
+            <h2
+              className="text-[50px] md:text-5xl font-bold"
+              data-aos="fade-up"
+            >
+              CSR at Offshore 365
+            </h2>
+          </div>
+
+          <p
+            className="text-[20px] text-center max-w-4xl mx-auto mb-16 opacity-80"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            "At Offshore 365, we believe that businesses have a responsibility to contribute positively to society. Our CSR initiatives are driven by our commitment to sustainability, community engagement, and ethical business practices."
+          </p>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div
+              className="bg-gray-50 rounded-3xl p-10 shadow-lg border border-gray-100"
+              data-aos="fade-right"
+              data-aos-delay="200"
+            >
+              <h3 className="text-3xl font-bold mb-8">OUR MISSION</h3>
+              <p className="text-xl leading-relaxed opacity-80">
+                At Offshore 365, we believe that businesses have a responsibility to contribute positively to society. Our CSR initiatives are driven by our commitment to sustainability, community engagement, and ethical business practices. We strive to create lasting value for our clients while maintaining the highest standards of professional excellence and social responsibility.
+              </p>
+            </div>
+
+            <div
+              className="bg-gray-50 rounded-3xl p-10 shadow-lg border border-gray-100"
+              data-aos="fade-left"
+              data-aos-delay="300"
+            >
+              <h3 className="text-3xl font-bold mb-8">OUR VISION</h3>
+              <p className="text-xl leading-relaxed opacity-80">
+                We envision a future where architecture, engineering, and design contribute to a more sustainable, inclusive, and equitable society. We support underrepresented communities by improving their living and working environments through innovative eco-friendly and energy-efficient designs. We encourage education and skill development in architecture and interior design to create opportunities for the next generation of professionals.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="py-24 px-6 md:px-12 lg:px-24 bg-gradient-to-b from-blue-50 to-white">
+        <div className="max-w-7xl mx-auto text-center">
+          <h2
+            className="text-4xl md:text-5xl font-bold mb-8"
+            data-aos="fade-up"
+          >
+            Ready to transform your AEC workflow?
+          </h2>
+
+          <p
+            className="text-xl opacity-80 max-w-3xl mx-auto mb-12"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            Connect with our team to discover how Offshore 365 can enhance your productivity and deliver exceptional results for your projects.
+          </p>
+
+          <button
+            className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-10 py-4 rounded-lg text-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            Schedule a consultation
           </button>
         </div>
       </section>
 
-      {/* Company Culture Section */}
-      <section style={{ padding: "96px 24px" }}>
-        <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(400px, 1fr))",
-              gap: "64px",
-              alignItems: "center",
-            }}
-          >
-            <div
-              className="animate-on-scroll"
-              style={{
-                opacity: 0,
-                transform: "translateX(-50px)",
-                transition: "all 1s ease",
-              }}
-            >
-              <h2
-                style={{
-                  fontSize: "clamp(2.5rem, 5vw, 3rem)",
-                  fontWeight: "bold",
-                  marginBottom: "24px",
-                  background: "linear-gradient(135deg, #000000 0%, #434343 100%)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                  fontFamily,
-                }}
-              >
-                Our Culture
-              </h2>
-              <p
-                style={{
-                  fontSize: "18px",
-                  color: "#6b7280",
-                  marginBottom: "24px",
-                  lineHeight: "1.6",
-                  fontFamily,
-                }}
-              >
-                We believe in fostering an environment where innovation thrives, creativity is celebrated, and every
-                voice matters. Our team is our greatest asset, and we're committed to creating a workplace where
-                everyone can do their best work.
-              </p>
-              <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-                {["Innovation-first mindset", "Collaborative team environment", "Continuous learning culture"].map(
-                  (item, index) => (
-                    <div key={index} style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-                      <div
-                        style={{
-                          width: "8px",
-                          height: "8px",
-                          backgroundColor: "#000",
-                          borderRadius: "50%",
-                        }}
-                      />
-                      <span style={{ color: "#374151", fontFamily }}>{item}</span>
-                    </div>
-                  ),
-                )}
-              </div>
-            </div>
-            <div
-              className="animate-on-scroll"
-              style={{
-                opacity: 0,
-                transform: "translateX(50px)",
-                transition: "all 1s ease 0.3s",
-              }}
-            >
-              <img
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                alt="Team collaboration"
-                style={{
-                  borderRadius: "16px",
-                  boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
-                  filter: "grayscale(100%)",
-                  transition: "all 0.5s ease",
-                  width: "100%",
-                  height: "auto",
-                }}
-                onMouseEnter={(e) => (e.target.style.filter = "grayscale(0%)")}
-                onMouseLeave={(e) => (e.target.style.filter = "grayscale(100%)")}
-              />
+      {/* Footer */}
+      <footer className="py-16 px-6 md:px-12 lg:px-24 bg-gray-900 text-white">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+          <div>
+            <h3 className="text-2xl font-bold mb-6">Offshore 365</h3>
+            <p className="opacity-70 mb-6">
+              Your trusted partner for comprehensive AEC solutions, delivering exceptional results with efficiency and precision.
+            </p>
+            <div className="flex space-x-4">
+              <a href="#" className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"></path>
+                </svg>
+              </a>
+              <a href="#" className="w-10 h-10 bg-blue-400 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors">
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M22.162 5.656a8.384 8.384 0 01-2.402.658A4.196 4.196 0 0021.6 4c-.82.488-1.719.83-2.656 1.015a4.182 4.182 0 00-7.126 3.814 11.874 11.874 0 01-8.62-4.37 4.168 4.168 0 00-.566 2.103c0 1.45.738 2.731 1.86 3.481a4.168 4.168 0 01-1.894-.523v.052a4.185 4.185 0 003.355 4.101 4.21 4.21 0 01-1.89.072A4.185 4.185 0 007.97 16.65a8.394 8.394 0 01-6.191 1.732 11.83 11.83 0 006.41 1.88c7.693 0 11.9-6.373 11.9-11.9 0-.18-.005-.362-.013-.54a8.496 8.496 0 002.087-2.165z"></path>
+                </svg>
+              </a>
+              <a href="#" className="w-10 h-10 bg-blue-800 rounded-full flex items-center justify-center hover:bg-blue-900 transition-colors">
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path>
+                </svg>
+              </a>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* Section Divider */}
-      <div
-        style={{
-          background: "linear-gradient(90deg, transparent 0%, #e5e5e5 50%, transparent 100%)",
-          height: "1px",
-          width: "100%",
-        }}
-      />
-
-      {/* Open Positions Section */}
-      <section style={{ padding: "96px 24px", backgroundColor: "#f9fafb" }}>
-        <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-          <div
-            className="animate-on-scroll"
-            style={{
-              textAlign: "center",
-              marginBottom: "64px",
-              opacity: 0,
-              transform: "translateY(32px)",
-              transition: "all 1s ease",
-            }}
-          >
-            <h2
-              style={{
-                fontSize: "clamp(2.5rem, 5vw, 3rem)",
-                fontWeight: "bold",
-                marginBottom: "24px",
-                background: "linear-gradient(135deg, #000000 0%, #434343 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-                fontFamily,
-              }}
-            >
-              Open Positions
-            </h2>
-            <p
-              style={{
-                fontSize: "18px",
-                color: "#6b7280",
-                maxWidth: "512px",
-                margin: "0 auto",
-                fontFamily,
-              }}
-            >
-              Discover your next career opportunity and join our team of innovators
-            </p>
+          <div>
+            <h4 className="text-xl font-bold mb-6">Services</h4>
+            <ul className="space-y-4">
+              <li><a href="#" className="opacity-70 hover:opacity-100 transition-opacity">BIM Consultancy</a></li>
+              <li><a href="#" className="opacity-70 hover:opacity-100 transition-opacity">Design Documentation</a></li>
+              <li><a href="#" className="opacity-70 hover:opacity-100 transition-opacity">3D Visualization</a></li>
+              <li><a href="#" className="opacity-70 hover:opacity-100 transition-opacity">Interior Design</a></li>
+              <li><a href="#" className="opacity-70 hover:opacity-100 transition-opacity">Architecture</a></li>
+            </ul>
           </div>
 
-          <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
-            {positions.map((position, index) => {
-              const Icon = position.icon
-              return (
-                <div
-                  key={index}
-                  className="animate-on-scroll"
-                  style={{
-                    ...cardStyle,
-                    opacity: 0,
-                    transform: "translateY(32px)",
-                    transition: `all 1s ease ${index * 200}ms`,
-                  }}
-                  onMouseEnter={(e) => (e.target.style.boxShadow = "0 20px 25px -5px rgba(0, 0, 0, 0.1)")}
-                  onMouseLeave={(e) => (e.target.style.boxShadow = "0 4px 6px -1px rgba(0, 0, 0, 0.1)")}
-                >
-                  <div
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "space-between",
-                      flexWrap: "wrap",
-                      gap: "16px",
-                    }}
-                  >
-                    <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
-                      <div
-                        style={{
-                          padding: "12px",
-                          backgroundColor: "#000",
-                          borderRadius: "8px",
-                        }}
-                      >
-                        <Icon style={{ width: "24px", height: "24px", color: "#fff" }} />
-                      </div>
-                      <div>
-                        <h3
-                          style={{
-                            fontSize: "20px",
-                            fontWeight: "600",
-                            marginBottom: "8px",
-                            fontFamily,
-                          }}
-                        >
-                          {position.title}
-                        </h3>
-                        <div
-                          style={{
-                            display: "flex",
-                            alignItems: "center",
-                            gap: "16px",
-                            color: "#6b7280",
-                            flexWrap: "wrap",
-                          }}
-                        >
-                          <span style={{ ...badgeStyle, fontFamily }}>{position.department}</span>
-                          <div style={{ display: "flex", alignItems: "center", gap: "4px" }}>
-                            <MapPin style={{ width: "16px", height: "16px" }} />
-                            <span style={{ fontSize: "14px", fontFamily }}>{position.location}</span>
-                          </div>
-                          <div style={{ display: "flex", alignItems: "center", gap: "4px" }}>
-                            <Clock style={{ width: "16px", height: "16px" }} />
-                            <span style={{ fontSize: "14px", fontFamily }}>{position.type}</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <button
-                      style={outlineButtonStyle}
-                      onMouseEnter={(e) => {
-                        e.target.style.backgroundColor = "#000"
-                        e.target.style.color = "#fff"
-                      }}
-                      onMouseLeave={(e) => {
-                        e.target.style.backgroundColor = "transparent"
-                        e.target.style.color = "#000"
-                      }}
-                    >
-                      Apply Now
-                    </button>
-                  </div>
-                </div>
-              )
-            })}
+          <div>
+            <h4 className="text-xl font-bold mb-6">Company</h4>
+            <ul className="space-y-4">
+              <li><a href="#" className="opacity-70 hover:opacity-100 transition-opacity">About Us</a></li>
+              <li><a href="#" className="opacity-70 hover:opacity-100 transition-opacity">Our Team</a></li>
+              <li><a href="#" className="opacity-70 hover:opacity-100 transition-opacity">Careers</a></li>
+              <li><a href="#" className="opacity-70 hover:opacity-100 transition-opacity">CSR</a></li>
+              <li><a href="#" className="opacity-70 hover:opacity-100 transition-opacity">Contact</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-xl font-bold mb-6">Contact Us</h4>
+            <ul className="space-y-4">
+              <li className="flex items-start">
+                <svg className="w-6 h-6 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+                <span className="opacity-70">123 Business Avenue, Suite 500, New Delhi, India</span>
+              </li>
+              <li className="flex items-start">
+                <svg className="w-6 h-6 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                </svg>
+                <span className="opacity-70">info@offshore365.com</span>
+              </li>
+              <li className="flex items-start">
+                <svg className="w-6 h-6 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                </svg>
+                <span className="opacity-70">+91 123 456 7890</span>
+              </li>
+            </ul>
           </div>
         </div>
-      </section>
 
-      {/* Benefits Section */}
-      <section
-        style={{
-          padding: "96px 24px",
-          position: "relative",
-          overflow: "hidden",
-        }}
-      >
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            opacity: 0.1,
-            backgroundImage: `url('https://images.unsplash.com/photo-1497366811353-6870744d04b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            transform: `translateY(${scrollY * 0.3}px)`,
-            filter: "grayscale(100%)",
-            willChange: "transform",
-          }}
-        />
-        <div style={{ maxWidth: "1200px", margin: "0 auto", position: "relative", zIndex: 10 }}>
-          <div
-            className="animate-on-scroll"
-            style={{
-              textAlign: "center",
-              marginBottom: "64px",
-              opacity: 0,
-              transform: "translateY(32px)",
-              transition: "all 1s ease",
-            }}
-          >
-            <h2
-              style={{
-                fontSize: "clamp(2.5rem, 5vw, 3rem)",
-                fontWeight: "bold",
-                marginBottom: "24px",
-                background: "linear-gradient(135deg, #000000 0%, #434343 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-                fontFamily,
-              }}
-            >
-              Why Join Us?
-            </h2>
-            <p
-              style={{
-                fontSize: "18px",
-                color: "#6b7280",
-                maxWidth: "512px",
-                margin: "0 auto",
-                fontFamily,
-              }}
-            >
-              We offer more than just a job - we provide a platform for growth, innovation, and making a real impact
-            </p>
-          </div>
-
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-              gap: "32px",
-            }}
-          >
-            {benefits.map((benefit, index) => {
-              const Icon = benefit.icon
-              return (
-                <div
-                  key={index}
-                  className="animate-on-scroll"
-                  style={{
-                    ...cardStyle,
-                    textAlign: "center",
-                    background: "rgba(255, 255, 255, 0.95)",
-                    backdropFilter: "blur(10px)",
-                    border: "1px solid rgba(0, 0, 0, 0.1)",
-                    opacity: 0,
-                    transform: "translateY(32px)",
-                    transition: `all 1s ease ${index * 200}ms`,
-                  }}
-                  onMouseEnter={(e) => (e.target.style.transform = "scale(1.05)")}
-                  onMouseLeave={(e) => (e.target.style.transform = "scale(1)")}
-                >
-                  <div
-                    style={{
-                      marginBottom: "24px",
-                      display: "flex",
-                      justifyContent: "center",
-                    }}
-                  >
-                    <div
-                      style={{
-                        padding: "16px",
-                        backgroundColor: "#000",
-                        borderRadius: "50%",
-                      }}
-                    >
-                      <Icon style={{ width: "32px", height: "32px", color: "#fff" }} />
-                    </div>
-                  </div>
-                  <h3
-                    style={{
-                      fontSize: "20px",
-                      fontWeight: "600",
-                      marginBottom: "16px",
-                      fontFamily,
-                    }}
-                  >
-                    {benefit.title}
-                  </h3>
-                  <p style={{ color: "#6b7280", fontFamily }}>{benefit.description}</p>
-                </div>
-              )
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Application Process Section */}
-      <section
-        style={{
-          padding: "96px 24px",
-          backgroundColor: "#000",
-          color: "#fff",
-        }}
-      >
-        <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-          <div
-            className="animate-on-scroll"
-            style={{
-              textAlign: "center",
-              marginBottom: "64px",
-              opacity: 0,
-              transform: "translateY(32px)",
-              transition: "all 1s ease",
-            }}
-          >
-            <h2
-              style={{
-                fontSize: "clamp(2.5rem, 5vw, 3rem)",
-                fontWeight: "bold",
-                marginBottom: "24px",
-                fontFamily,
-              }}
-            >
-              Application Process
-            </h2>
-            <p
-              style={{
-                fontSize: "18px",
-                color: "#d1d5db",
-                maxWidth: "512px",
-                margin: "0 auto",
-                fontFamily,
-              }}
-            >
-              Our streamlined process ensures we find the perfect fit for both you and our team
-            </p>
-          </div>
-
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-              gap: "32px",
-            }}
-          >
-            {[
-              { step: "01", title: "Apply", description: "Submit your application and portfolio" },
-              { step: "02", title: "Screen", description: "Initial screening call with our team" },
-              { step: "03", title: "Interview", description: "Technical and cultural fit interviews" },
-              { step: "04", title: "Offer", description: "Welcome to the team!" },
-            ].map((process, index) => (
-              <div
-                key={index}
-                className="animate-on-scroll"
-                style={{
-                  textAlign: "center",
-                  opacity: 0,
-                  transform: "translateY(32px)",
-                  transition: `all 1s ease ${index * 200}ms`,
-                }}
-              >
-                <div
-                  style={{
-                    fontSize: "48px",
-                    fontWeight: "bold",
-                    color: "#6b7280",
-                    marginBottom: "16px",
-                    fontFamily,
-                  }}
-                >
-                  {process.step}
-                </div>
-                <h3
-                  style={{
-                    fontSize: "20px",
-                    fontWeight: "600",
-                    marginBottom: "12px",
-                    fontFamily,
-                  }}
-                >
-                  {process.title}
-                </h3>
-                <p style={{ color: "#9ca3af", fontFamily }}>{process.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section style={{ padding: "96px 24px", backgroundColor: "#f9fafb" }}>
-        <div
-          className="animate-on-scroll"
-          style={{
-            maxWidth: "1024px",
-            margin: "0 auto",
-            textAlign: "center",
-            opacity: 0,
-            transform: "translateY(32px)",
-            transition: "all 1s ease",
-          }}
-        >
-          <h2
-            style={{
-              fontSize: "clamp(2.5rem, 5vw, 3rem)",
-              fontWeight: "bold",
-              marginBottom: "24px",
-              background: "linear-gradient(135deg, #000000 0%, #434343 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
-              fontFamily,
-            }}
-          >
-            Ready to Start?
-          </h2>
-          <p
-            style={{
-              fontSize: "18px",
-              color: "#6b7280",
-              marginBottom: "32px",
-              maxWidth: "512px",
-              margin: "0 auto 32px auto",
-              fontFamily,
-            }}
-          >
-            Take the next step in your career journey. We're excited to hear from you and learn about what you can bring
-            to our team.
+        <div className="max-w-7xl mx-auto mt-16 pt-8 border-t border-gray-800">
+          <p className="text-center opacity-70">
+            © {new Date().getFullYear()} Offshore 365. All rights reserved.
           </p>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: "16px",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <button
-              style={{
-                ...primaryButtonStyle,
-                fontSize: "18px",
-                padding: "16px 32px",
-              }}
-              onMouseEnter={(e) => (e.target.style.backgroundColor = "#374151")}
-              onMouseLeave={(e) => (e.target.style.backgroundColor = "#000")}
-            >
-              <Briefcase style={{ marginRight: "8px", width: "20px", height: "20px" }} />
-              View All Positions
-            </button>
-            <button
-              style={{
-                ...outlineButtonStyle,
-                fontSize: "18px",
-                padding: "16px 32px",
-              }}
-              onMouseEnter={(e) => {
-                e.target.style.backgroundColor = "#000"
-                e.target.style.color = "#fff"
-              }}
-              onMouseLeave={(e) => {
-                e.target.style.backgroundColor = "transparent"
-                e.target.style.color = "#000"
-              }}
-            >
-              Learn More About Us
-            </button>
-          </div>
         </div>
-      </section>
+      </footer>
     </div>
-  )
-}
+  );
+};
+
+export default AboutOffshore365;
